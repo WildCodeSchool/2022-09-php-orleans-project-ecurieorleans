@@ -12,7 +12,7 @@
 .titleContent {
    margin-left: 75px;
    margin-block-end: -20px ;
-    width: 400px;
+    width: clamp(150px, 50%, 450px);
     height: 50px;
     transform: skew(-20deg);
     background: #1F1CC6;
@@ -25,7 +25,7 @@
     font-family: titlefont;
     text-align: center;
     transform: skew(20deg);
-    font-size: 2.2rem;
+    font-size: clamp(1rem,-1rem + 8vw, 2.2rem);
 }
 
 
@@ -61,6 +61,8 @@
 
 .card-content {
     width: 90%;
+    display: flex;
+    flex-direction: row;
 }
 
 .EventContent {
@@ -81,7 +83,7 @@
     text-decoration: none;
 }
 .card-title {
-    font-size: 2.2rem;
+    font-size: (2.2rem);
 }
 
 .allEventContent {
@@ -93,4 +95,38 @@
 .btn-plus{
     display: flex;
     justify-content: flex-end;
+}
+
+@media screen and (max-width:1000px) {
+    .card-content {
+        flex-direction: column;
+    }
+    
+    .imgCard{
+        width: 90%;
+        height: 20%;
+    }
+
+    .btn-plus{
+        margin-bottom: 10px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .course {
+        font-size: 1rem;
+        height:30px;
+        width: 60px;
+    }
+
+    .date {
+        font-size: 1rem;
+        height:30px;
+        width: 50px;
+    }
+    .titleContent{
+        display: flex;
+        align-items: center;
+    }
 }

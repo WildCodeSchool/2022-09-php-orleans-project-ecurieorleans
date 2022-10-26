@@ -57,6 +57,7 @@
     margin-left: 5%;
     background-color: var(--bs-dark);
     padding-top: 40px;
+    border-block: 8px solid var(--bs-secondary);
 }
 
 .card-content {
@@ -71,9 +72,9 @@
     width: fit-content;
      height: 50px;
      transform: skew(-20deg);
-     background: #1F1CC6;
-     border: 1px solid #2D29EE;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   
+     border: 2px solid #2D29EE;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     border-radius: 4px 4px 8px;
      display: flex;
      align-items: center;
 }
@@ -90,6 +91,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    margin-block: 16px;
 }
 
 .btn-plus{

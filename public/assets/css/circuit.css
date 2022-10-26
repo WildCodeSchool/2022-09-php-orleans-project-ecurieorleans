@@ -1,0 +1,46 @@
+.yellow-spacer {
+    height: 8px;
+    background-color: var(--bs-secondary);
+}
+
+.header-container {
+    /* penser à retirer la hauteur de la navbar dans height calc*/
+    height: calc(45vh - 16px);
+    background-image: url(../images/header_circuit2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50% 50% 30%;
+}
+
+header,
+h1,
+h2 {
+    text-shadow: 2px 3px 1px rgba(24, 23, 23, 0.55);
+    color: #ffff;
+}
+
+header,
+h1 {
+    font-size: 60px;
+    font-family: titleFont;
+}
+
+header,
+h2 {
+    text-shadow: 2px 3px 1px rgba(24, 23, 23, 0.55);
+    font-size: 40px;
+    font-family: bodyFont;
+}
+
+@media screen and (max-width: 720px) {
+    header,
+    h1 {
+        font-size: 40px;
+    }
+
+    header,
+    h2 {
+        text-shadow: 2px 3px 1px rgba(24, 23, 23, 0.55);
+        font-size: 20px;
+    }
+}

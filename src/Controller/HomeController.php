@@ -7,7 +7,7 @@ class HomeController extends AbstractController
     /**
      * Display home page
      */
-    public function index(): string
+    public function circuit(): string
     {
         return $this->twig->render('Home/index.html.twig');
     }

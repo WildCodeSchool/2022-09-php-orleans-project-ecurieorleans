@@ -5,7 +5,7 @@
 
 .header-container {
     /* penser à retirer la hauteur de la navbar dans height calc*/
-    height: calc(45vh - 16px);
+    height: calc(40vh - 16px);
     background-image: url(../images/header_circuit2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;

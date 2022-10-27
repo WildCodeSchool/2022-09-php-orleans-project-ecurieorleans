@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\AssociationManager;
+use App\Model\AssociationsManager as Associations;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +12,10 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $associationManager = new AssociationManager();
+        $association = $associationManager->selectOne();
+
+        return $this->twig->render('Home/index.html.twig', ["association"=>$association]);
+
     }
 }

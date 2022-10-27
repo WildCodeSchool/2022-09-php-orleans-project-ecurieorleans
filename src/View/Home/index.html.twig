@@ -1,6 +1,19 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/presentation.css" />{% endblock %}
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+
+<main class="container-fluid">
+    <section>
+
+        <h1 class="text-primary title -2p">Présentation de l’association </h1>
+        <hr>
+        <p class="presentation-text m-5">
+            {{ association.presentation }}
+        </p>
+        <hr>
+    </section>
+</main>
 {% endblock %}

@@ -13,4 +13,6 @@
     --bs-primary: rgb(var(--bs-primary-rgb));
     --bs-secondary-rgb: 245, 250, 38;
     --bs-secondary: rgb(var(--bs-secondary-rgb));
+    --bs-lightcolor: rgb(var(--bs-lightcolor));
+    --bs-darkcolor: rgb(var(--bs-darkcolor));
 }

@@ -1,3 +1,6 @@
-body {
-    color: #f76c6c;
+
+.title{
+    border: solid var(--bs-primary) 3px;
+    width: fit-content;
+    
 }

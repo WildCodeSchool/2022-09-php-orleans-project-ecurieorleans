@@ -8,7 +8,7 @@
     background-size: fill;
     background-repeat: no-repeat;
     background-position: center;
-    padding-block-start: 130px;
+    padding-block-start: 100px;
 }
 
 header,
@@ -30,9 +30,9 @@ h2 {
 }
 
 .arrow-down {
-    height: 80px;
-    width: 90px;
-    margin-block-start: -40px;
+    height: 130px;
+    width: 150px;
+    margin-block-start: -80px;
     opacity: 0.85;
 }
 
@@ -110,9 +110,9 @@ h2 {
     }
 }
 
-@media screen and (max-height: 730px) {
+@media screen and (max-height: 760px) {
     .header-container :nth-child(3) {
-        margin-block-start: 10px;
+        margin-block-start: -10px;
     }
     .header-container {
         padding-block-start: 60px;

@@ -4,7 +4,7 @@ namespace App\Model;
 
 use PDO;
 
-class CardManager extends AbstractManager
+class eventManager extends AbstractManager
 {
     public const TABLE = 'event';
 }

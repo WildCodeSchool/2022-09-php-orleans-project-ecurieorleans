@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block content %}
-{% for card in cards %}
+{% for event in events %}
 	<div class='titleContent bg-primary'>
 		<h2 class='title h2 texte-center text-white'>Evènement</h2>
 	</div>
 	<div class="cards bg-dark mx-5">
 		<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
-			<img class="imgCard card-img-top m-4" src="{{ card.imgPath }}" alt="Card image cap">
+			<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Card image cap">
 			<div class="card-body w-100">
 				<div class=' d-flex flex-row justify-content-around'>
-					<h3 class="card-title mb-5 mt-2 h3">{{ card.title }}</h3>
+					<h3 class="card-title mb-5 mt-2 h3">{{ event.title }}</h3>
 					<div class='d-flex flex-lg-row flex-column mt-2'>
 						<h4 class='course pt-2 texte-center text-white bg-primary'>
 							Course
@@ -24,7 +24,7 @@
 						</h4>
 					</div>
 				</div>
-				<p class="card-text"> {{ card.paragraph }} </p>
+				<p class="card-text"> {{ event.paragraph }} </p>
 				<div class='btn-plus d-flex justify-content-end mb-lg-0'>
 					<a href="#" class="btn btn-primary">En savoir plus</a>
 				</div>

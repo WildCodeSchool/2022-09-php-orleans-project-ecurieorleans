@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\CardManager as Card;
+use App\Model\EventManager;
 
 class HomeController extends AbstractController
 {
@@ -11,8 +11,8 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        $selectCards = new Card();
-        $cards = $selectCards->selectAll();
-        return $this->twig->render('Home/index.html.twig', ['cards' => $cards]);
+        $eventManager = new eventManager();
+        $events = $eventManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', ['events' => $events]);
     }
 }

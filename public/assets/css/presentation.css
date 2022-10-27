@@ -11,7 +11,7 @@ h1 .text-primary .title p-2 {
     margin: 0;
 }
 
-h1 {
+h2 {
     margin-block-end: -3px;
     width: clamp(150px, 50%, 450px);
     height: 50px;

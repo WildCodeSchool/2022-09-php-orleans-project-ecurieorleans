@@ -1,6 +1,15 @@
-
-.title{
+.title {
     border: solid var(--bs-primary) 3px;
     width: fit-content;
-    
+
+}
+
+h2 {
+    margin-block-end: -3px;
+    width: clamp(150px, 50%, 450px);
+    height: 50px;
+    transform: skew(-20deg);
+    background: rgb(var(--bs-lightcolor));
+    border: 1px solid rgb(var(--bs-primary-rgb));
+    box-shadow: 0px 4px 4px rgb(var(--bs-darkcolor));
 }

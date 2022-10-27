@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\AssociationManager;
-use App\Model\AssociationsManager as Associations;
 
 class HomeController extends AbstractController
 {

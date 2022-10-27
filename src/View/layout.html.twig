@@ -15,13 +15,14 @@
     />
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/root.css"/>
-
+  
 
     {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block content %}{% endblock %}
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

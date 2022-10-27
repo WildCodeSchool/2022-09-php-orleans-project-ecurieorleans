@@ -12,5 +12,4 @@ class AssociationManager extends AbstractManager
 
         return $statement->fetch();
     }
-
 }

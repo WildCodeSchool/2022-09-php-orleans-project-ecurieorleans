@@ -15,7 +15,6 @@ class HomeController extends AbstractController
         $associationManager = new AssociationManager();
         $association = $associationManager->selectOne();
 
-        return $this->twig->render('Home/index.html.twig', ["association"=>$association]);
-
+        return $this->twig->render('Home/index.html.twig', ["association" => $association]);
     }
 }

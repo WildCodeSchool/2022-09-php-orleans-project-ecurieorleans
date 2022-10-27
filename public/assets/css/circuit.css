@@ -1,0 +1,22 @@
+.yellow-spacer {
+    height: 8px;
+}
+
+.header-container {
+    height: calc(40vh - var(--navbar_height));
+    background-image: url(../images/header_circuit2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50% 50% 30%;
+}
+
+header,
+h1 {
+    text-shadow: 2px 3px 1px var(--bs-dark);
+}
+
+header,
+h1 {
+    font-size: clamp(20px, 55px, 100px);
+    font-family: var(--font_title);
+}

@@ -63,12 +63,12 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-CREATE TABLE `Event` (
+CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
   imgPath TEXT NOT NULL ,
   title VARCHAR(255) NOT NULL,
   paragraph TEXT NOT NULL
 );
 
-INSERT INTO `Event` (imgPath, title, paragraph) VALUES ("assets/images/circuit2.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+INSERT INTO `event` (imgPath, title, paragraph) VALUES ("assets/images/circuit2.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");

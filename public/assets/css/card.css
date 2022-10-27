@@ -4,8 +4,8 @@
 }
 
 .imgCard {
-    height: 300px;
-    width: 400px;
+    height: clamp(200px, 40%, 300px);
+    width: clamp(250px, 40% ,400px);
     box-shadow: 15px -15px var(--lightdark);
 }
 
@@ -15,7 +15,7 @@
     width: clamp(150px, 50%, 450px);
     height: 50px;
     transform: skew(-20deg);
-    border: 1px solid #2D29EE;
+    border: 1px solid var(--bs-primary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -27,7 +27,7 @@
 
 
 .date {
-    color: black;
+    color: var(--bs-dark);
     transform: skew(-20deg);
     height: 40px;
     width: 70px;
@@ -42,27 +42,28 @@
     font-size: 1.5rem;
 }
 
-.Cards {
+.cards {
+    width: 90%;
     padding-top: 40px;
     border-block: 8px solid var(--bs-secondary);
 }
 
-.EventContent {
+.event-content {
     margin: 0;
     padding: 0;
     width: fit-content;
     height: 50px;
     transform: skew(-20deg);
-    border: 2px solid #2D29EE;
+    border: 2px solid var(--bs-primary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px 4px 8px;
 }
 
-.w-100 {
-    width: 90% !important;
-}
 
-.allEvent {
+.card-content {
+    width: 90%;
+}
+.all-event {
     text-decoration: none;
 }
 
@@ -70,34 +71,11 @@
     font-size: (2.2rem);
 }
 
-.allEventContent {
-
+.all-event-content{
+    width: 95%;
     margin-block: 16px;
 }
 
 .btn-plus {
     margin-bottom: 10px;
-}
-
-@media screen and (max-width:992px) {
-    .imgCard {
-        width: 90%;
-        height: 20%;
-    }
-
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .course {
-        font-size: 1rem;
-        height: 30px;
-        width: 60px;
-    }
-
-    .date {
-        font-size: 1rem;
-        height: 30px;
-        width: 50px;
-    }
 }

@@ -20,3 +20,12 @@ h1 {
     font-size: clamp(20px, 55px, 100px);
     font-family: var(--font_title);
 }
+
+.blue-spacer {
+    margin-block-start: -2px;
+    height: 2px;
+}
+
+.l-spacer {
+    margin-inline: 500px;
+}

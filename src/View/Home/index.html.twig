@@ -5,36 +5,38 @@
 {% endblock %}
 
 {% block content %}
-{% for event in events %}
-	<div class="titleContent bg-primary">
-		<h2 class="title h2 texte-center text-white">Evènement</h2>
-	</div>
-	<div class="cards bg-dark mx-5">
-		<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
-			<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
-			<div class="card-body w-100">
-				<div class="d-flex flex-row justify-content-around">
-					<h3 class="card-title mb-5 mt-2 h3">{{ event.title }}</h3>
-					<div class="d-flex flex-lg-row flex-column mt-2">
-						<h4 class='course pt-2 texte-center text-white bg-primary'>
-							Course
-						</h4>
-						<h4 class="date pt-2 texte-center text-dark bg-secondary">
-							Date
-						</h4>
+	{% for event in events %}
+		<div class="titleContent bg-primary">
+			<h2 class="title h2 text-center text-white">Evènement</h2>
+		</div>
+		<div class="cards bg-dark mx-5">
+			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
+				<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
+				<div class="card-body w-100">
+					<div class="d-flex flex-row justify-content-around">
+						<h3 class="card-title mb-5 mt-2 h3">{{ event.title }}</h3>
+						<div class="d-flex flex-lg-row flex-column mt-2">
+							<h4 class='course pt-2 text-center text-white bg-primary'>
+								Course
+							</h4>
+							<h4 class="date pt-2 text-center text-dark bg-secondary">
+								Date
+							</h4>
+						</div>
+					</div>
+					<p class="card-text">
+						{{ event.paragraph }}
+					</p>
+					<div class="btn-plus d-flex justify-content-end mb-lg-0">
+						<a href="#" class="btn btn-primary">En savoir plus</a>
 					</div>
 				</div>
-				<p class="card-text"> {{ event.paragraph }} </p>
-				<div class="btn-plus d-flex justify-content-end mb-lg-0">
-					<a href="#" class="btn btn-primary">En savoir plus</a>
+			</div>
+			<div class="all-event-content d-flex justify-content-end mr-0">
+				<div class="event-content pt-2">
+					<a href='#' class="all-event text-white">Voir tous les évènements</a>
 				</div>
 			</div>
 		</div>
-		<div class="all-event-content d-flex justify-content-end mr-0">
-			<div class="event-content pt-2">
-				<a href='#' class="all-event text-white">Voir tous les évènements</a>
-			</div>
-		</div>
-	</div>
 	{% endfor %}
 {% endblock %}

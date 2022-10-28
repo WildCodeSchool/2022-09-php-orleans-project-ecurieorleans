@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-    font-family: titlefont;
+    font-family: var(--font_title);
     transform: skew(20deg);
     font-size: clamp(1rem, -1rem + 8vw, 2.2rem);
 }

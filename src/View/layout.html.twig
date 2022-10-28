@@ -13,15 +13,16 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css"/>
     <link rel="stylesheet" href="/assets/css/root.css"/>
+    <link rel="stylesheet" href="/assets/css/navbar.css"/>
   
 
     {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
-{% block navbar %}{% endblock %}
+{% block navbar %}{{include ('/Components/_navbar.html.twig')}}{% endblock %}
 {% block content %}{% endblock %}
 
     <script

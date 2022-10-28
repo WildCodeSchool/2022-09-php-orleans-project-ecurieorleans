@@ -49,42 +49,7 @@ h2 {
     animation: bounce 2.5s infinite;
     animation: bounce 2.5s infinite;
 }
-@-moz-keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(20px);
-        transform: translateY(20px);
-    }
-    60% {
-        transform: translateY(25px);
-        transform: translateY(25px);
-    }
-}
-@-webkit-keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(40px);
-        transform: translateY(40px);
-    }
-    60% {
-        transform: translateY(25px);
-        transform: translateY(25px);
-    }
-}
+
 @keyframes bounce {
     0%,
     20%,

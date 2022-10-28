@@ -8,8 +8,6 @@ h2 {
     border: 1px solid rgb(var(--bs-primary-rgb));
     box-shadow: 0px 4px 4px rgb(var(--bs-darkcolor));
 
-body {
-    color: #f76c6c;
 }
 
 .titleContent {

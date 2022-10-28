@@ -1,3 +1,4 @@
+
 h2 {
     margin-block-end: -3px;
     width: clamp(150px, 50%, 450px);
@@ -27,5 +28,3 @@ body {
     font-size: clamp(1rem, -1rem + 8vw, 2.2rem);
     border: solid var(--bs-primary) 3px;
     width: fit-content;
-
-}

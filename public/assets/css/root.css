@@ -13,7 +13,8 @@
     --bs-primary: rgb(var(--bs-primary-rgb));
     --bs-secondary-rgb: 245, 250, 38;
     --bs-secondary: rgb(var(--bs-secondary-rgb));
-
+    --bs-lightcolor: rgb(var(--bs-lightcolor));
+    --bs-darkcolor: rgb(var(--bs-darkcolor));
     --box-shadow: rgba(0,0,0,0.25);
     --navbar_height: 16px;
     --font_title: Spiky016;

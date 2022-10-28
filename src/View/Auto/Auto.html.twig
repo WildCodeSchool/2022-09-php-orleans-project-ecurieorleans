@@ -1,9 +1,25 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+
+<link rel="stylesheet" href="/assets/css/presentation.css" />
+{% endblock %}
 
 {% block content %}
-
-    <h2>Présentation section Auto </h2>
-    <p> {{ paragraph }} </p>
-
+	<main class='container-fluid'>
+		<section>
+			{% for paragraph in paragraphs %}
+				<div class='titleContent'>
+					<h2 class='text-primary title -2p'>
+                    Présentation section Auto
+					</h2>
+				</div>
+				<hr>
+				<p class='presentation-text m-5'>
+					{{ paragraph.paragraph }}
+				</p>
+				<hr>
+			{% endfor %}
+		</section>
+	</main>
 {% endblock %}

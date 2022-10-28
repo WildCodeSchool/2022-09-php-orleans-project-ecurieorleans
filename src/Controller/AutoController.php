@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\Auto;
+use App\Model\AutoManager;
 
 class AutoController extends AbstractController
 {
     public function presentation()
     {
-        $selectAuto = new Auto();
+        $selectAuto = new AutoManager();
         $presentationAuto = $selectAuto->selectAll();
-        return $this->twig->render('Home/Auto.html.twig', ['paragraph' => $presentationAuto]);
+        return $this->twig->render('Auto/Auto.html.twig', ['paragraphs' => $presentationAuto]);
     }
 }

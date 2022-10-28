@@ -61,3 +61,17 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE Auto (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  paragraph TEXT NOT NULL
+);
+
+INSERT INTO Auto (paragraph) VALUES ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at feugiat ex, vel
+ tempor justo. Nullam euismod odio et nibh facilisis, ac iaculis arcu congue. Nam rhoncus vulputate enim, 
+ cndimentum iaculis turpis auctor sed. Nunc semper ultrices sodales. Suspendisse pellentesque ipsum diam, 
+ eget molestie nisl fermentum eu. Nam accumsan felis quis lobortis porta. Pellentesque quis interdum est, 
+ sit amet tincidunt diam. Nulla at eros nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales 
+ id turpis vel rhoncus. Praesent facilisis lacus sit amet tortor tincidunt porttitor. Maecenas consequat ac metus ac 
+ imperdiet. Quisque molestie sit amet purus sed placerat. Nam eu cursus felis.");

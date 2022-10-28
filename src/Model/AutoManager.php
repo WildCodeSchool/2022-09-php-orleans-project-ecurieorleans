@@ -4,7 +4,7 @@ namespace App\Model;
 
 use PDO;
 
-class Auto extends AbstractManager
+class AutoManager extends AbstractManager
 {
     public const TABLE = 'Auto';
 }

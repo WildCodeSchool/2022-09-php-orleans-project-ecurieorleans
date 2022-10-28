@@ -1,3 +1,15 @@
-body {
-    color: #f76c6c;
+.titleContent {
+    margin-left: 75px;
+    margin-block-end: -20px;
+    width: clamp(150px, 50%, 450px);
+    height: 50px;
+    transform: skew(-20deg);
+    border: 1px solid var(--bs-primary);
+    box-shadow: 0px 4px 4px var(--box-shadow);
+}
+
+.title {
+    font-family: titlefont;
+    transform: skew(20deg);
+    font-size: clamp(1rem, -1rem + 8vw, 2.2rem);
 }

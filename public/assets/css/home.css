@@ -1,0 +1,71 @@
+.yellow-spacer {
+    height: 8px;
+}
+
+.header-container {
+    height: calc(100vh - var(--navbar_height));
+    background-image: url(../images/home_cover.jpg);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-block-start: 100px;
+}
+
+.header-h1,
+.header-h2 {
+    text-shadow: 2px 3px 1px var(--bs-dark);
+}
+
+.header-h1 {
+    font-size: clamp(35px, 3.5vw, 100px);
+    font-family: var(--font_title);
+}
+
+.header-h2 {
+    font-size: clamp(25px, 2.5vw, 100px);
+    font-family: var(--font_body);
+}
+
+.arrow-down {
+    height: 130px;
+    width: 150px;
+    margin-block-start: -80px;
+    opacity: 0.85;
+}
+
+.header-container :nth-child(3) {
+    margin-block-start: 60px;
+}
+
+.header-container :nth-child(5) {
+    margin-block-end: -100px;
+}
+
+.bounce {
+    animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(40px);
+    }
+    60% {
+        transform: translateY(25px);
+    }
+}
+
+@media screen and (max-height: 760px) {
+    .header-container :nth-child(3) {
+        margin-block-start: -10px;
+    }
+    .header-container {
+        padding-block-start: 60px;
+    }
+}

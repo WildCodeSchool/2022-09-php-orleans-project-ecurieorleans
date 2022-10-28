@@ -23,6 +23,7 @@
 
 <body>
 {{include ('/Components/_navbar.html.twig')}}
+			{% block header %}{% endblock %}
 {% block content %}{% endblock %}
 
     <script
@@ -32,7 +33,5 @@
     ></script>
     {% block javascript %}{% endblock %}
 
-</body>
-</html>
-
-
+		</body>
+	</html>

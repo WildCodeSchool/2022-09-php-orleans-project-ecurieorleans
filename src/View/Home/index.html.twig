@@ -1,15 +1,18 @@
 {% extends 'layout.html.twig' %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/home.css"/>
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/home.css"/>
+	<link rel="stylesheet" href="/assets/css/card.css"/>
 {% endblock %}
 
 {% block header %}
 	<header>
 		<div class="yellow-spacer bg-secondary"></div>
 		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-white">
-			<h1>
+			<h1 class="header-h1">
 				Les écuries d'Orléans</h1>
-			<h2 class="pt-4">Circuit tout terrain d'1 km à Sougy
+			<h2 class="pt-4 header-h2">Circuit tout terrain d'1 km à Sougy
 			</h2>
 			<!-- ajouter les href vers la présentation -->
 			<svg viewbox="0 0 24 24" class="arrow-down bounce">
@@ -26,5 +29,39 @@
 	</header>
 {% endblock %}
 
-
-{% block content %}{% endblock %}
+{% block content %}
+	{% for event in events %}
+		<div class="titleContent bg-primary">
+			<h2 class="title h2 texte-center text-white">Evènement</h2>
+		</div>
+		<div class="cards bg-dark mx-5">
+			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
+				<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
+				<div class="card-body w-100">
+					<div class="d-flex flex-row justify-content-around">
+						<h3 class="card-title mb-5 mt-2 h3">{{ event.title }}</h3>
+						<div class="d-flex flex-lg-row flex-column mt-2">
+							<h4 class='course pt-2 texte-center text-white bg-primary'>
+								Course
+							</h4>
+							<h4 class="date pt-2 texte-center text-dark bg-secondary">
+								Date
+							</h4>
+						</div>
+					</div>
+					<p class="card-text">
+						{{ event.paragraph }}
+					</p>
+					<div class="btn-plus d-flex justify-content-end mb-lg-0">
+						<a href="#" class="btn btn-primary">En savoir plus</a>
+					</div>
+				</div>
+			</div>
+			<div class="all-event-content d-flex justify-content-end mr-0">
+				<div class="event-content pt-2">
+					<a href='#' class="all-event text-white">Voir tous les évènements</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

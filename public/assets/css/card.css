@@ -1,0 +1,65 @@
+:root {
+    --lightdark: rgb(98, 98, 98);
+    box-sizing: border-box;
+}
+
+.imgCard {
+    height: clamp(200px, 40%, 300px);
+    width: clamp(250px, 40% ,400px);
+    box-shadow: 15px -15px var(--lightdark);
+}
+
+
+.date {
+    color: var(--bs-dark);
+    transform: skew(-20deg);
+    height: 40px;
+    width: 70px;
+    font-size: 1.5rem;
+}
+
+.course {
+    transform: skew(-20deg);
+    height: fit-content;
+    height: 40px;
+    width: 100px;
+    font-size: 1.5rem;
+}
+
+.cards {
+    width: 90%;
+    padding-top: 40px;
+    border-block: 8px solid var(--bs-secondary);
+}
+
+.event-content {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: 50px;
+    transform: skew(-20deg);
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0px 4px 4px var(--box-shadow);
+    border-radius: 4px 4px 8px;
+}
+
+
+.card-content {
+    width: 90%;
+}
+.all-event {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: (2.2rem);
+}
+
+.all-event-content{
+    width: 95%;
+    margin-block: 16px;
+}
+
+.btn-plus {
+    margin-bottom: 10px;
+}

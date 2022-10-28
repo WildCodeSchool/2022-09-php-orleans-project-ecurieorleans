@@ -1,10 +1,10 @@
 @font-face {
-    font-family: titleFont;
+    font-family: Spiky016;
     src: url(/assets/fonts/Spiky016-axa75.otf);
 }
 
 @font-face {
-    font-family: bodyFont;
+    font-family: Roboto;
     src: url(/assets/fonts/Roboto-Regular.ttf);
 }
 
@@ -13,4 +13,8 @@
     --bs-primary: rgb(var(--bs-primary-rgb));
     --bs-secondary-rgb: 245, 250, 38;
     --bs-secondary: rgb(var(--bs-secondary-rgb));
+    --box-shadow: rgba(0,0,0,0.25);
+    --navbar_height: 16px;
+    --font_title: Spiky016;
+    --font_body: Roboto;
 }

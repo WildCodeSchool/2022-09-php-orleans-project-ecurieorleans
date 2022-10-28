@@ -62,7 +62,6 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-
 CREATE TABLE Auto (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   paragraph TEXT NOT NULL
@@ -75,3 +74,13 @@ INSERT INTO Auto (paragraph) VALUES ("Lorem ipsum dolor sit amet, consectetur ad
  sit amet tincidunt diam. Nulla at eros nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales 
  id turpis vel rhoncus. Praesent facilisis lacus sit amet tortor tincidunt porttitor. Maecenas consequat ac metus ac 
  imperdiet. Quisque molestie sit amet purus sed placerat. Nam eu cursus felis.");
+
+CREATE TABLE `event` (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
+  imgPath TEXT NOT NULL ,
+  title VARCHAR(255) NOT NULL,
+  paragraph TEXT NOT NULL
+);
+
+INSERT INTO `event` (imgPath, title, paragraph) VALUES ("assets/images/Card1.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");

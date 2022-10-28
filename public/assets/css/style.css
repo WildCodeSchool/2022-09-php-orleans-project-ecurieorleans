@@ -1,8 +1,3 @@
-
-body {
-    color: #f76c6c;
-}
-
 .titleContent {
     margin-left: 75px;
     margin-block-end: -20px;
@@ -18,4 +13,3 @@ body {
     transform: skew(20deg);
     font-size: clamp(1rem, -1rem + 8vw, 2.2rem);
 }
-

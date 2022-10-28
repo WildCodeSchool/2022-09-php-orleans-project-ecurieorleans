@@ -16,6 +16,6 @@ class HomeController extends AbstractController
         $association = $associationManager->selectOne();
         $eventManager = new EventManager();
         $events = $eventManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ["association" => $association, 'events' => $events);
+        return $this->twig->render('Home/index.html.twig', ["association" => $association, 'events' => $events]);
     }
 }

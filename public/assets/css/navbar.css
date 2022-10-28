@@ -49,8 +49,7 @@ img {
     margin-inline-start: 40px;
 }
 
-@media (max-width:991px) {
-
+@media (max-width:768px) {
 
     .skewright {
         display: none;

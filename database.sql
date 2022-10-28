@@ -69,13 +69,11 @@ CREATE TABLE association(
         presentation TEXT NOT NULL
     );
 
-INSERT INTO
-    `association` (presentation)
-VALUES (
-        'L\'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d\'un magnifique circuit à 20 km d\'Orléans. Nous nous distinguons par une constante volonté d\'innovation.La sécurité reste,
-bien sûr,
-l\'élément primordial, tout en assurant le bonheur et l\'étonnement des spectateurs.'
-    )
+INSERT INTO association (presentation)
+VALUES ("L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste,
+bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.");
+
+
 
 CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,

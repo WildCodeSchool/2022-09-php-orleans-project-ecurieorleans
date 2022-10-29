@@ -1,7 +1,7 @@
 .headerTitle {
     font-family: var(--font_title);
     text-shadow: 2px 3px 1px var(--bs-dark);
-    font-size: clamp(20px, 2vw, 100px);
+    font-size: clamp(25px, 3vw, 100px);
 }
 
 .headerSubtitle {

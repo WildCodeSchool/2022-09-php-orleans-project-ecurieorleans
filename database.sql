@@ -1,3 +1,4 @@
+-- Active: 1666295490871@@127.0.0.1@3306@pdo_quest
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -63,6 +64,17 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+CREATE TABLE association(
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        presentation TEXT NOT NULL
+    );
+
+INSERT INTO association (presentation)
+VALUES ("L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste,
+bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.");
+
+
+
 CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
   imgPath TEXT NOT NULL ,
@@ -70,5 +82,5 @@ CREATE TABLE `event` (
   paragraph TEXT NOT NULL
 );
 
-INSERT INTO `event` (imgPath, title, paragraph) VALUES ("assets/images/circuit2.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+INSERT INTO `event` (imgPath, title, paragraph) VALUES ("assets/images/Card1.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");

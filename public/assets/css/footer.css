@@ -1,0 +1,12 @@
+footer {
+    background-image: url(../images/home_cover.jpg);
+    background-position: 50%;
+}
+
+.footer-container {
+    opacity: 0.9;
+}
+
+.footer-link-container {
+    list-style-type: none;
+}

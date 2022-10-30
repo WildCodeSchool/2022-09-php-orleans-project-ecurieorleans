@@ -1,0 +1,11 @@
+.yellow-spacer {
+    height: 8px;
+}
+
+.header-container {
+    height: calc(40vh - var(--navbar_height));
+    background-image: url(../images/handi-car-cover.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 65%;
+}

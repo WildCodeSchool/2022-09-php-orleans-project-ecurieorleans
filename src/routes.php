@@ -9,6 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'circuit' => ['CircuitController', 'circuit',],
+    'handicar' => ['HandiCarController', 'handiCar',],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

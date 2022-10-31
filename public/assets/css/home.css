@@ -26,19 +26,15 @@
     font-family: var(--font_body);
 }
 
+.titleContainer {
+    margin-block-end: -50px;
+}
+
 .arrow-down {
     height: 130px;
     width: 150px;
     margin-block-start: -80px;
     opacity: 0.85;
-}
-
-.header-container :nth-child(3) {
-    margin-block-start: 60px;
-}
-
-.header-container :nth-child(5) {
-    margin-block-end: -100px;
 }
 
 .bounce {
@@ -58,14 +54,5 @@
     }
     60% {
         transform: translateY(25px);
-    }
-}
-
-@media screen and (max-height: 760px) {
-    .header-container :nth-child(3) {
-        margin-block-start: -10px;
-    }
-    .header-container {
-        padding-block-start: 60px;
     }
 }

@@ -1,26 +1,54 @@
-h2 {
-    margin-block-end: -3px;
-    width: clamp(150px, 50%, 450px);
-    height: 50px;
+.headerTitle {
+    font-family: var(--font_title);
+    text-shadow: 2px 3px 1px var(--bs-dark);
+    font-size: clamp(25px, 3vw, 100px);
+}
+
+.headerSubtitle {
+    font-family: var(--font_body);
+    text-shadow: 2px 3px 1px var(--bs-dark);
+    font-size: clamp(23px, 2.8vw, 100px);
+}
+
+.titleContentLight {
+    margin-left: -30px;
+    width: clamp(250px, 30%, 550px);
     transform: skew(-20deg);
-    background: rgb(var(--bs-lightcolor));
-    border: 1px solid rgb(var(--bs-primary-rgb));
-    box-shadow: 0px 4px 4px rgb(var(--bs-darkcolor));
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0px 4px 4px rgb(var(--bs-dark));
+}
+
+.titleLight {
+    margin-left: 25px;
+    transform: skew(20deg);
+    font-family: var(--font_title);
+    font-size: clamp(15px, 1.5vw, 40px);
 }
 
 .titleContent {
     margin-left: 75px;
     margin-block-end: -20px;
-    width: clamp(150px, 50%, 450px);
-    height: 50px;
+    width: clamp(250px, 25%, 550px);
     transform: skew(-20deg);
-    border: 1px solid var(--bs-primary);
     box-shadow: 0px 4px 4px var(--box-shadow);
 }
 
 .title {
     font-family: var(--font_title);
     transform: skew(20deg);
-    font-size: clamp(1rem, -1rem + 8vw, 2.2rem);
-    border: solid var(--bs-primary) 3px;
+    font-size: clamp(15px, 1.5vw, 40px);
     width: fit-content;
+}
+
+.yellow-spacer {
+    height: 8px;
+}
+
+.blue-spacer {
+    margin-block-start: -2px;
+    height: 2px;
+}
+
+.light-spacer {
+    margin-inline: 20%;
+}

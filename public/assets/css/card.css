@@ -5,10 +5,9 @@
 
 .imgCard {
     height: clamp(200px, 40%, 300px);
-    width: clamp(250px, 40% ,400px);
+    width: clamp(250px, 40%, 400px);
     box-shadow: 15px -15px var(--lightdark);
 }
-
 
 .date {
     color: var(--bs-dark);
@@ -43,7 +42,6 @@
     border-radius: 4px 4px 8px;
 }
 
-
 .card-content {
     width: 90%;
 }
@@ -54,6 +52,7 @@
 .card-title {
     font-size: (2.2rem);
 }
+
 
 .all-event-content{
     width: 98%;

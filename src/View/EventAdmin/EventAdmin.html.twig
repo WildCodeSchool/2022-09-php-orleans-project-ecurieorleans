@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<form method="post" accept-charset="UTF-8" class="container-fluid mt-4 h-100">
+		<div class="row p-4">
+			<div class="col-3">
+				<h3>
+					<label for="eventImage">Ajouter une image
+					</label>
+				</h3>
+				<input id="eventImage" type="file" name="eventImage" value="{% if eventImage is defined %}{{ eventImage }}{% endif %}" class="col-6">
+			</div>
+			<div class="col-9">
+				<div class="container">
+					<div class="row">
+						<div class="col-5">
+							<h3>
+								<label for="raceName" class="text-center">Titre de la course</label>
+							</h3>
+							<input class="col-6" id="raceName" type="text" name="raceName" value="{% if raceName is defined %}{{ raceName }}{% endif %}">
+						</div>
+						<div class="col-7">
+							<div class="container row">
+								<div class="col-6">
+									<h3>
+										<label for="sportSelect">Type de course</label>
+									</h3>
+									<select class="col-6" name="sportselect" id="sportSelect">
+										<option value="Auto">Auto</option>
+										<option value="Moto">Moto</option>
+										<option value="Handicar">Handicar</option>
+										<option value="Mecasport">Mécasport</option>
+									</select>
+								</div>
+								<div class="col-6">
+									<section class="container">
+										<h3>
+											<label for="date" class="col-1 col-form-label">Date</label>
+										</h3>
+										<div class="col-12">
+											<div class="input-group date" id="datepicker">
+												<input type="date" class="form-control" id="date"/>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3>
+			<label class="mx-3" for="raceDescription">Description de la course</label>
+		</h3>
+		<textarea id="raceDescription" class="col-11 mx-3 p-4">
+			{% if raceDescription is defined %}
+				{{ raceDescription }}
+			{% else %}
+				{{ craft.app.user.rememberedUsername }}
+			{% endif %}
+		</textarea>
+
+		{% if errors is defined %}
+			<ul class="errors">
+				{% for error in errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		<input type="submit" value="Submit" class="col-1">
+	</form>
+{% endblock %}

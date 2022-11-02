@@ -11,25 +11,6 @@
     padding-block-start: 100px;
 }
 
-.header-h1,
-.header-h2 {
-    text-shadow: 2px 3px 1px var(--bs-dark);
-}
-
-.header-h1 {
-    font-size: clamp(35px, 3.5vw, 100px);
-    font-family: var(--font_title);
-}
-
-.header-h2 {
-    font-size: clamp(25px, 2.5vw, 100px);
-    font-family: var(--font_body);
-}
-
-.titleContainer {
-    margin-block-end: -50px;
-}
-
 .arrow-down {
     height: 130px;
     width: 150px;

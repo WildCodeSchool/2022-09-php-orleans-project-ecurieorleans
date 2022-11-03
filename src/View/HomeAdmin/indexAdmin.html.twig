@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+
+	<link rel="stylesheet" href="/assets/css/card.css"/>
+	<link rel="stylesheet" href="/assets/css/cardAdmin.css"/>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="cards bg-dark mx-5">
+{% for event in events %}
+			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
+				<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
+				<div class="card-body w-100">
+					<div class="d-flex flex-row justify-content-around">
+						<h3 class="card-title mb-5 mt-2 h3 text-dark">{{ event.title }}</h3>
+						<div class="d-flex flex-lg-row flex-column mt-2">
+							<h4 class='course pt-2 text-center text-white bg-primary'>
+								Course
+							</h4>
+							<h4 class="date pt-2 text-center text-dark bg-secondary">
+								Date
+							</h4>
+						</div>
+					</div>
+					<p class="card-text text-dark">
+						{{ event.paragraph }}
+					</p>
+					<div class="btn-plus d-flex justify-content-end mb-lg-0">
+						<a href="#" class="btn btn-primary">En savoir plus</a>
+					</div>
+				</div>
+			</div>
+	<div class="row justify-content-end mx-5 mt-3">
+		<form action="/HomeAdmin/delete" method="POST" class="row justify-content-end my-3">
+			<input type="hidden" name="id" value="{{ event.id }}">
+			<button class="titleContent col-1">Delete</button>
+		</form>
+	</div>
+		{% endfor %}
+{% endblock %}

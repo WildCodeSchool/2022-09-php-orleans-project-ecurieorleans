@@ -4,6 +4,7 @@
 
 	<link rel="stylesheet" href="/assets/css/home.css"/>
 	<link rel="stylesheet" href="/assets/css/card.css"/>
+	<link rel="stylesheet" href="/assets/css/cardAdmin.css"/>
 
 {% endblock %}
 
@@ -46,12 +47,11 @@
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
 	</main>
-
-	{% for event in events %}
 		<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
 			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
 		</div>
 		<div class="cards bg-dark mx-5">
+		{% for event in events %}
 			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
 				<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
 				<div class="card-body w-100">
@@ -69,15 +69,16 @@
 					<p class="card-text text-dark">
 						{{ event.paragraph }}
 					</p>
+					{{event.id}}
 					<div class="btn-plus d-flex justify-content-end mb-lg-0">
 						<a href="#" class="btn btn-primary">En savoir plus</a>
 					</div>
 				</div>
 			</div>
+		{% endfor %}
 			<div class="all-event-content d-flex justify-content-end mr-0">
 				<div class="event-content pt-2">
 					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
 				</div>
 			</div>
-		{% endfor %}
 	{% endblock %}

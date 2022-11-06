@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+
+	<link rel="stylesheet" href="/assets/css/section.css"/>
+
+{% endblock %}
+
+{% block header %}
+	<header>
+		<div class="yellow-spacer bg-secondary"></div>
+		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-light">
+			<img src="" alt="">
+			<h1 class="headerTitle">
+				{{section.name}}
+			</h1>
+		</div>
+		<div class="yellow-spacer bg-secondary"></div>
+	</header>
+{% endblock %}

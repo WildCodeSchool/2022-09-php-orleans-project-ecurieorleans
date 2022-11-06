@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use Twig\Environment;
-use Twig\Extension\DebugExtension;
+use App\Model\SectionManager;
 use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 
 /**
  * Initialized some Controller common features (Twig...)
@@ -12,6 +13,7 @@ use Twig\Loader\FilesystemLoader;
 abstract class AbstractController
 {
     protected Environment $twig;
+    protected array|false $sections;
 
 
     public function __construct()
@@ -25,5 +27,8 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $sectionManager = new SectionManager();
+        $this->sections = $sectionManager->selectAll('id');
+        $this->twig->addGlobal('sections', $this->sections);
     }
 }

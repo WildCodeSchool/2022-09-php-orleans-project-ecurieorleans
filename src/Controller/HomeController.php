@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\AssociationManager;
 use App\Model\EventManager;
+use App\Model\SectionManager;
 
 class HomeController extends AbstractController
 {
@@ -16,6 +17,9 @@ class HomeController extends AbstractController
         $association = $associationManager->selectOne();
         $eventManager = new EventManager();
         $events = $eventManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ["association" => $association, 'events' => $events]);
+        $sectionManager = new SectionManager();
+        $sections = $sectionManager->selectAll('id');
+        $_SESSION['sections'] = $sections;
+        return $this->twig->render('Home/index.html.twig', ["association" => $association, 'events' => $events, 'sections' => $_SESSION['sections']]);
     }
 }

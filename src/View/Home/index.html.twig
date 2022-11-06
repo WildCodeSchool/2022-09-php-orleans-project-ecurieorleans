@@ -2,7 +2,6 @@
 
 {% block stylesheet %}
 
-	<link rel="stylesheet" href="/assets/css/presentation.css"/>
 	<link rel="stylesheet" href="/assets/css/home.css"/>
 	<link rel="stylesheet" href="/assets/css/card.css"/>
 
@@ -11,44 +10,46 @@
 {% block header %}
 	<header>
 		<div class="yellow-spacer bg-secondary"></div>
-		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-white">
-			<h1 class="header-h1">
+		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-light">
+			<h1 class="headerTitle">
 				Les écuries d'Orléans</h1>
-			<h2 class="pt-4 header-h2">Circuit tout terrain d'1 km à Sougy
+			<h2 class="pt-4 headerSubtitle">Circuit tout terrain d'1 km à Sougy
 			</h2>
 			<!-- ajouter les href vers la présentation -->
-			<svg viewbox="0 0 24 24" class="arrow-down bounce">
-				<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
-			</svg>
-			<svg viewbox="0 0 24 24" fill="#FFFFFF" class=" arrow-down bounce">
-				<path fill-rule="evenodd" fill="#FFFFF" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
-			</svg>
-			<svg viewbox="0 0 24 24" class="arrow-down bounce">
-				<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
-			</svg>
+			<div class="arrows-container d-flex flex-column mt-5">
+				<svg viewbox="0 0 24 24" class="arrow-down bounce">
+					<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
+				</svg>
+				<svg viewbox="0 0 24 24" fill="#FFFFFF" class=" arrow-down bounce">
+					<path fill-rule="evenodd" fill="#FFFFF" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
+				</svg>
+				<svg viewbox="0 0 24 24" class="arrow-down bounce">
+					<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
+				</svg>
+			</div>
 		</div>
 		<div class="yellow-spacer bg-secondary"></div>
 	</header>
 {% endblock %}
 
 {% block content %}
-
-	<main class="container-fluid">
+	<main class="container-fluid p-0">
 		<section>
-
-			<h2 class="text-primary title -2p">Présentation de l’association
-			</h2>
-			<hr>
+			<div class="titleContentLight mt-4 p-2 text-center">
+				<h2 class="text-primary titleLight">Présentation de l’association
+				</h2>
+			</div>
+			<div class=" blue-spacer bg-primary w-100"></div>
 			<p class="presentation-text m-5">
 				{{ association.presentation }}
 			</p>
-			<hr>
+			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
 	</main>
 
 	{% for event in events %}
-		<div class="titleContent bg-primary">
-			<h2 class="title h2 text-center text-white">Evènement</h2>
+		<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
+			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
 		</div>
 		<div class="cards bg-dark mx-5">
 			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">

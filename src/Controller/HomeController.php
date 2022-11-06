@@ -20,6 +20,9 @@ class HomeController extends AbstractController
         $sectionManager = new SectionManager();
         $sections = $sectionManager->selectAll('id');
         $_SESSION['sections'] = $sections;
-        return $this->twig->render('Home/index.html.twig', ["association" => $association, 'events' => $events, 'sections' => $_SESSION['sections']]);
+        return $this->twig->render(
+            'Home/index.html.twig',
+            ["association" => $association, 'events' => $events, 'sections' => $_SESSION['sections']]
+        );
     }
 }

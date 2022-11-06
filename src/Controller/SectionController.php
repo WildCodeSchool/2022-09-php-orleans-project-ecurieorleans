@@ -6,7 +6,6 @@ use App\Model\SectionManager;
 
 class SectionController extends AbstractController
 {
-
     public function section(int $id): string
     {
         $sectionManager = new SectionManager();

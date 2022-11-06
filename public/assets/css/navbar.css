@@ -15,25 +15,22 @@
     float: left;
     font-weight: 900;
     font-family: var(--font_body);
-    transition: all .1s linear;
+    transition: all 0.1s linear;
+    z-index: 1;
 }
 
 .navbar {
     padding: 0;
 }
 
-
-.navbar-brand,
-img {
+.navbar-brand > img {
     width: 150px;
     margin-block-start: -20px;
 }
 
-
 .navbar-nav li:hover {
     transform: translateY(-3px);
 }
-
 
 .nav-item a {
     align-self: center;
@@ -49,12 +46,8 @@ img {
     margin-inline-start: 40px;
 }
 
-@media (max-width:768px) {
-
+@media (max-width: 768px) {
     .skewright {
         display: none;
     }
 }
-
-
-

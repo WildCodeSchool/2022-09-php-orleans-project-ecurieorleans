@@ -1,3 +1,8 @@
 .header-container {
-    height: calc(40vh - var(--navbar_height));
+    height: calc(50vh - var(--navbar_height));
+    z-index: 0;
+}
+
+.header-image {
+    object-fit: cover;
 }

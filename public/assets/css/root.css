@@ -15,7 +15,7 @@
     --bs-secondary: rgb(var(--bs-secondary-rgb));
     --bs-lightcolor: rgb(var(--bs-lightcolor));
     --bs-darkcolor: rgb(var(--bs-darkcolor));
-    --box-shadow: rgba(0,0,0,0.25);
+    --box-shadow: rgba(0, 0, 0, 0.25);
     --navbar_height: 16px;
     --font_title: Spiky016;
     --font_body: Roboto;

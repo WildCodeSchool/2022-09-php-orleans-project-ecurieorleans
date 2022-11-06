@@ -3,10 +3,11 @@
 		<div class="yellow-spacer bg-secondary mt-4"></div>
 		<div class="footer-container bg-dark d-flex flex-column pt-3">
 			<div class="d-flex justify-content-around align-items-center py-3">
-				<img src="/assets/images/FFM-logo.png" alt="logo of FFM">
-				<img src="/assets/images/FFSA-logo.jpg" alt="logo of FFSA">
-				<img src="/assets/images/ufolep-logo.png" alt="logo of UFOLEP">
-				<img src="/assets/images/RCVL-logo.png" alt="logo of Région Centre-Val de Loire">
+				{% for partner in partners %}
+					<a href="{{partner.URL}}" class="text-light">
+						<img src="{{partner.logo}}" alt="logo of {{partner.name}}">
+					</a>
+				{% endfor %}
 			</div>
 			<div class="bg-secondary pt-1 w-75 m-auto"></div>
 			<div class="footer-link-container d-flex justify-content-around py-3">
@@ -25,6 +26,7 @@
 				<li>
 					<a href="" class="text-light">CGU</a>
 				</li>
+
 			</div>
 		</div>
 	</footer>

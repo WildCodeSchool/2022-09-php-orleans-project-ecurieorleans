@@ -1,0 +1,33 @@
+{% block footer %}
+	<footer>
+		<div class="yellow-spacer bg-secondary mt-4"></div>
+		<div class="footer-container bg-dark d-flex flex-column pt-3">
+			<div class="d-flex justify-content-around align-items-center py-3">
+				{% for partner in partners %}
+					<a href="{{partner.URL}}" class="text-light">
+						<img src="{{partner.logo}}" alt="logo of {{partner.name}}">
+					</a>
+				{% endfor %}
+			</div>
+			<div class="bg-secondary pt-1 w-75 m-auto"></div>
+			<div class="footer-link-container d-flex justify-content-around py-3">
+				<li>
+					<a href="" class="text-light">À propos</a>
+				</li>
+				<div class="bg-primary px-1"></div>
+				<li>
+					<a href="" class="text-light">Contact</a>
+				</li>
+				<div class="bg-primary px-1"></div>
+				<li>
+					<a href="" class="text-light">Mentions légales</a>
+				</li>
+				<div class="bg-primary px-1"></div>
+				<li>
+					<a href="" class="text-light">CGU</a>
+				</li>
+
+			</div>
+		</div>
+	</footer>
+{% endblock %}

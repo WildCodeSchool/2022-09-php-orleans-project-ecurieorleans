@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use Twig\Environment;
+
 use App\Model\SectionManager;
+
+use App\Model\PartnerManager;
+
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 
@@ -13,8 +17,10 @@ use Twig\Extension\DebugExtension;
 abstract class AbstractController
 {
     protected Environment $twig;
+
     protected array|false $sections;
 
+    protected array|false $partners;
 
     public function __construct()
     {
@@ -30,5 +36,8 @@ abstract class AbstractController
         $sectionManager = new SectionManager();
         $this->sections = $sectionManager->selectAll('id');
         $this->twig->addGlobal('sections', $this->sections);
+        $partnerManager = new PartnerManager();
+        $this->partners = $partnerManager->selectAll('id');
+        $this->twig->addGlobal('partners', $this->partners);
     }
 }

@@ -168,4 +168,31 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
         "assets/images/mecanic.webp",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+
+CREATE TABLE 
+    `partner` (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        `name` VARCHAR(255) NOT NULL,
+        logo TEXT NOT NULL,
+        `URL` TEXT NOT NULL
+    );
+
+INSERT INTO
+    `partner` (`name`, logo, `URL`)
+VALUES (
+        "Fédération Française de Motocyclisme",
+        "/assets/images/FFM-logo.png",
+        "https://www.ffmoto.org/"
+    ), (
+        "Fédération Française du Sport Automobile",
+        "/assets/images/FFSA-logo.jpg",
+        "https://www.ffsa.org/"
+    ), (
+        "L'Union Française des Oeuvres Laïques d'Education Physique",
+        "/assets/images/ufolep-logo.png",
+        "https://www.ufolep.org/"
+    ), (
+        "Région Centre-Val-de-Loire",
+        "/assets/images/RCVL-logo.png",
+        "https://www.centre-valdeloire.fr/"
     );

@@ -3,11 +3,8 @@
 namespace App\Controller;
 
 use Twig\Environment;
-
 use App\Model\SectionManager;
-
 use App\Model\PartnerManager;
-
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 

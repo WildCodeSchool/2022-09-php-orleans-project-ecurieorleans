@@ -11,7 +11,7 @@
 		<div class="yellow-spacer bg-secondary"></div>
 		<h1 class="headerSubtitle shadow-none text-dark text-center py-4">Notre bureau</h1>
 		<div class="blue-spacer bg-primary w-75 m-auto pt-2 my-2"></div>
-		<section>
+		<section class="section-bureau">
 			<div class="titleContentLight mt-4">
 				<h2 class="titleLight text-primary text-center py-2">Les membres du bureau</h2>
 			</div>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="blue-spacer blue-spacer-right bg-primary w-25  my-4"></div>
 		</section>
-		<section>
+		<section class="section-bureau">
 			<div class="titleContentLight mt-5">
 				<h2 class="titleLight text-primary text-center py-2">Le conseil d'administration</h2>
 			</div>
@@ -39,16 +39,26 @@
 				</div>
 			</div>
 		</section>
-		<section>
+		<section class="section-bureau">
 			<div class="titleContentLight mt-5">
 				<h2 class="titleLight text-primary text-center py-2">L'organisation des sports</h2>
 			</div>
-			<div class="blue-spacer bg-primary w-25 m-auto my-4"></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div class="blue-spacer bg-primary w-25 m-auto my-4"></div>
+			<div
+				class="row gap-4 d-flex justify-content-center my-4">
+				<!-- rendre cette partie dynamique avec une relation avec section -->
+				<div class="organization-container col-3 d-flex flex-column">
+					<h3 class="text-center">Section</h3>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ratione eius! Illo voluptas magnam neque obcaecati distinctio? Doloribus soluta aut aliquid impedit. Placeat facilis illum obcaecati, libero pariatur fugit veritatis?</p>
+				</div>
+				<div class="organization-container col-3">
+					<h3 class="text-center">Section</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, est maxime ratione nulla ex dignissimos illum velit itaque, temporibus magni odio ipsum illo ea iusto non in enim aspernatur id.</p>
+				</div>
+				<div class="organization-container col-3">
+					<h3 class="text-center">Section</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam totam quidem veniam dolore corrupti ipsum autem laudantium quae, quibusdam ratione dignissimos cupiditate sit exercitationem, eveniet doloremque! Velit nobis maxime aliquid!</p>
+				</div>
+			</div>
 		</section>
-		<div class="blue-spacer bg-primary w-75 m-auto pt-2 my-2"></div>
 	</body>
 {% endblock %}

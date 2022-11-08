@@ -13,3 +13,12 @@
 .bureau-image {
     object-fit: cover;
 }
+
+.organization-container {
+    border: 2px solid var(--bs-primary);
+    border-radius: 20px;
+}
+
+.section-bureau:not(:first-of-type) {
+    margin-block-start: 11rem;
+}

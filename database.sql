@@ -142,34 +142,31 @@ CREATE TABLE
     section(
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(25) NOT NULL,
-        header TEXT NOT NULL,
+        header TEXT NULL,
         presentation TEXT NOT NULL
     );
 
 INSERT INTO
-    section (`name`, header, presentation)
+    section (`name`, presentation)
 VALUES (
         "Auto",
-        "assets/images/auto_cover.webp",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
     ), (
         "Moto",
-        "assets/images/Motocross.webp",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
     ), (
         "Handi-car",
-        "assets/images/handi-car-cover.webp",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
     ), (
         "Mécasport",
-        "assets/images/mecanic.webp",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    );
 
-CREATE TABLE 
+CREATE TABLE
     `partner` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(255) NOT NULL,

@@ -1,0 +1,15 @@
+.bureau-members {
+    font-size: 1.3rem;
+}
+
+.admin-members {
+    font-size: 1.3rem;
+}
+
+.admin-image {
+    object-fit: cover;
+}
+
+.bureau-image {
+    object-fit: cover;
+}

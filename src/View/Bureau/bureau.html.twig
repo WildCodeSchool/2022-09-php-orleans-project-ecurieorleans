@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+
+	<link rel="stylesheet" href="/assets/css/bureau.css"/>
+
+{% endblock %}
+
+{% block content %}
+	<body>
+		<div class="yellow-spacer bg-secondary"></div>
+		<h1 class="headerSubtitle shadow-none text-dark text-center py-4">Notre bureau</h1>
+		<div class="blue-spacer bg-primary w-75 m-auto pt-2 my-2"></div>
+		<section>
+			<div class="titleContentLight mt-4">
+				<h2 class="titleLight text-primary text-center py-2">Les membres du bureau</h2>
+			</div>
+			<div class="blue-spacer blue-spacer-right bg-primary w-25 my-4"></div>
+			<div class="row">
+				<img src="assets/images/bureau_members.png" alt="a photo of the members of the bureau" class="bureau-image col-5 mx-2">
+				<div class="d-flex flex-column align-items-center m-auto col-6">
+					{% for member in members %}
+						<p class="bureau-members">{{member.role ~ ' ' ~ ':' ~ ' ' ~ member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</p>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="blue-spacer blue-spacer-right bg-primary w-25  my-4"></div>
+		</section>
+		<section>
+			<div class="titleContentLight mt-5">
+				<h2 class="titleLight text-primary text-center py-2">Le conseil d'administration</h2>
+			</div>
+			<div class="row bg-primary">
+				<img src="assets/images/conseil_admistration.png" alt="a photo of the members of the administration" class="admin-image col-5 px-0">
+				<div class="d-flex flex-wrap m-auto  col-7 text-center py-2">
+					{% for conseilAdminstrateur in conseilAdminstrateurs %}
+						<p class="admin-members text-light w-25">{{conseilAdminstrateur.firstname ~' ' ~ conseilAdminstrateur.lastname}}</p>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="titleContentLight mt-5">
+				<h2 class="titleLight text-primary text-center py-2">L'organisation des sports'</h2>
+			</div>
+			<div class="blue-spacer bg-primary w-25 m-auto my-4"></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="blue-spacer bg-primary w-25 m-auto my-4"></div>
+		</section>
+		<div class="blue-spacer bg-primary w-75 m-auto pt-2 my-2"></div>
+	</body>
+{% endblock %}

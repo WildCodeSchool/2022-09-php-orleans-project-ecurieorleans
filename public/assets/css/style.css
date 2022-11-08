@@ -49,6 +49,16 @@
     height: 2px;
 }
 
+.blue-spacer-right {
+    margin-block-start: -2px;
+    height: 2px;
+    margin-inline-start: 60%;
+}
+
 .light-spacer {
     margin-inline: 20%;
+}
+
+.shadow-none {
+    text-shadow: none;
 }

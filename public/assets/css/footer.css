@@ -13,4 +13,15 @@ footer {
 
 .footer-link {
     width: clamp(150px, 10%, 550px);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline var(--bs-lightdark);
+}
+
+.small-blue-spacer {
+    width: 2px;
+    background-color: var(--bs-lightdark);
+    opacity: 0.8;
 }

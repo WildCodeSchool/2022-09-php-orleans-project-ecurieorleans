@@ -45,40 +45,51 @@
 			</p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
-	</main>
+		<section class="row gap-3 d-flex justify-content-center my-4">
+			{% for section in sections %}
+				<div class="mosaic-container col-md-5 col-sm-12 p-0 d-flex justify-content-center ">
+					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}"><img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
+						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
+					</a>
+				</div>
+			{% endfor %}
+			<div class="mosaic-image-container position-relative col-10 d-flex justify-content-center p-0"><img class="mosaic-image w-100" src="assets/images/header_circuit2.jpeg" alt="image fo the circuit"><h3 class="position-absolute text-dark top-50 start-50 translate-middle">Circuit</h3>
+			</div>
+		</section>
 
-	{% for event in events %}
-		<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
-			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
-		</div>
-		<div class="cards bg-dark mx-5">
-			<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
-				<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
-				<div class="card-body w-100">
-					<div class="d-flex flex-row justify-content-around">
-						<h3 class="card-title mb-5 mt-2 h3 text-dark">{{ event.title }}</h3>
-						<div class="d-flex flex-lg-row flex-column mt-2">
-							<h4 class='course pt-2 text-center text-white bg-primary'>
-								Course
-							</h4>
-							<h4 class="date pt-2 text-center text-dark bg-secondary">
-								Date
-							</h4>
+		{% for event in events %}
+			<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
+				<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
+			</div>
+			<div class="cards bg-dark mx-5">
+				<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
+					<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image de carte de l'evenement">
+					<div class="card-body w-100">
+						<div class="d-flex flex-row justify-content-around">
+							<h3 class="card-title mb-5 mt-2 h3 text-dark">{{ event.title }}</h3>
+							<div class="d-flex flex-lg-row flex-column mt-2">
+								<h4 class='course pt-2 text-center text-white bg-primary'>
+									Course
+								</h4>
+								<h4 class="date pt-2 text-center text-dark bg-secondary">
+									Date
+								</h4>
+							</div>
+						</div>
+						<p class="card-text text-dark">
+							{{ event.paragraph }}
+						</p>
+						<div class="btn-plus d-flex justify-content-end mb-lg-0">
+							<a href="#" class="btn btn-primary">En savoir plus</a>
 						</div>
 					</div>
-					<p class="card-text text-dark">
-						{{ event.paragraph }}
-					</p>
-					<div class="btn-plus d-flex justify-content-end mb-lg-0">
-						<a href="#" class="btn btn-primary">En savoir plus</a>
+				</div>
+				<div class="all-event-content d-flex justify-content-end mr-0">
+					<div class="event-content pt-2">
+						<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
 					</div>
 				</div>
 			</div>
-			<div class="all-event-content d-flex justify-content-end mr-0">
-				<div class="event-content pt-2">
-					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
-				</div>
-			</div>
-		</div>
-	{% endfor %}
+		{% endfor %}
+	</main>
 {% endblock %}

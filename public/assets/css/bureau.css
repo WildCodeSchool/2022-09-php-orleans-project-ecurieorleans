@@ -4,6 +4,7 @@
 
 .admin-members {
     font-size: 1.3rem;
+    width: 33%;
 }
 
 .admin-image {
@@ -17,8 +18,21 @@
 .organization-container {
     border: 2px solid var(--bs-primary);
     border-radius: 20px;
+    width: clamp(250px, 30%, 550px);
 }
 
 .section-bureau:not(:first-of-type) {
     margin-block-start: 11rem;
+}
+
+@media screen and (max-width: 768px) {
+    .blue-spacer-right {
+        margin: auto;
+    }
+    .bureau-members {
+        margin-block-start: 1.5rem;
+    }
+    .bureau-image {
+        margin-inline: 0 !important;
+    }
 }

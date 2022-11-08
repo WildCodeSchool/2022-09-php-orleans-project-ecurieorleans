@@ -22,7 +22,7 @@
 }
 
 .section-bureau:not(:first-of-type) {
-    margin-block-start: 11rem;
+    margin-block-start: 10rem;
 }
 
 @media screen and (max-width: 768px) {

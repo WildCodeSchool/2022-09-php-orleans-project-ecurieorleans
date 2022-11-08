@@ -139,6 +139,34 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
     );
 
 CREATE TABLE
+    section(
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        `name` VARCHAR(25) NOT NULL,
+        header TEXT NULL,
+        presentation TEXT NOT NULL
+    );
+
+INSERT INTO
+    section (`name`, presentation)
+VALUES (
+        "Auto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Moto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Handi-car",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Mécasport",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    );
+
+CREATE TABLE
     `partner` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(255) NOT NULL,

@@ -52,23 +52,23 @@
 	</div>
 	<div class="cards bg-dark mx-5">
 		{% for event in events %}
-			<div class="card mb-5 m-auto">
+			<div class="card mb-5 m-auto col-lg-10">
 				<div class="row g-0">
 					<div class="col-md-4">
 						<img src="{{ event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
 					</div>
-					<div class="col-md-7 mx-4">
+					<div class="col-md-7 mx-md-4">
 						<div class="card-body">
 							<h3 class="card-title">{{ event.title }}</h3>
 							<div class="row mx-2 my-4">
 								<h4 class="col-2 course bg-primary pt-2 text-white ">
-									Course
+									{{event.course}}
 								</h4>
 								<h4 class="col-2 date bg-secondary pt-2">
-									Date
+									{{event.raceDate}}
 								</h4>
 							</div>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<p class="card-text p-">{{event.paragraph}}</p>
 						</div>
 					</div>
 				</div>

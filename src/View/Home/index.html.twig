@@ -33,19 +33,19 @@
 {% endblock %}
 
 {% block content %}
-	<main class="container-fluid p-0">
-		<section>
-			<div class="titleContentLight mt-4 p-2 text-center">
-				<h2 class="text-primary titleLight">Présentation de l’association
-				</h2>
-			</div>
-			<div class=" blue-spacer bg-primary w-100"></div>
-			<p class="presentation-text m-5">
-				{{ association.presentation }}
-			</p>
-			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
-		</section>
-	</main>
+<main class="container-fluid p-0">
+	<section>
+		<div class="titleContentLight mt-4 p-2 text-center">
+			<h2 class="text-primary titleLight">Présentation de l'association
+			</h2>
+		</div>
+		<div class=" blue-spacer bg-primary w-100"></div>
+		<p class="presentation-text m-5">
+			{{ association.presentation }}
+		</p>
+		<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
+	</section>
+</main>
 
 	<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
 		<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
@@ -55,7 +55,7 @@
 			<div class="card mb-5 m-auto col-lg-10">
 				<div class="row g-0">
 					<div class="col-md-4">
-						<img src="{{ event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+						<img src="{{ event.imgPath is null ? "/assets/images/Card1.jpeg" : "/assets/images/" ~ event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
 					</div>
 					<div class="col-md-7 mx-md-4">
 						<div class="card-body">

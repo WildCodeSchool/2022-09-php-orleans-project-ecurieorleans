@@ -77,10 +77,10 @@ bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement 
 
 CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
-  imgPath TEXT NOT NULL ,
+  imgPath TEXT ,
   title VARCHAR(255) NOT NULL,
   paragraph TEXT NOT NULL
 );
 
-INSERT INTO `event` (imgPath, title, paragraph) VALUES ("assets/images/Card1.jpeg", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+INSERT INTO `event` (imgPath, title, paragraph) VALUES ("", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");

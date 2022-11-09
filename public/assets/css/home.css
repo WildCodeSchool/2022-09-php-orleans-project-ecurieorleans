@@ -41,18 +41,13 @@
 .mosaic-image {
     object-fit: cover;
     transition: ease-in-out 0.5s;
+    height: 150px;
 }
 
 .mosaic-image:hover {
-    scale: 1.03;
+    transform: scale(1.05);
 }
 
-@media screen and (max-width: 768px) {
-    .mosaic-image {
-        height: 100px;
-    }
-
-    .mosaic-image-container {
-        width: 90% !important;
-    }
+.mosaic-image-container {
+    overflow: hidden;
 }

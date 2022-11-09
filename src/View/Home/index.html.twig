@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block content %}
-	<main class="container-fluid p-0">
+	<main class="container-fluid">
 		<section>
 			<div class="titleContentLight mt-4 p-2 text-center">
 				<h2 class="text-primary titleLight">Présentation de l’association
@@ -45,18 +45,19 @@
 			</p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
-		<section class="row gap-3 d-flex justify-content-center my-4">
+
+		<section class="row g-3 justify-content-center">
 			{% for section in sections %}
-				<div class="mosaic-container col-md-5 col-sm-12 p-0 d-flex justify-content-center ">
+				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
 						<img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
 						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
 					</a>
 				</div>
 			{% endfor %}
-			<div class="mosaic-container col-12 p-0 d-flex justify-content-center">
-				<a class="mosaic-image-container position-relative d-flex justify-content-center w-75" href="/circuit">
-					<img class=" mosaic-image w-100" src=" assets/images/header_circuit2.jpeg" alt=" image of the circuit">
+			<div class="d-flex justify-content-center pb-4">
+				<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/circuit">
+					<img class="mosaic-image w-100" src=" assets/images/header_circuit2.jpeg" alt=" image of the circuit">
 					<h3 class="position-absolute text-dark top-50 start-50 translate-middle">Circuit</h3>
 				</a>
 			</div>
@@ -68,7 +69,7 @@
 			</div>
 			<div class="cards bg-dark mx-5">
 				<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
-					<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image of the event card">
+					<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image of {{ event.title }}">
 					<div class="card-body w-100">
 						<div class="d-flex flex-row justify-content-around">
 							<h3 class="card-title mb-5 mt-2 h3 text-dark">{{ event.title }}</h3>

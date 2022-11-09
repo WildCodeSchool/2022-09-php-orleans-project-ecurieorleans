@@ -15,12 +15,6 @@
     object-fit: cover;
 }
 
-.organization-container {
-    border: 2px solid var(--bs-primary);
-    border-radius: 20px;
-    width: clamp(250px, 30%, 550px);
-}
-
 .section-bureau:not(:first-of-type) {
     margin-block-start: 10rem;
 }
@@ -32,7 +26,7 @@
     .bureau-members {
         margin-block-start: 1.5rem;
     }
-    .bureau-image {
-        margin-inline: 0 !important;
+    .admin-members {
+        margin-block-start: 1.5rem;
     }
 }

@@ -146,6 +146,7 @@ CREATE TABLE
         gender VARCHAR(50),
         phone CHAR(20),
         mail VARCHAR(150),
+        is_board_member BOOLEAN NOT NULL,
         `role` VARCHAR(255),
         section_id INT
     );
@@ -157,6 +158,7 @@ INSERT INTO
         gender,
         phone,
         mail,
+        is_board_member,
         `role`
     )
 VALUES (
@@ -165,6 +167,7 @@ VALUES (
         "M.",
         "02 00 00 00 00",
         "m.lempereur@gmail.com",
+        TRUE,
         "Président d'honneur"
     ), (
         "Jean-Claude",
@@ -172,6 +175,7 @@ VALUES (
         "M.",
         "02 00 00 00 00",
         "jc.painchault@gmail.com",
+        TRUE,
         "Président"
     ), (
         "Jean-Marc",
@@ -179,6 +183,7 @@ VALUES (
         "M.",
         "02 00 00 00 00",
         "jm.pelletier@gmail.com",
+        TRUE,
         "Vice-président"
     ), (
         "Pascal",
@@ -186,6 +191,7 @@ VALUES (
         "M.",
         "02 00 00 00 00",
         "p.perdereau@gmail.com",
+        TRUE,
         "Vice-président"
     ), (
         "Carole",
@@ -193,23 +199,118 @@ VALUES (
         "Mme.",
         "02 00 00 00 00",
         "c.marechal@gmail.com",
+        TRUE,
         "Secrétaire"
+    ), (
+        "Jacky",
+        "Casanueva",
+        "M.",
+        "02 00 00 00 00",
+        "j.casanueva@gmail.com",
+        TRUE,
+        "Secrétaire adjoint"
     ), (
         "Olivier",
         "Venot",
         "M.",
         "02 00 00 00 00",
         "o.venot@gmail.com",
+        TRUE,
         "Trésorier"
+    ), (
+        "Pascal",
+        "Billard",
+        "M.",
+        "02 00 00 00 00",
+        "p.billard@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Marcel",
+        "Debat",
+        "M.",
+        "02 00 00 00 00",
+        "m.debat@gmail.com",
+        TRUE,
+        "Trésorier adjoint"
+    ), (
+        "Roselyne",
+        "Tardif",
+        "Mme.",
+        "02 00 00 00 00",
+        "r.tardif@gmail.com",
+        TRUE,
+        "Trésorière adjoint"
+    ), (
+        "Helder",
+        "Duarte",
+        "M.",
+        "02 00 00 00 00",
+        "h.duarte@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Dominique",
+        "Jouas",
+        "M.",
+        "02 00 00 00 00",
+        "d.jouas@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Philippe",
+        "Jubert",
+        "M.",
+        "02 00 00 00 00",
+        "p.jubert@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Guillaume",
+        "Lecouflet",
+        "M.",
+        "02 00 00 00 00",
+        "g.lecouflet@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Sylvain",
+        "Migniot",
+        "M.",
+        "02 00 00 00 00",
+        "s.migniot@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Vincent",
+        "Perdereau",
+        "M.",
+        "02 00 00 00 00",
+        "v.perdereau@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Paulin",
+        "Pinsart",
+        "M.",
+        "02 00 00 00 00",
+        "p.pinsart@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Roger",
+        "Soulas",
+        "M.",
+        "02 00 00 00 00",
+        "r.soulas@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Jean-Luc",
+        "Martineau",
+        "M.",
+        "02 00 00 00 00",
+        "jl.martineau@gmail.com",
+        FALSE,
+        ""
     );
-
-CREATE TABLE
-    `conseil_administration` (
-        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-        firstname VARCHAR(255) NOT NULL,
-        lastname VARCHAR(255) NOT NULL
-    );
-
-INSERT INTO
-    `conseil_administration` (firstname, lastname)
-VALUES ("Pascal", "Billard"), ("Jacky", "Casanueva"), ("Marcel", "Debat"), ("Helder", "Duarte"), ("Dominique", "Jouas"), ("Philippe", "Jubert"), ("Guillaume", "Lecouflet"), ("Sylvain", "Migniot"), ("Carole", "Maréchal"), ("Jean-Claude", "Painchault"), ("Jean-Marc", "Pelletier"), ("Pascal", "Perdereau"), ("Vincent", "Perdereau"), ("Paulin", "Pinsart"), ("Roger", "Soulas"), ("Roselyn", "Tardif"), ("Olivier", "Venot"), ("Jean-Luc", "Martineau");

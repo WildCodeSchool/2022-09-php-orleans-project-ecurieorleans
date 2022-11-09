@@ -18,7 +18,7 @@
 			<div class="blue-spacer blue-spacer-right bg-primary w-25 my-4"></div>
 			<div class="row g-3">
 				<img src="assets/images/bureau_members.png" alt="a photo of the members of the bureau" class="bureau-image col-md-5 px-4 col-sm-12">
-				<div class="d-flex flex-column align-items-center m-auto col-7">
+				<div class="d-flex flex-column align-items-center m-auto col-7 pt-3">
 					{% for boardMember in boardMembers %}
 						<p class="bureau-members text-center">{{boardMember.role ~ ' ' ~ ':' ~ ' ' ~ boardMember.gender ~ ' ' ~ boardMember.firstname ~ ' ' ~ boardMember.lastname}}</p>
 					{% endfor %}

@@ -8,9 +8,12 @@ class BoardManager extends AbstractManager
 {
     public const TABLE = 'member';
 
-    public function selectAllBoardMembers(string $orderBy = '', string $direction = 'ASC', bool $is_board_member = true): array
-    {
-        $query = 'SELECT * FROM ' . static::TABLE . ' WHERE is_board_member = ' . $is_board_member;
+    public function selectAllBoardMembers(
+        bool $isBoardMember,
+        string $orderBy = '',
+        string $direction = 'ASC'
+    ): array {
+        $query = 'SELECT * FROM ' . static::TABLE . ' WHERE is_board_member = ' . $isBoardMember;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }

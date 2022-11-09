@@ -139,6 +139,34 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
     );
 
 CREATE TABLE
+    section(
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        `name` VARCHAR(25) NOT NULL,
+        header TEXT NULL,
+        presentation TEXT NOT NULL
+    );
+
+INSERT INTO
+    section (`name`, presentation)
+VALUES (
+        "Auto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Moto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Handi-car",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Mécasport",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    );
+
+CREATE TABLE
     `member` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         firstname VARCHAR(255) NOT NULL,
@@ -313,4 +341,32 @@ VALUES (
         "jl.martineau@gmail.com",
         FALSE,
         ""
+    );
+
+CREATE TABLE
+    `partner` (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        `name` VARCHAR(255) NOT NULL,
+        logo TEXT NOT NULL,
+        `URL` TEXT NOT NULL
+    );
+
+INSERT INTO
+    `partner` (`name`, logo, `URL`)
+VALUES (
+        "Fédération Française de Motocyclisme",
+        "/assets/images/FFM-logo.png",
+        "https://www.ffmoto.org/"
+    ), (
+        "Fédération Française du Sport Automobile",
+        "/assets/images/FFSA-logo.jpg",
+        "https://www.ffsa.org/"
+    ), (
+        "L'Union Française des Oeuvres Laïques d'Education Physique",
+        "/assets/images/ufolep-logo.png",
+        "https://www.ufolep.org/"
+    ), (
+        "Région Centre-Val-de-Loire",
+        "/assets/images/RCVL-logo.png",
+        "https://www.centre-valdeloire.fr/"
     );

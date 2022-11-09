@@ -16,35 +16,28 @@
 						</a>
 
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li>
-								<a class="dropdown-item" href="#">Auto</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Moto</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">HandiCar</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">Mécasport</a>
-							</li>
+							{% for section in sections %}
+								<li>
+									<a class="dropdown-item" href="/section?id={{ section.id }}">{{section.name}}</a>
+								</li>
+							{% endfor %}
 						</ul>
 					</li>
-					<div class="skewright"></div>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Partenaires</a>
-					</li>
-					<div class="skewright"></div>
-					<li class="nav-item">
-						<a class="nav-link" href="/bureau">Notre Bureau</a>
+					<div class="skewright d-none d-md-block"></div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Partenaires</a>
+				</li>
+				<div class="skewright d-none d-md-block"></div>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Notre Bureau</a>
 
-					</li>
-					<div class="skewright"></div>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Le Circuit</a>
-					</li>
-				</ul>
-			</div>
+				</li>
+				<div class="skewright d-none d-md-block"></div>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Le Circuit</a>
+				</li>
+			</ul>
 		</div>
-	</nav>
-{% endblock %}
+	</div>
+</nav>{% endblock %}

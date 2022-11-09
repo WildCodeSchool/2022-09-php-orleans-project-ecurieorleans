@@ -166,6 +166,16 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
     );
 
+CREATE TABLE `event` (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
+  imgPath TEXT ,
+  title VARCHAR(255) NOT NULL,
+  paragraph TEXT NOT NULL
+);
+
+INSERT INTO `event` (imgPath, title, paragraph) VALUES ("", "Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");
+
 CREATE TABLE
     `partner` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,

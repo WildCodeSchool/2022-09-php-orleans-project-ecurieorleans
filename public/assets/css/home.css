@@ -51,3 +51,9 @@
 .mosaic-image-container {
     overflow: hidden;
 }
+
+.contactUs{
+    margin-top: -20%;
+    text-decoration: none;
+    color: white;
+}

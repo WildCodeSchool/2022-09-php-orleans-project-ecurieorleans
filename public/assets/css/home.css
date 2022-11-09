@@ -37,3 +37,33 @@
         transform: translateY(25px);
     }
 }
+
+.contactUs{
+    margin-top: -20%;
+    text-decoration: none;
+    color: white;
+}
+
+.font-image {
+    object-fit: cover;
+    margin-block-start: 20px;
+}
+
+.divJoin{
+    border-block: 8px solid var(--bs-secondary);
+}
+
+.contact{
+    width: fit-content;
+    transform: skew(-20deg);
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0px 4px 4px rgb(var(--bs-dark));
+    margin-top: -100px;
+}
+
+.member{
+    width: fit-content;
+    transform: skew(-20deg);
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0px 4px 4px rgb(var(--bs-dark));
+}

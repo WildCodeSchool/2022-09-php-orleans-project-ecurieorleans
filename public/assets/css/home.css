@@ -38,6 +38,20 @@
     }
 }
 
+.mosaic-image {
+    object-fit: cover;
+    transition: ease-in-out 0.5s;
+    height: 150px;
+}
+
+.mosaic-image:hover {
+    transform: scale(1.05);
+}
+
+.mosaic-image-container {
+    overflow: hidden;
+}
+
 .contactUs{
     margin-top: -20%;
     text-decoration: none;

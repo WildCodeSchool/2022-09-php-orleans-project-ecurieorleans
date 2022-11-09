@@ -37,3 +37,9 @@
         transform: translateY(25px);
     }
 }
+
+.contactUs{
+    margin-top: -20%;
+    text-decoration: none;
+    color: white;
+}

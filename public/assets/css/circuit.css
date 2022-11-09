@@ -10,13 +10,27 @@
     background-position: 50% 50% 50% 30%;
 }
 
-header,
-h1 {
-    text-shadow: 2px 3px 1px var(--bs-dark);
+.blue-spacer {
+    margin-block-start: -2px;
+    height: 2px;
 }
 
-header,
-h1 {
-    font-size: clamp(20px, 55px, 100px);
-    font-family: var(--font_title);
+.circuit-content-image {
+    margin-block-start: -80px;
+    border: solid var(--bs-primary) 3px;
+}
+
+.circuit-section3 {
+    margin-block-start: 115px;
+    border: solid var(--bs-primary) 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .circuit-content-image {
+        margin-block-start: 0;
+        border: solid var(--bs-primary) 1px;
+    }
+    .circuit-section3 {
+        margin-block-start: 40px;
+    }
 }

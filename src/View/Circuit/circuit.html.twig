@@ -6,8 +6,8 @@
 {% block header %}
 	<header>
 		<div class="yellow-spacer bg-secondary"></div>
-		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-white">
-			<h1>
+		<div class="header-container d-flex justify-content-center flex-column align-items-center text-center text-light">
+			<h1 class="headerTitle">
 				Le Circuit</h1>
 		</div>
 		<div class="yellow-spacer bg-secondary"></div>
@@ -15,4 +15,35 @@
 	</header>
 {% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+	<div class="titleContentLight mt-4 p-2 px-4 d-flex align-items-center">
+		<h2 class="titleLight text-center text-primary ">Présentation du circuit</h2>
+	</div>
+	<div class=" blue-spacer bg-primary"></div>
+	<article class="d-flex bg-primary text-light row">
+		<img src="/assets/images/circuit_presentation.jpeg" alt="image of a car race" class="col-md-7 content-img">
+		<p class="text-center p-4 col-md-5">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum quaerat quod tempore ullam esse voluptates cumque minus, quis eius exercitationem est ut iusto dolorem, nostrum numquam aliquam molestiae aspernatur? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit eveniet tempore, odit, obcaecati, nemo deleniti accusantium quibusdam iusto nostrum eligendi quia repellendus nulla similique! Minus itaque placeat excepturi nam nobis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem itaque excepturi voluptatibus cupiditate. Architecto minus itaque tenetur accusantium quisquam voluptatem nihil consequuntur numquam sit voluptates quibusdam quae velit, recusandae nam.
+		</p>
+	</article>
+	<div class="yellow-spacer bg-secondary"></div>
+	<article class="mt-4">
+		<div class=" d-flex row m-4">
+			<img src="/assets/images/circuit.webp" alt="panoramic view of the circuit" class="col-lg-5 mb-3">
+			<p class="col-lg-7 w-55">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nisi necessitatibus eum, cum iste perspiciatis dolorem commodi veritatis minus tempore laborum odio a delectus molestias esse quaerat, consequuntur deleniti explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum voluptas error neque.
+				<br>Rem excepturi veniam incidunt in, repellendus quasi assumenda iste sint dignissimos culpa saepe sit blanditiis eveniet ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus obcaecati possimus unde, cupiditate culpa soluta. Tenetur voluptates minus inventore quisquam dolorem, vero nihil earum expedita doloribus quae eius consectetur numquam.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in exercitationem perferendis porro earum! Saepe, illum molestiae accusamus corporis vitae deserunt velit expedita ab voluptatem, harum dolor nihil ipsa obcaecati.</p>
+			<p class="col-lg-12">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nemo voluptatibus ipsa beatae ratione delectus quos tempore dicta, velit culpa saepe aliquam maiores perspiciatis eligendi numquam rerum. Ipsa, officia possimus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi iure dolores repudiandae at numquam repellat quod ex officia vitae ut hic, consequuntur corporis necessitatibus ipsam. Iste expedita sed blanditiis consequuntur!</p>
+		</div>
+
+	</article>
+	<div class=" blue-spacer light-spacer bg-primary"></div>
+	<article class="circuit-section3">
+		<div class="d-flex m-0 bg-light row">
+			<p class="col-lg-7 pl-4 pt-4 text-dark col-sm-12 section3-circuit-upper-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nisi necessitatibus eum, cum iste perspiciatis dolorem commodi veritatis minus tempore laborum odio a delectus molestias esse quaerat, consequuntur deleniti explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum voluptas error neque.
+				<br>Rem excepturi veniam incidunt in, repellendus quasi assumenda iste sint dignissimos culpa saepe sit blanditiis eveniet ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus obcaecati possimus unde, cupiditate culpa soluta. Tenetur voluptates minus inventore quisquam dolorem, vero nihil earum expedita doloribus quae eius consectetur numquam.<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus in exercitationem perferendis porro earum! Saepe, illum molestiae accusamus corporis vitae deserunt velit expedita ab voluptatem, harum dolor nihil ipsa obcaecati.</p>
+			<img src="/assets/images/circuit_description.webp" alt="panoramic view of the circuit" class=" col-lg-5 col-sm-12 circuit-content-image p-0">
+			<p class="pt-4 pl-4 text-dark col-lg-12 col-sm-12">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nemo voluptatibus ipsa beatae ratione delectus quos tempore dicta, velit culpa saepe aliquam maiores perspiciatis eligendi numquam rerum. Ipsa, officia possimus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi iure dolores repudiandae at numquam repellat quod ex officia vitae ut hic, consequuntur corporis necessitatibus ipsam. Iste expedita sed blanditiis consequuntur!</p>
+		</div>
+	</article>
+
+{% endblock %}

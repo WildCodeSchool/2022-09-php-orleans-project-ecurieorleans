@@ -42,5 +42,5 @@
     background-color: var(--bs-black);
     width: 1px;
     transform: skew(-20deg);
-    margin-inline-start: 0px;
+    margin-inline-start: 0;
 }

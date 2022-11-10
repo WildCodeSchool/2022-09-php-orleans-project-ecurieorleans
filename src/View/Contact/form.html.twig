@@ -1,0 +1,57 @@
+{% extends "layout.html.twig"%}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/form.css">
+{% endblock %}
+{% block content %}
+<div class="contain">
+
+	<div class="wrapper">
+
+		<div class="form">
+			<h2>Formulaire de contact</h2>
+			<h3 class="form-headline">Envoyez-nous un message</h3>
+			<form class="formContact" id="submit-form" action="" method="POST">
+				
+				<div>
+					<input id="name" name="name" class="form-input" type="text" placeholder="Votre Nom*" required>
+				</div>
+				<div>
+					<input id="email" name="email" class="form-input" type="email" placeholder="Votre Email*" required>
+				</div>
+				<div>
+					<select id="subject" name="subject" class="form-select" type="select" placeholder="Sélectionnez un sujet*" required>
+						<option value="Auto">Auto</option>
+						<option value="Moto">Moto</option>
+						<option value="HandiCar">HandiCar</option>
+						<option value="Mécasport">Mécasport</option>
+						<option value="Question">Une question à propos de l'abonnement?</option>
+						<option value="Other">Une autre question?</option>
+					</select>
+				</div>
+				<div class="full-width">
+					<textarea minlength="10" id="message" name="message" cols="30" rows="7" placeholder="Votre Message*"
+						required></textarea>
+				</div>
+				<div class="full-width">
+					<input type="checkbox" id="checkbox" name="checkbox" checked> Oui, je souhaite recevoir des communications par appel / e-mail sur les services de l'association et de nos partenaires.
+				</div>
+				<div class="full-width">
+					<input type="submit" class="submit-btn float-start" value="Submit">
+					<button class="reset-btn float-end">Reset</button>
+				</div>
+			</form>
+		</div>
+		<div class="message message-wrapper row align-self-center">
+			<ul>
+				<li>Nous vous répondrons le plus rapidement possible.</li>
+			</ul>
+			{% for error in errors %}
+			<ul>
+				<li class="error text-danger fw-bold">{{ error }}</li>
+			</ul>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

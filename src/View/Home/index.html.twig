@@ -62,20 +62,22 @@
 				</a>
 			</div>
 		</section>
-
+	<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
+		<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
+	</div>
+	<div class="cards bg-dark mx-5">
 		{% for event in events %}
-			<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
-				<h2 class="title text-center text-light p-2 pt-3">Évènement</h2>
-			</div>
-			<div class="cards bg-dark mx-5">
-				<div class=" card-content bg-light m-auto d-flex flex-lg-row flex-column">
-					<img class="imgCard card-img-top m-4" src="{{ event.imgPath }}" alt="Image of {{ event.title }}">
-					<div class="card-body w-100">
-						<div class="d-flex flex-row justify-content-around">
-							<h3 class="card-title mb-5 mt-2 h3 text-dark">{{ event.title }}</h3>
-							<div class="d-flex flex-lg-row flex-column mt-2">
-								<h4 class='course pt-2 text-center text-white bg-primary'>
-									Course
+			<div class="card mb-5 m-auto col-lg-10">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src= "{{'/assets/upload/'~event.imgPath is null ? "/assets/images/Card1.jpeg" :  event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+					</div>
+					<div class="col-md-7 mx-md-4">
+						<div class="card-body">
+							<h3 class="card-title">{{ event.title }}</h3>
+							<div class="row mx-2 my-4">
+								<h4 class="col-2 course bg-primary pt-2 text-white">
+									{{event.course}}
 								</h4>
 								<h4 class="date pt-2 text-center text-dark bg-secondary">
 									Date

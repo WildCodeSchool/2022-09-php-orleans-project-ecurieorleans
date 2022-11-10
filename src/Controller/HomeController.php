@@ -7,9 +7,6 @@ use App\Model\EventManager;
 
 class HomeController extends AbstractController
 {
-    /**
-     * Display home page
-     */
     public function index(): string
     {
         $associationManager = new AssociationManager();

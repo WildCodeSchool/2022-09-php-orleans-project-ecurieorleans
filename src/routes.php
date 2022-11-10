@@ -8,6 +8,7 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     '' => ['HomeController', 'index',],
+    'eventAdmin' => ['EventAdminController', 'index'],
     'circuit' => ['CircuitController', 'circuit',],
     'section' => ['SectionController', 'section', ['id']],
     'items' => ['ItemController', 'index',],

@@ -26,7 +26,7 @@
 }
 
 .titleContent {
-    margin-left: 75px;
+    margin-left: 55px;
     margin-block-end: -20px;
     width: clamp(250px, 25%, 550px);
     transform: skew(-20deg);

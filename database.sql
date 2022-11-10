@@ -109,36 +109,6 @@ ALTER TABLE
 ;
 
 CREATE TABLE
-    association(
-        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-        presentation TEXT NOT NULL
-    );
-
-INSERT INTO
-    association (presentation)
-VALUES (
-        "L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste,
-bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs."
-    );
-
-CREATE TABLE
-    `event` (
-        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-        imgPath TEXT NOT NULL,
-        title VARCHAR(255) NOT NULL,
-        paragraph TEXT NOT NULL
-    );
-
-INSERT INTO
-    `event` (imgPath, title, paragraph)
-VALUES (
-        "assets/images/Card1.jpeg",
-        "Compétition rallye Orleans",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    );
-
-CREATE TABLE
     section(
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(25) NOT NULL,
@@ -342,6 +312,29 @@ VALUES (
         FALSE,
         ""
     );
+
+CREATE TABLE
+    association(
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        presentation TEXT NOT NULL
+    );
+
+INSERT INTO
+    association (presentation)
+VALUES (
+        "L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste,
+bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs."
+    );
+
+CREATE TABLE `event` (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
+  imgPath TEXT ,
+  title VARCHAR(255) NOT NULL,
+  paragraph TEXT NOT NULL
+);
+
+INSERT INTO `event` (title, paragraph) VALUES ("Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");
 
 CREATE TABLE
     `partner` (

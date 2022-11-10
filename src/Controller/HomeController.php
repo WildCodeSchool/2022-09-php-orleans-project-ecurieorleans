@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\AssociationManager;
 use App\Model\EventManager;
-use App\Model\SectionManager;
 
 class HomeController extends AbstractController
 {

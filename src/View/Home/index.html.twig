@@ -45,7 +45,23 @@
 			</p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
-		<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
+		<section class="row g-3 justify-content-center">
+			{% for section in sections %}
+				<div class="col-md-6 d-flex justify-content-center ">
+					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
+						<img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
+						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
+					</a>
+				</div>
+			{% endfor %}
+			<div class="d-flex justify-content-center pb-4">
+				<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/circuit">
+					<img class="mosaic-image w-100" src=" assets/images/header_circuit2.jpeg" alt=" image of the circuit">
+					<h3 class="position-absolute text-dark top-50 start-50 translate-middle">Circuit</h3>
+				</a>
+			</div>
+		</section>
+		<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
 			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
 		</div>
 		<div class="cards bg-dark mx-5">
@@ -59,23 +75,24 @@
 							<div class="card-body">
 								<h3 class="card-title">{{ event.title }}</h3>
 								<div class="row mx-2 my-4">
-									<h4 class="col-2 course bg-primary pt-2 text-white ">
+									<h4 class="col-2 course bg-primary pt-2 text-white">
 										{{event.course}}
 									</h4>
-									<h4 class="col-2 date bg-secondary pt-2">
-										{{event.raceDate}}
+									<h4 class="date pt-2 text-center text-dark bg-secondary">
+										Date
 									</h4>
 								</div>
-								<p class="card-text p-">{{event.paragraph}}</p>
 							</div>
+							<p class="card-text text-dark">
+								{{ event.paragraph }}
+							</p>
 						</div>
 					</div>
 				</div>
-        {% endfor %}
-				<div class="all-event-content d-flex justify-content-end mr-0">
-					<div class="event-content pt-2">
-						<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
-					</div>
+			{% endfor %}
+			<div class="all-event-content d-flex justify-content-end mr-0">
+				<div class="event-content pt-2">
+					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
 				</div>
 		<section>
 			<div class="titleContentLight mt-4 p-2 text-center">

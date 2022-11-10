@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block content %}
-	<main class="container-fluid p-0">
+	<main class="container-fluid">
 		<section>
 			<div class="titleContentLight mt-4 p-2 text-center">
 				<h2 class="text-primary titleLight">Présentation de l'association
@@ -45,9 +45,23 @@
 			</p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
-
-
-		<div class="titleContent bg-primary d-flex justify-content-center align-items-center ">
+		<section class="row g-3 justify-content-center">
+			{% for section in sections %}
+				<div class="col-md-6 d-flex justify-content-center ">
+					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
+						<img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
+						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
+					</a>
+				</div>
+			{% endfor %}
+			<div class="d-flex justify-content-center pb-4">
+				<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/circuit">
+					<img class="mosaic-image w-100" src=" assets/images/header_circuit2.jpeg" alt=" image of the circuit">
+					<h3 class="position-absolute text-dark top-50 start-50 translate-middle">Circuit</h3>
+				</a>
+			</div>
+		</section>
+		<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
 			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
 		</div>
 		<div class="cards bg-dark mx-5">
@@ -61,15 +75,17 @@
 							<div class="card-body">
 								<h3 class="card-title">{{ event.title }}</h3>
 								<div class="row mx-2 my-4">
-									<h4 class="col-2 course bg-primary pt-2 text-white ">
+									<h4 class="col-2 course bg-primary pt-2 text-white">
 										{{event.course}}
 									</h4>
-									<h4 class="col-2 date bg-secondary pt-2">
-										{{event.raceDate}}
+									<h4 class="date pt-2 text-center text-dark bg-secondary">
+										Date
 									</h4>
 								</div>
-								<p class="card-text p-">{{event.paragraph}}</p>
 							</div>
+							<p class="card-text text-dark">
+								{{ event.paragraph }}
+							</p>
 						</div>
 					</div>
 				</div>
@@ -79,5 +95,29 @@
 					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
 				</div>
 			</div>
-		</main>
-	{% endblock %}
+		</div>
+		<section>
+			<div class="titleContentLight mt-4 p-2 text-center">
+				<h2 class="mx-4 mt-4 mb-3 titleLight text-primary">Comment nous rejoindre :</h2>
+			</div>
+			<div class=" blue-spacer bg-primary w-100"></div>
+			<div class="row m-0 divJoin">
+				<div class="col-lg-6 col-12 bg-primary text-white">
+					<div class="d-flex justify-content-center mx-3 align-items-center">
+						<h3 class="member d-flex titleLight bg-white">
+							<a class="text-primary text-decoration-none p-2" href="/">Je deviens Membre</a>
+						</h3>
+					</div>
+				</div>
+				<div class="col-lg-6 col-12 p-0 ">
+					<img class=" font-image col-12 m-0 " src="assets/images/BMW.jpg" alt="image de voiture"/>
+				</div>
+			</div>
+			<div class="d-flex justify-content-end mx-3 align-items-center ">
+				<h3 class="contact d-flex titleLight bg-white">
+					<a class="text-primary text-decoration-none p-2" href="/">Contact</a>
+				</h3>
+			</div>
+		</section>
+	</main>
+{% endblock %}

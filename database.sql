@@ -137,6 +137,183 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
     );
 
 CREATE TABLE
+    `member` (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        firstname VARCHAR(255) NOT NULL,
+        lastname VARCHAR(255) NOT NULL,
+        gender VARCHAR(50),
+        phone CHAR(20),
+        mail VARCHAR(150),
+        is_board_member BOOLEAN NOT NULL,
+        `role` VARCHAR(255),
+        section_id INT
+    );
+
+INSERT INTO
+    `member` (
+        firstname,
+        lastname,
+        gender,
+        phone,
+        mail,
+        is_board_member,
+        `role`
+    )
+VALUES (
+        "Michel",
+        "Lempereur",
+        "M.",
+        "02 00 00 00 00",
+        "m.lempereur@gmail.com",
+        TRUE,
+        "Président d'honneur"
+    ), (
+        "Jean-Claude",
+        "Painchault",
+        "M.",
+        "02 00 00 00 00",
+        "jc.painchault@gmail.com",
+        TRUE,
+        "Président"
+    ), (
+        "Jean-Marc",
+        "Pelletier",
+        "M.",
+        "02 00 00 00 00",
+        "jm.pelletier@gmail.com",
+        TRUE,
+        "Vice-président"
+    ), (
+        "Pascal",
+        "Perdereau",
+        "M.",
+        "02 00 00 00 00",
+        "p.perdereau@gmail.com",
+        TRUE,
+        "Vice-président"
+    ), (
+        "Carole",
+        "Maréchal",
+        "Mme.",
+        "02 00 00 00 00",
+        "c.marechal@gmail.com",
+        TRUE,
+        "Secrétaire"
+    ), (
+        "Jacky",
+        "Casanueva",
+        "M.",
+        "02 00 00 00 00",
+        "j.casanueva@gmail.com",
+        TRUE,
+        "Secrétaire adjoint"
+    ), (
+        "Olivier",
+        "Venot",
+        "M.",
+        "02 00 00 00 00",
+        "o.venot@gmail.com",
+        TRUE,
+        "Trésorier"
+    ), (
+        "Pascal",
+        "Billard",
+        "M.",
+        "02 00 00 00 00",
+        "p.billard@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Marcel",
+        "Debat",
+        "M.",
+        "02 00 00 00 00",
+        "m.debat@gmail.com",
+        TRUE,
+        "Trésorier adjoint"
+    ), (
+        "Roselyne",
+        "Tardif",
+        "Mme.",
+        "02 00 00 00 00",
+        "r.tardif@gmail.com",
+        TRUE,
+        "Trésorière adjoint"
+    ), (
+        "Helder",
+        "Duarte",
+        "M.",
+        "02 00 00 00 00",
+        "h.duarte@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Dominique",
+        "Jouas",
+        "M.",
+        "02 00 00 00 00",
+        "d.jouas@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Philippe",
+        "Jubert",
+        "M.",
+        "02 00 00 00 00",
+        "p.jubert@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Guillaume",
+        "Lecouflet",
+        "M.",
+        "02 00 00 00 00",
+        "g.lecouflet@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Sylvain",
+        "Migniot",
+        "M.",
+        "02 00 00 00 00",
+        "s.migniot@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Vincent",
+        "Perdereau",
+        "M.",
+        "02 00 00 00 00",
+        "v.perdereau@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Paulin",
+        "Pinsart",
+        "M.",
+        "02 00 00 00 00",
+        "p.pinsart@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Roger",
+        "Soulas",
+        "M.",
+        "02 00 00 00 00",
+        "r.soulas@gmail.com",
+        FALSE,
+        ""
+    ), (
+        "Jean-Luc",
+        "Martineau",
+        "M.",
+        "02 00 00 00 00",
+        "jl.martineau@gmail.com",
+        FALSE,
+        ""
+    );
+
+CREATE TABLE
     association(
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         presentation TEXT NOT NULL

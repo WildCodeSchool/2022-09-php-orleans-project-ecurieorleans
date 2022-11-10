@@ -18,6 +18,10 @@
     opacity: 0.85;
 }
 
+.arrow-down:first-of-type {
+    margin-block-start: -10px;
+}
+
 .bounce {
     animation: bounce 2.5s infinite;
 }
@@ -52,7 +56,7 @@
     overflow: hidden;
 }
 
-.contactUs{
+.contactUs {
     margin-top: -20%;
     text-decoration: none;
     color: white;

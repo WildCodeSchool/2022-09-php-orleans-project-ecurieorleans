@@ -9,12 +9,10 @@ class BoardController extends AbstractController
     public function index(): string
     {
         $boardManager = new BoardManager();
-        $members = $boardManager->selectAll('firstname');
-        $boardMembers = $boardManager->selectAllBoardMembers(true, 'id', 'ASC');
+        $members = $boardManager->selectAll('id');
 
         return $this->twig->render('Bureau/bureau.html.twig', [
             "members" => $members,
-            "boardMembers" => $boardMembers,
         ]);
     }
 }

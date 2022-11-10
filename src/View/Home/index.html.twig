@@ -62,42 +62,40 @@
 				</a>
 			</div>
 		</section>
-	<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
-		<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
-	</div>
-	<div class="cards bg-dark mx-5">
-		{% for event in events %}
-			<div class="card mb-5 m-auto col-lg-10">
-				<div class="row g-0">
-					<div class="col-md-4">
-						<img src= "{{'/assets/upload/'~event.imgPath is null ? "/assets/images/Card1.jpeg" :  event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
-					</div>
-					<div class="col-md-7 mx-md-4">
-						<div class="card-body">
-							<h3 class="card-title">{{ event.title }}</h3>
-							<div class="row mx-2 my-4">
-								<h4 class="col-2 course bg-primary pt-2 text-white">
-									{{event.course}}
-								</h4>
-								<h4 class="date pt-2 text-center text-dark bg-secondary">
-									Date
-								</h4>
-							</div>
+		<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
+			<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
+		</div>
+		<div class="cards bg-dark mx-5">
+			{% for event in events %}
+				<div class="card mb-5 m-auto col-lg-10">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{'/assets/upload/'~event.imgPath is null ? "/assets/images/Card1.jpeg" : event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
 						</div>
-						<p class="card-text text-dark">
-							{{ event.paragraph }}
-						</p>
-						<div class="btn-plus d-flex justify-content-end mb-lg-0">
-							<a href="#" class="btn btn-primary">En savoir plus</a>
+						<div class="col-md-7 mx-md-4">
+							<div class="card-body">
+								<h3 class="card-title">{{ event.title }}</h3>
+								<div class="row mx-2 my-4">
+									<h4 class="col-2 course bg-primary pt-2 text-white">
+										{{event.course}}
+									</h4>
+									<h4 class="date pt-2 text-center text-dark bg-secondary">
+										Date
+									</h4>
+								</div>
+							</div>
+							<p class="card-text text-dark">
+								{{ event.paragraph }}
+							</p>
 						</div>
 					</div>
 				</div>
-				<div class="all-event-content d-flex justify-content-end mr-0">
-					<div class="event-content pt-2">
-						<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
-					</div>
+			{% endfor %}
+			<div class="all-event-content d-flex justify-content-end mr-0">
+				<div class="event-content pt-2">
+					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
 				</div>
 			</div>
-		{% endfor %}
+		</div>
 	</main>
 {% endblock %}

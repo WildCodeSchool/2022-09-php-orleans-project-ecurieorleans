@@ -1,43 +1,41 @@
-{% block navbar %}
-	<div class="blackspacer"></div>
-	<nav class="navbar navbar-expand-md navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
-				<img src="/assets/images/NavLogo.png" alt="Logo"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+<div class="blackspacer"></div>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">
+			<img src="/assets/images/NavLogo.png" alt="Logo"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Sections Sports
-						</a>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Sections Sports
+					</a>
 
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							{% for section in sections %}
-								<li>
-									<a class="dropdown-item" href="/section?id={{ section.id }}">{{section.name}}</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</li>
-					<div class="skewright d-none d-md-block"></div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Partenaires</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						{% for section in sections %}
+							<li>
+								<a class="dropdown-item" href="/section?id={{ section.id }}">{{section.name}}</a>
+							</li>
+						{% endfor %}
+					</ul>
 				</li>
 				<div class="skewright d-none d-md-block"></div>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Notre Bureau</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Partenaires</a>
+			</li>
+			<div class="skewright d-none d-md-block"></div>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Notre Bureau</a>
 
-				</li>
-				<div class="skewright d-none d-md-block"></div>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Le Circuit</a>
-				</li>
-			</ul>
-		</div>
+			</li>
+			<div class="skewright d-none d-md-block"></div>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Le Circuit</a>
+			</li>
+		</ul>
 	</div>
-</nav>{% endblock %}
+</div></nav>

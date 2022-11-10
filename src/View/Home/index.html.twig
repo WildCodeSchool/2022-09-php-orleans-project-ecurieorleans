@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block content %}
-	<main class="container-fluid p-0">
+	<main class="container-fluid">
 		<section>
 			<div class="titleContentLight mt-4 p-2 text-center">
 				<h2 class="text-primary titleLight">Présentation de l'association
@@ -71,12 +71,12 @@
 						</div>
 					</div>
 				</div>
-			{% endfor %}
-			<div class="all-event-content d-flex justify-content-end mr-0">
-				<div class="event-content pt-2">
-					<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
+        {% endfor %}
+				<div class="all-event-content d-flex justify-content-end mr-0">
+					<div class="event-content pt-2">
+						<a href='#' class="all-event text-white px-2">Voir tous les évènements</a>
+					</div>
 				</div>
-			</div>
 		<section>
 			<div class="titleContentLight mt-4 p-2 text-center">
 				<h2 class="mx-4 mt-4 mb-3 titleLight text-primary">Comment nous rejoindre :</h2>

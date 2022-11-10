@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+    {% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/card.css"/>
+    {% endblock %}
+
+    {% block content%}
+{% for event in events %}
+				<div class="card mb-5 m-auto col-lg-10">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{'/assets/upload/'~event.imgPath is null ? "/assets/images/Card1.jpeg" : event.imgPath}}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+						</div>
+						<div class="col-md-7 mx-md-4">
+							<div class="card-body">
+								<h3 class="card-title">{{ event.title }}</h3>
+								<div class="row mx-2 my-4">
+									<h4 class="col-2 course bg-primary pt-2 text-white ">
+										{{event.course}}
+									</h4>
+									<h4 class="col-2 date bg-secondary pt-2">
+										{{event.raceDate}}
+									</h4>
+								</div>
+								<p class="card-text p-">{{event.paragraph}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+    {% endblock %}

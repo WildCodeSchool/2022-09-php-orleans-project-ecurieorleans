@@ -1,4 +1,4 @@
-{%extends"layout.html.twig"%}
+{% extends "layout.html.twig"%}
 {% block stylesheet %}
 <link rel="stylesheet" href="/assets/css/form.css">
 {% endblock %}
@@ -19,7 +19,7 @@
 					<input id="email" name="email" class="form-input" type="email" placeholder="Votre Email*" required>
 				</div>
 				<div>
-					<select id="subject" name="subject" class="form-select" type="select" placeholder="Selectionner un sujet*" required>
+					<select id="subject" name="subject" class="form-select" type="select" placeholder="Selectionnez un sujet*" required>
 						<option value="Auto">Auto</option>
 						<option value="Moto">Moto</option>
 						<option value="HandiCar">HandiCar</option>
@@ -33,8 +33,7 @@
 						required></textarea>
 				</div>
 				<div class="full-width">
-					<input type="checkbox" id="checkbox" name="checkbox" checked> Oui, je souhaite recevoir
-					communications par appel / e-mail sur les services de l'association et de nos partenaires.
+					<input type="checkbox" id="checkbox" name="checkbox" checked> Oui, je souhaite recevoir des communications par appel / e-mail sur les services de l'association et de nos partenaires.
 				</div>
 				<div class="full-width">
 					<input type="submit" class="submit-btn float-start" value="Submit">

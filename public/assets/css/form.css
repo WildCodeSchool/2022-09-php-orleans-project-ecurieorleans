@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  list-style: none;
-}
-
 .contain {
   background-color: var(--bs-light);
   max-width: 1200px;

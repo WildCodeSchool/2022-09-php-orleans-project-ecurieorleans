@@ -11,14 +11,14 @@ class FormController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = $this->errors();
             if (empty($errors)) {
-                echo 'Votre message à bien été envoyer';
+                echo 'Votre message à bien été envoyé';
                 $formView = new formManager();
                 $formView->Insert();
                 header('Location: /contact');
             }
-            return $this->twig->render('/Item/_form.html.twig', ['errors' => $errors]);
+            return $this->twig->render('/Contact/form.html.twig', ['errors' => $errors]);
         }
-        return $this->twig->render('/Item/_form.html.twig');
+        return $this->twig->render('/Contact/form.html.twig');
     }
 
 

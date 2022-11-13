@@ -25,6 +25,12 @@
     border: solid var(--bs-primary) 20px;
 }
 
+.circuit-adress {
+    border-top: solid var(--bs-primary) 2px;
+    border-bottom: solid var(--bs-primary) 2px;
+    padding-block: 214px;
+}
+
 @media screen and (max-width: 960px) {
     .circuit-content-image {
         margin-block-start: 0;

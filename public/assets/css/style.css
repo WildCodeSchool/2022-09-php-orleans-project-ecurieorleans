@@ -73,4 +73,5 @@
 
 .admin-view-card {
     margin-right: 0;
+    background-color: var(--bs-lightdark);
 }

@@ -62,3 +62,11 @@
 .shadow-none {
     text-shadow: none;
 }
+
+.admin-header-image {
+    object-fit: contain;
+}
+
+.admin-right-buttons {
+    width: 20%;
+}

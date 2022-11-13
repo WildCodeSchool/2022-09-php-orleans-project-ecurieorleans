@@ -1,7 +1,28 @@
 {% extends 'layout.html.twig' %}
 
-{% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/card.css"/>
-{% endblock %}
+{% block stylesheet %}{% endblock %}
 
-{% block content%}{% endblock %}
+{% block content %}
+	{{include ('/Components/_addButton.html.twig')}}
+	{% for section in sections %}
+		<div class="row my-5 justify-content-around g-0">
+			<div class="col-9 card bg-light container-xxl">
+				<div class="row g-0">
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">{{section.name}}</h5>
+							<p class="card-text">{{ section.presentation }}</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<img src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" class="admin-header-image h-100 w-100 img-fluid rounded-start py-2" alt="header image of {{section.name}}">
+					</div>
+				</div>
+			</div>
+			<div class="admin-right-buttons col-1 d-flex flex-column justify-content-center">
+				{{include ('/Components/_editButton.html.twig')}}
+				{{include ('/Components/_deleteButton.html.twig')}}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

@@ -12,6 +12,7 @@ return [
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
     'section' => ['SectionController', 'section', ['id']],
+    'admin/sports' => ['SportsAdminController', 'index',],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

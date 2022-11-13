@@ -70,3 +70,7 @@
 .admin-right-buttons {
     width: 20%;
 }
+
+.admin-view-card {
+    margin-right: 0;
+}

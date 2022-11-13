@@ -22,13 +22,14 @@
 
 .circuit-section3 {
     margin-block-start: 115px;
+    margin-block-end: 10rem;
     border: solid var(--bs-primary) 20px;
 }
 
 .circuit-adress {
     border-top: solid var(--bs-primary) 2px;
     border-bottom: solid var(--bs-primary) 2px;
-    padding-block: 214px;
+    padding-block: 150px;
 }
 
 @media screen and (max-width: 960px) {
@@ -38,5 +39,11 @@
     }
     .circuit-section3 {
         margin-block-start: 40px;
+    }
+
+    .circuit-adress {
+        border-top: none;
+        padding-block: 1rem;
+        width: 50%;
     }
 }

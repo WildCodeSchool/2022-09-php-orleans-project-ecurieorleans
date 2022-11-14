@@ -20,14 +20,14 @@ class EventAdminController extends AbstractController
             if (empty($errors[0])) {
                 $addCard = new EventManager();
                 $addCard->addCard($events, $errors1[1]);
-                return $this->twig->render('AdminEvent/AdminEvent.html.twig');
+                return $this->twig->render('AdminEvent/AdminAddEvent.html.twig');
             }
             return $this->twig->render(
-                'AdminEvent/AdminEvent.html.twig',
+                'AdminEvent/AdminAddEvent.html.twig',
                 ['errors' => $errors[0], 'events' => $_POST]
             );
         }
-        return $this->twig->render('AdminEvent/AdminEvent.html.twig');
+        return $this->twig->render('AdminEvent/AdminAddEvent.html.twig');
     }
 
     public function errors1(array $event)

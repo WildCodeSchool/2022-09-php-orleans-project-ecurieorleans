@@ -333,32 +333,13 @@ CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
   imgPath TEXT ,
   title VARCHAR(255) NOT NULL,
+  course VARCHAR(255) NOT NULL,
+  raceDate DATE NOT NULL,
   paragraph TEXT NOT NULL
 );
 
 INSERT INTO `event` (title, paragraph) VALUES ("Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");
-
-
-CREATE TABLE `category` (
-id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-title VARCHAR(255)
-);
-
-DROP TABLE `form`;
-
-CREATE TABLE `form` (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-name VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL,
-message VARCHAR(500) NOT NULL
-);
-
-
-
-
-
-
 
 CREATE TABLE
     `partner` (

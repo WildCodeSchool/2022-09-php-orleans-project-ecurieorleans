@@ -16,14 +16,12 @@
 }
 
 .circuit-content-image {
-    margin-block-start: -80px;
-    border: solid var(--bs-primary) 3px;
+    object-fit: cover;
 }
 
 .circuit-section3 {
     margin-block-start: 115px;
     margin-block-end: 10rem;
-    border: solid var(--bs-primary) 20px;
 }
 
 .circuit-adress {

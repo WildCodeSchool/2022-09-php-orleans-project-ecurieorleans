@@ -17,7 +17,6 @@ class EventAdminController extends AbstractController
             $events = array_map('trim', $_POST);
             $errors = $this->errors1($events);
             $errors1 = $this->errors2($errors);
-            var_dump($errors1);
             if (empty($errors[0])) {
                 $addCard = new EventManager();
                 $addCard->addCard($events, $errors1[1]);

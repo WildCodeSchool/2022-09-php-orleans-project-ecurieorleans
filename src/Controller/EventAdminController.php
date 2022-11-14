@@ -15,7 +15,7 @@ class EventAdminController extends AbstractController
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $events = array_map('trim', $_POST);
-            $errors = $this->errors($events);
+            $errors = $this->errors1($events);
             $errors1 = $this->errors2($errors);
             var_dump($errors1);
             if (empty($errors[0])) {
@@ -31,7 +31,7 @@ class EventAdminController extends AbstractController
         return $this->twig->render('AdminEvent/AdminEvent.html.twig');
     }
 
-    public function errors(array $event)
+    public function errors1(array $event)
     {
         $tmp = [];
         $errors = [];

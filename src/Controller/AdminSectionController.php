@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\SectionManager;
 
-class SportsAdminController extends AbstractController
+class AdminSectionController extends AbstractController
 {
     public function index(): string
     {

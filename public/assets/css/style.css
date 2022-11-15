@@ -83,3 +83,7 @@
 .admin-buttons {
     text-decoration: none;
 }
+
+.errors {
+    list-style-type: none;
+}

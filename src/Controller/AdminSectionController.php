@@ -15,7 +15,7 @@ class AdminSectionController extends AbstractController
             ['sections' => $sections]
         );
     }
-    
+
     public function add(): ?string
     {
         return $this->twig->render('AdminSports/adminAddSports.html.twig');

@@ -75,3 +75,11 @@
     margin-right: 0;
     background-color: var(--bs-lightdark);
 }
+
+.admin-form {
+    background-color: var(--bs-lightdark);
+}
+
+.admin-buttons {
+    text-decoration: none;
+}

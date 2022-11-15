@@ -13,7 +13,7 @@ return [
     'bureau' => ['BoardController', 'index',],
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
-    'admin/sports/add' => ['AdminSectionController', 'add', ['id']],
+    'admin/sports/add' => ['AdminSectionController', 'add',],
     'items' => ['ItemController', 'index',],
     'administration' => ['AdminController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],

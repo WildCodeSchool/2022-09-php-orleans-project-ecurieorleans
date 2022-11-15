@@ -350,20 +350,28 @@ CREATE TABLE
 INSERT INTO
     `partner` (`name`, logo, `URL`)
 VALUES (
+        "Région Centre Val de Loire",
+        "/assets/images/Partner-img/RCVL-logo.png",
+        "https://www.centre-valdeloire.fr/"
+    ), (
         "Fédération Française de Motocyclisme",
-        "/assets/images/FFM-logo.png",
+        "/assets/images/Partner-img/FFM-logo.png",
         "https://www.ffmoto.org/"
     ), (
         "Fédération Française du Sport Automobile",
-        "/assets/images/FFSA-logo.jpg",
+        "/assets/images/Partner-img/FFSA-logo.png",
         "https://www.ffsa.org/"
     ), (
         "L'Union Française des Oeuvres Laïques d'Education Physique",
-        "/assets/images/ufolep-logo.png",
+        "/assets/images/Partner-img/Ufolep-logo.png",
         "https://www.ufolep.org/"
     ), (
-        "Région Centre-Val-de-Loire",
-        "/assets/images/RCVL-logo.png",
-        "https://www.centre-valdeloire.fr/"
+        "Loiret Département",
+        "/assets/images/Partner-img/Loiret-logo.png",
+        "https://www.loiret.fr/"
+    ), (
+        "Orléans Mairie",
+        "/assets/images/Partner-img/Orleans-logo.png",
+        "https://www.orleans-metropole.fr/"
     );
 

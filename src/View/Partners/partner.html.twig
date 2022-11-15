@@ -1,0 +1,14 @@
+{% extends "layout.html.twig"%}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/partner.css">
+{% endblock %}
+{% block content %}
+<div class="item">Nos Partenaires</div>
+<div class="startline"></div>
+<div class="partnerscontainer row justify-content-center align-items-center flex-wrap">
+    {% for partner in partners %}
+     <a class="col-6 col-md-3 d-flex justify-content-center " href="{{ partner.url }}"><img class="logo" src="{{ partner.logo }}"></a>   
+    {% endfor %}
+</div>
+    <div class="endline"></div>
+    {% endblock %}

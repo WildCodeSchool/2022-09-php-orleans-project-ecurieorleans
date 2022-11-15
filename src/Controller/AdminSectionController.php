@@ -19,6 +19,7 @@ class AdminSectionController extends AbstractController
     public function add(): ?string
     {
         return $this->twig->render('AdminSports/adminAddSports.html.twig');
+    }
 
     public function edit(int $id): string
     {

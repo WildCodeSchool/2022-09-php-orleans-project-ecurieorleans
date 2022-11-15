@@ -333,12 +333,12 @@ CREATE TABLE `event` (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
   imgPath TEXT ,
   title VARCHAR(255) NOT NULL,
-  course VARCHAR(255) NOT NULL,
+  courseType VARCHAR(255) NOT NULL,
   raceDate DATE NOT NULL,
   paragraph TEXT NOT NULL
 );
 
-INSERT INTO `event` (title, paragraph) VALUES ("Compétition rallye Orleans", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+INSERT INTO `event` (title,courseType, raceDate, paragraph) VALUES ("Compétition rallye Orleans", "Auto", '2022-04-07', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.");
 
 CREATE TABLE

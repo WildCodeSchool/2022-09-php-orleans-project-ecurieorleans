@@ -1,4 +1,4 @@
-{% extends 'admin_layout.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/card.css"/>
@@ -29,10 +29,9 @@
 										<label for="sportSelect">Type de course</label>
 									</h3>
 									<select class="col-6" name="sportSelect" id="sportSelect">
-										<option value="Auto" selected="{% if events.sportSelect == Auto %}{{ selected }}{% endif %}">Auto</option>
-										<option value="Moto" selected="{% if events.sportSelect == Moto %}{{ selected }}{% endif %}">Moto</option>
-										<option value="Handicar" selected="{% if events.sportSelect == Handicar %}{{ selected }}{% endif %}">Handicar</option>
-										<option value="Mecasport" selected="{% if events.sportSelect == Mecasport %}{{ selected }}{% endif %}">Mécasport</option>
+										{% for section in sections %}
+											<option value="{{section.name}}">{{section.name}}</option>
+										{% endfor %}
 									</select>
 								</div>
 								<div class="col-md-6 col-12 p-0 pt-3">

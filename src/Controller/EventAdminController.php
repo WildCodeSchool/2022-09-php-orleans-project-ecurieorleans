@@ -15,8 +15,8 @@ class EventAdminController extends AbstractController
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $events = array_map('trim', $_POST);
-            $errors = $this->errors1($events);
-            $errors1 = $this->errors2($errors);
+            $errors = $this->errorsForm($events);
+            $errors1 = $this->errorsFile($errors);
             if (empty($errors[0])) {
                 $addCard = new EventManager();
                 $addCard->addCard($events, $errors1[1]);
@@ -30,7 +30,7 @@ class EventAdminController extends AbstractController
         return $this->twig->render('AdminEvent/AdminAddEvent.html.twig');
     }
 
-    public function errors1(array $event)
+    public function errorsForm(array $event)
     {
         $tmp = [];
         $errors = [];
@@ -55,7 +55,7 @@ class EventAdminController extends AbstractController
         }
     }
 
-    public function errors2(array $tmp)
+    public function errorsFile(array $tmp)
     {
         $nameFile = $_FILES['eventImage']['tmp_name'];
         $tmp[] = $_FILES['eventImage']['name'];

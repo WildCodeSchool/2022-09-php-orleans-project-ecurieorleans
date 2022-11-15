@@ -16,11 +16,29 @@ class AdminSectionController extends AbstractController
         );
     }
 
-    public function edit(int $id): string
+    public function edit(int $id): ?string
     {
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $section = array_map('trim', $_POST);
+
+            if (empty($errors)) {
+                $sectionManager->update($section);
+                header('Location: /admin/sports/edit?id=' . $id);
+            }
+
+
+            return null;
+        }
 
         return $this->twig->render('AdminSports/adminEditSports.twig', ['section' => $section]);
+    }
+
+    private function checkErrorText()
+    {
+    }
+    private function checkErrorFile()
+    {
     }
 }

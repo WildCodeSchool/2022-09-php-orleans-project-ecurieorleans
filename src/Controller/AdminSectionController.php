@@ -21,6 +21,6 @@ class AdminSectionController extends AbstractController
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
 
-        return $this->twig->render('AdminSports/EditAdminSports.html.twig', ['section' => $section]);
+        return $this->twig->render('AdminSports/adminEditSports.twig', ['section' => $section]);
     }
 }

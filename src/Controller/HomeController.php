@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\AssociationManager;
 use App\Model\EventManager;
 
 class HomeController extends AbstractController

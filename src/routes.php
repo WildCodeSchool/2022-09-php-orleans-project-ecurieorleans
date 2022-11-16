@@ -9,6 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'eventAdmin' => ['EventAdminController', 'index'],
+    'eventAdmin/add' => ['EventAdminController', 'index'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
     'section' => ['SectionController', 'section', ['id']],

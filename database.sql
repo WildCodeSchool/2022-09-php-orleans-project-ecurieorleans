@@ -275,6 +275,7 @@ CREATE TABLE
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         imgPath TEXT,
         title VARCHAR(255) NOT NULL,
+        raceDate DATE,
         paragraph TEXT NOT NULL,
         section_id INT NULL,
         CONSTRAINT fk_event_section FOREIGN KEY (section_id) REFERENCES section(id)

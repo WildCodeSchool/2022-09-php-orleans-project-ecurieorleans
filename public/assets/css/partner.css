@@ -1,8 +1,4 @@
 .item {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    padding: 5px;
     font-weight: larger;
     font-size: 30px;
     font-family: Spiky016;      
@@ -10,20 +6,12 @@
 }
 
 .startline {
-    padding: 7px;
-    width: 75%;
-    background-color: rgb(var(--bs-primary-rgb));
-    margin: auto;
     border-radius: 5px 5px 5px;
     margin-bottom: 15px;
     opacity: 90%;
 }
 
 .endline {
-    padding: 7px;
-    width: 75%;
-    background-color: rgb(var(--bs-primary-rgb));
-    margin: auto;
     border-radius: 5px 5px 5px;
     margin-top: 15px;
     opacity: 90%;

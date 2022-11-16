@@ -18,5 +18,5 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['FormController', 'contact',],
-    'partner' => ['PartnerController', 'partner',]
+    'partenaires' => ['PartnerController', 'partner',]
 ];

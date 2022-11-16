@@ -1,14 +1,15 @@
-{% extends "layout.html.twig"%}
-{% block stylesheet %}
+{% extends "visitor_layout.html.twig"%}
+{% block stylesheetGrandChild %}
 <link rel="stylesheet" href="/assets/css/partner.css">
 {% endblock %}
 {% block content %}
-<div class="item">Nos Partenaires</div>
-<div class="startline"></div>
+<div class="item d-flex justify-content-center align-self-center p-3">Nos Partenaires</div>
+<div class="startline w-75 p-2 m-auto mb-3 bg-primary"></div>
 <div class="partnerscontainer row justify-content-center align-items-center flex-wrap">
     {% for partner in partners %}
-     <a class="col-6 col-md-3 d-flex justify-content-center " href="{{ partner.url }}"><img class="logo" src="{{ partner.logo }}"></a>   
+    <a class="col-6 col-md-3 d-flex justify-content-center" href="{{ partner.url }}"><img class="logo"
+            src="{{ partner.logo }}"></a>
     {% endfor %}
 </div>
-    <div class="endline"></div>
-    {% endblock %}
+<div class="endline w-75 p-2 m-auto mt-3 bg-primary"></div>
+{% endblock %}

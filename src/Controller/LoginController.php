@@ -23,4 +23,10 @@ class LoginController extends AbstractController
         }
         return $this->twig->render("Login/Login.html.twig");
     }
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        header('Location: /');
+    }
 }

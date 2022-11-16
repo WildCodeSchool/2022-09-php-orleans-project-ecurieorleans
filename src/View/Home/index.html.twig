@@ -40,16 +40,14 @@
 				</h2>
 			</div>
 			<div class=" blue-spacer bg-primary w-100"></div>
-			<p class="presentation-text m-5">
-				{{ association.presentation }}
-			</p>
+			<p class="presentation-text m-5"></p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
 		<section class="row g-3 justify-content-center">
 			{% for section in sections %}
 				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
-						<img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
+						<img class="mosaic-image w-100 " src="{% if section.header is not null %} {{'/assets/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt=" image of {{section.name}} ">
 						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
 					</a>
 				</div>

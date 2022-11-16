@@ -79,3 +79,7 @@
 .admin-form {
     background-color: var(--bs-lightdark);
 }
+
+.admin-buttons {
+    text-decoration: none;
+}

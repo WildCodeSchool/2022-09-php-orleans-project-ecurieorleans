@@ -20,6 +20,7 @@ class AdminSectionController extends AbstractController
             ['sections' => $sections]
         );
     }
+
     public function add(): ?string
     {
         $errors = [];
@@ -98,5 +99,13 @@ class AdminSectionController extends AbstractController
         }
 
         return $fileErrors;
+    }
+
+    public function edit(int $id): string
+    {
+        $sectionManager = new SectionManager();
+        $section = $sectionManager->selectOneById($id);
+
+        return $this->twig->render('AdminSports/adminEditSports.twig', ['section' => $section]);
     }
 }

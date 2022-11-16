@@ -26,17 +26,13 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<img src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" class="admin-header-image h-100 w-100 img-fluid rounded-start py-2" alt="header image of {{section.name}}">
+						<img src="{% if section.header is not null %} {{'/assets/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="admin-header-image h-100 w-100 img-fluid rounded-start py-2" alt="header image of {{section.name}}">
 					</div>
 				</div>
 			</div>
 			<div class="admin-right-buttons col-1 d-flex flex-column justify-content-center">
-				<div class="d-grid gap-2 col-4 mx-auto my-2">
-					{{include ('/Components/_editButton.html.twig')}}
-				</div>
-				<div class="d-grid gap-2 col-4 mx-auto my-2">
-					{{include ('/Components/_deleteButton.html.twig')}}
-				</div>
+				<div class="d-grid gap-2 col-4 mx-auto my-2"></div>
+				<div class="d-grid gap-2 col-4 mx-auto my-2"></div>
 			</div>
 		</div>
 	{% endfor %}

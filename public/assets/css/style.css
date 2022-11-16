@@ -62,3 +62,24 @@
 .shadow-none {
     text-shadow: none;
 }
+
+.admin-header-image {
+    object-fit: contain;
+}
+
+.admin-right-buttons {
+    width: 20%;
+}
+
+.admin-view-card {
+    margin-right: 0;
+    background-color: var(--bs-lightdark);
+}
+
+.admin-form {
+    background-color: var(--bs-lightdark);
+}
+
+.admin-buttons {
+    text-decoration: none;
+}

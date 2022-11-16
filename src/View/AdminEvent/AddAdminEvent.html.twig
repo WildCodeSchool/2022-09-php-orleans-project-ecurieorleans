@@ -1,0 +1,67 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block stylesheetGrandChild %}
+	<link rel="stylesheet" href="/assets/css/card.css"/>
+{% endblock %}
+
+{% block content%}
+	<form method="post" accept-charset="UTF-8" class=" form container-fluid mt-5" enctype="multipart/form-data">
+		<div class="row p-4">
+			<div class="col-md-3 col-12 p-0 pt-3">
+				<h3>
+					<label for="eventImage">Ajouter une image</label>
+				</h3>
+				<input id="eventImage" type="file" name="eventImage" class="col-6">
+			</div>
+			<div class="col-md-9 col-12 p-0">
+				<div>
+					<div class="row">
+						<div class="col-md-4 col-12 pt-3">
+							<h3>
+								<label for="raceName" class="text-center">Titre de la course</label>
+							</h3>
+							<input class="col-md-7 col-8" id="raceName" type="text" name="raceName" value="{% if events.raceName is defined %}{{ events.raceName }}{% endif %}">
+						</div>
+						<div class="col-md-8 col-12">
+							<div class="container row">
+								<div class="col-md-6 col-12 p-0 pt-3">
+									<h3>
+										<label for="sportSelect">Type de course</label>
+									</h3>
+									<select class="col-6" name="sportSelect" id="sportSelect">
+										{% for section in sections %}
+											<option value="{{section.id}}">{{section.name}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col-md-6 col-12 p-0 pt-3">
+									<h3>
+										<label for="date">Date</label>
+									</h3>
+									<div>
+										<div class="input-group date" id="datepicker">
+											<input type="date" class="form-control p-0" id="date" name="date" value="{% if events.date is defined %}{{ events.date }}{% endif %}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3>
+			<label class="mx-3" for="raceDescription">Description de la course</label>
+		</h3>
+		<textarea id="raceDescription" class="col-11 mx-3 p-4" name="raceDescription">{% if events.raceDescription is defined %}{{ events.raceDescription }}{% endif %}</textarea>
+
+		{% if errors is defined %}
+			<ul class="errors">
+				{% for error in errors %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		<input type="submit" value="Submit" class="col-md-1 col-4 mx-3" name="send">
+	</form>
+{% endblock %}

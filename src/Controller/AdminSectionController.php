@@ -37,7 +37,7 @@ class AdminSectionController extends AbstractController
 
             if (empty($errors)) {
                 if (empty($file['name'])) {
-                    $uniqueFileName = null;
+                    $uniqueFileName = $section['header'];
                 } else {
                     $uniqueFileName = uniqid() . $file['name'];
                 }

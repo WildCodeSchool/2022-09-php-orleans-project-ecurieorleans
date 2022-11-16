@@ -77,6 +77,7 @@ class AdminSectionController extends AbstractController
     private function checkFilesErrors(array $file): array
     {
         $fileErrors = [];
+        $extensions = [];
 
         if ($file['size'] > self::MAX_FILE_SIZE) {
             $fileErrors[] = 'L\'image doit faire moins de ' . self::MAX_FILE_SIZE / 1000 . ' Ko.';

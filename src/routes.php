@@ -17,11 +17,12 @@ return [
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],
+    'admin/sports/supprimer' => ['AdminSectionController', 'delete'],
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
+    'items/delete' => ['ItemController', 'delete'],
     'contact' => ['FormController', 'contact',]
 ];

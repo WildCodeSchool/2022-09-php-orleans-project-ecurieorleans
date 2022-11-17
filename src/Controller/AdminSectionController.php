@@ -104,4 +104,59 @@ class AdminSectionController extends AbstractController
 
         return $fileErrors;
     }
+
+    public function delete()
+    {
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = (int) trim($_POST['id']);
+            $validateMembers = $this->deleteValidationMember($id);
+            $validatePartners = $this->deleteValidationPartner($id);
+            $validateEvents = $this->deleteValidationEvent($id);
+            $errors = array_merge($validateMembers, $validatePartners, $validateEvents);
+
+            if (empty($errors)) {
+                $sectionManager = new SectionManager();
+                $sectionManager->delete((int)$id);
+                header('Location: /admin/sports');
+            } else {
+                return $this->twig->render('AdminSports/adminSports.html.twig', [
+                    'errors' => $errors
+                ]);
+            }
+        }
+    }
+
+    public function deleteValidationMember(int $id): array
+    {
+        $errors = [];
+        $sectionManager = new SectionManager();
+        $membersSectionID = $sectionManager->selectSectionIDofMember($id);
+        if (!empty($membersSectionID)) {
+            $errors[] = 'Cette section ne peut pas être supprimée car elle est liée à des membres de l\'association.';
+        }
+        return $errors;
+    }
+
+    public function deleteValidationPartner(int $id): array
+    {
+        $errors = [];
+        $sectionManager = new SectionManager();
+        $partnersSectionID = $sectionManager->selectSectionIDofPartner($id);
+        if (!empty($partnersSectionID)) {
+            $errors[] = 'Cette section ne peut pas être supprimée car elle est liée à des partenaires.';
+        }
+        return $errors;
+    }
+
+    public function deleteValidationEvent(int $id): array
+    {
+        $errors = [];
+        $sectionManager = new SectionManager();
+        $eventsSectionID = $sectionManager->selectSectionIDofEvent($id);
+        if (!empty($eventsSectionID)) {
+            $errors[] = 'Cette section ne peut pas être supprimée car elle est liée à un évènement.';
+        }
+        return $errors;
+    }
 }

@@ -7,6 +7,9 @@ use PDO;
 class SectionManager extends AbstractManager
 {
     public const TABLE = 'section';
+    public const JOIN_TABLE_1 = 'member';
+    public const JOIN_TABLE_2 = 'event';
+    public const JOIN_TABLE_3 = 'partner';
 
     public function update(array $section, ?string $uniqueFileName): bool
     {
@@ -18,5 +21,40 @@ class SectionManager extends AbstractManager
         $statement->bindValue('presentation', $section['presentation'], PDO::PARAM_STR);
 
         return $statement->execute();
+    }
+
+    public function selectSectionIDofMember(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_1 . ' as m' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function selectSectionIDofPartner(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_3 . ' as m' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+    public function selectSectionIDofEvent(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_2 . ' as m' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
     }
 }

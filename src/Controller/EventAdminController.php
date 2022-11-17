@@ -9,7 +9,15 @@ class EventAdminController extends AbstractController
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
     private const MAX_FILE_SIZE = 200000;
     public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
-    public function index(): string
+
+    public function index()
+    {
+        $eventsManager = new EventManager();
+        $events = $eventsManager->selectAll();
+        return $this->twig->render("AdminEvent/AdminEvent.html.twig", ['events' => $events]);
+    }
+
+    public function add(): string
     {
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,10 +31,10 @@ class EventAdminController extends AbstractController
                 } else {
                     $uniqueFiles = uniqid() . $_FILES['eventImage']['name'];
                 }
-                move_uploaded_file($_FILES['eventImage']['name'], self::UPLOADS_DIR_LOCATION);
+                move_uploaded_file($_FILES['eventImage']['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFiles);
                 $addCard = new EventManager();
                 $addCard->addCard($events, $uniqueFiles);
-                return $this->twig->render('AdminEvent/AddAdminEvent.html.twig');
+                header("Location: /admin/evenement");
             }
             return $this->twig->render(
                 'AdminEvent/AddAdminEvent.html.twig',
@@ -34,6 +42,34 @@ class EventAdminController extends AbstractController
             );
         }
         return $this->twig->render('AdminEvent/AddAdminEvent.html.twig');
+    }
+
+    public function edit(int $id): string
+    {
+        $errors =  [];
+        $eventManager = new EventManager();
+        $event = $eventManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $events = array_map('trim', $_POST);
+            $errorsForm = $this->errorsForm($events);
+            $errorsFiles = $this->errorsFile();
+            $errors = array_merge($errorsFiles, $errorsForm);
+            if (empty($errors)) {
+                if (empty($_FILES['eventImage'])) {
+                    $uniqueFiles = $_FILES['eventImage']['name'];
+                } else {
+                    $uniqueFiles = uniqid() . $_FILES['eventImage']['name'];
+                }
+                move_uploaded_file($_FILES['eventImage']['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFiles);
+                $eventManager->update($events, $uniqueFiles);
+                header("Location: /admin/evenement");
+            }
+            return $this->twig->render(
+                'AdminEvent/AddAdminEvent.html.twig',
+                ['errors' => $errors, 'events' => $events]
+            );
+        }
+        return $this->twig->render('AdminEvent/EditAdminEvent.html.twig', ["event" => $event, "errors" => $errors]);
     }
 
     public function errorsForm(array $event)

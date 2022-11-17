@@ -335,7 +335,8 @@ VALUES (
     ), (
         "Région Centre-Val-de-Loire",
         "/assets/images/RCVL-logo.png",
-        "https://www.centre-valdeloire.fr/"
+        "https://www.centre-valdeloire.fr/",
+        4
     );
 
 create table `admin`(

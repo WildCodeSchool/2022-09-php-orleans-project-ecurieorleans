@@ -7,8 +7,10 @@
 <div class="startline w-75 p-2 m-auto mb-3 bg-primary"></div>
 <div class="partnerscontainer row justify-content-center align-items-center flex-wrap">
     {% for partner in partners %}
-    <a class="col-6 col-md-3 d-flex justify-content-center" href="{{ partner.url }}"><img class="logo"
-            src="{{ partner.logo }}"></a>
+    <a class="col-6 col-md-3 d-flex justify-content-center" href="{{ partner.url }}"><img
+            src="{% if partner.logo is not null %} {{'/assets/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}"
+            class="admin-header-image h-100 w-100 img-fluid rounded-start py-2"
+            alt="Logo image of {{partner.name}}"></a>
     {% endfor %}
 </div>
 <div class="endline w-75 p-2 m-auto mt-3 bg-primary"></div>

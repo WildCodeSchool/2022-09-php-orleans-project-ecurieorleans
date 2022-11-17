@@ -1,0 +1,77 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block stylesheetGrandChild %}{% endblock %}
+
+{% block content %}
+	<h1 class="text-center my-4 mb-5">Évenèment</h1>
+	{% if errors  %}
+		<div class="d-flex justify-content-center flex-column align-items-center">
+			<svg xmlns=" http://www.w3.org/2000/svg" width=" 120" height=" 120" fill=" #FF0000" class=" bi bi-exclamation-triangle py-2" viewbox=" 0 0 16 16">
+				<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+				<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+			</svg>
+			{% for error in errors %}
+				<ul class="errors text-center text-danger fs-5">
+					<li>{{ error }}</li>
+				</ul>
+			{% endfor %}
+		</div>
+	{% endif %}
+	<form method="post" accept-charset="UTF-8" class=" form container-fluid mt-5" enctype="multipart/form-data" id="editEvent">
+		<input type="hidden" value="{{ event.id }}" name="id">
+		<div class="row p-4">
+			<div class="col-md-3 col-12 p-0 pt-3">
+				<h3>
+					<label for="eventImage">Ajouter une image</label>
+				</h3>
+				<input id="eventImage" type="file" name="eventImage" class="col-6" value="{% if event.imgPath is defined %}{{ event.imgPath }}{% endif %}">
+			</div>
+			<div class="col-md-9 col-12 p-0">
+				<div>
+					<div class="row">
+						<div class="col-md-4 col-12 pt-3">
+							<h3>
+								<label for="raceName" class="text-center">Titre de la course</label>
+							</h3>
+							<input class="col-md-7 col-8" id="raceName" type="text" name="raceName" value="{% if event.title is defined %}{{ event.title }}{% endif %}">
+						</div>
+						<div class="col-md-8 col-12">
+							<div class="container row">
+								<div class="col-md-6 col-12 p-0 pt-3">
+									<h3>
+										<label for="sportSelect">Type de course</label>
+									</h3>
+									<select class="col-6" name="sportSelect" id="sportSelect">
+										{% for section in sections %}
+											<option value="{{section.id}}">{{section.name}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col-md-6 col-12 p-0 pt-3">
+									<h3>
+										<label for="date">Date</label>
+									</h3>
+									<div>
+										<div class="input-group date" id="datepicker">
+											<input type="date" class="form-control p-0" id="date" name="date" value="{% if event.raceDate is defined %}{{ event.raceDate }}{% endif %}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3>
+			<label class="mx-3" for="raceDescription">Description de la course</label>
+		</h3>
+		<textarea id="raceDescription" class="col-11 mx-3 p-4" name="raceDescription">{% if event.paragraph is defined %}{{ event.paragraph }}{% endif %}</textarea>
+	</form>
+	<div class="d-flex justify-content-between w-75 m-auto">
+		<button type="submit" class="btn btn-success w-25 py-2" form="editEvent">Valider</button>
+		<button class="btn btn-outline-danger w-25 py-2">
+			<a href="/admin/evenement" class="admin-buttons text-danger">Annuler</a>
+		</button>
+	</div>
+{% endblock %}

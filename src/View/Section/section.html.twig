@@ -10,7 +10,7 @@
 	<header>
 		<div class="yellow-spacer bg-secondary"></div>
 		<div class="header-container text-light position-relative">
-			<img src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="header image of {{section.name}}" class="header-image h-100 w-100">
+			<img src="{% if section.header is not null %} {{'/assets/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt="header image of {{section.name}}" class="header-image h-100 w-100">
 			<h1 class="headerTitle position-absolute top-50 start-50 translate-middle">
 				{{section.name}}
 			</h1>

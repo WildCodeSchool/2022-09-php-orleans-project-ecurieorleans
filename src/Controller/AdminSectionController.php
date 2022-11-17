@@ -11,7 +11,6 @@ class AdminSectionController extends AbstractController
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
     public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
 
-
     public function index(): string
     {
         $sectionManager = new SectionManager();
@@ -20,6 +19,37 @@ class AdminSectionController extends AbstractController
             'AdminSports/adminSports.html.twig',
             ['sections' => $sections]
         );
+    }
+
+    public function add(): ?string
+    {
+        $errors = [];
+        $sectionManager = new SectionManager();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $section = array_map('trim', $_POST);
+            $sectionErrors = $this->checkErrors($section);
+            $file =  array_map('trim', $_FILES['header']);
+            $fileErrors = $this->checkFilesErrors($file);
+            $errors = array_merge($sectionErrors, $fileErrors);
+
+            if (empty($errors)) {
+                if (empty($file['name'])) {
+                    $uniqueFileName = null;
+                } else {
+                    $uniqueFileName = uniqid() . $file['name'];
+                }
+                move_uploaded_file($file['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFileName);
+                $sectionManager->insert($section, $uniqueFileName);
+
+                header('Location: /admin/sports');
+
+                return null;
+            }
+        }
+        return $this->twig->render('AdminSports/adminAddSports.html.twig', [
+            'errors' => $errors,
+        ]);
     }
 
     public function edit(int $id): ?string
@@ -56,18 +86,18 @@ class AdminSectionController extends AbstractController
         ]);
     }
 
-    private function checkErrors(array $sectionUpdated): array
+    private function checkErrors(array $section): array
     {
         $errors = [];
-        if (empty($sectionUpdated['name'])) {
+        if (empty($section['name'])) {
             $errors[] = 'Le nom de la section est obligatoire.';
         }
 
-        if (empty($sectionUpdated['presentation'])) {
+        if (empty($section['presentation'])) {
             $errors[] = 'La présentation de la section est obligatoire.';
         }
 
-        if (strlen($sectionUpdated['name']) > self::INPUT_MAX_LENGHT) {
+        if (strlen($section['name']) > self::INPUT_MAX_LENGHT) {
             $errors[] = 'Le nom de la section doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
 

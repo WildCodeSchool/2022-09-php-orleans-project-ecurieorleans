@@ -1,0 +1,36 @@
+.item {
+    font-weight: larger;
+    font-size: 30px;
+    font-family: Spiky016;      
+    src: url(/assets/fonts/Spiky016-axa75.otf);
+}
+
+.startline {
+    border-radius: 5px 5px 5px;
+    margin-bottom: 15px;
+    opacity: 90%;
+}
+
+.endline {
+    border-radius: 5px 5px 5px;
+    margin-top: 15px;
+    opacity: 90%;
+}
+
+.partnerscontainer {
+    height:700px;
+    background-image: url('/assets/images/partner1.jpeg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+width:20vw;
+background-color: var(--bs-lightdark-rgb);
+opacity:70%;
+}
+
+
+
+

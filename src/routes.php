@@ -15,7 +15,7 @@ return [
     'bureau' => ['BoardController', 'index',],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
-    'section' => ['SectionController', 'section', ['id']],
+    'section' => ['SectionController', 'index', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
     'admin/sports/add' => ['AdminSectionController', 'add',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],

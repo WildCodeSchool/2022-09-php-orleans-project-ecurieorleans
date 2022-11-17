@@ -25,8 +25,8 @@ class SectionManager extends AbstractManager
 
     public function selectSectionIDofMember(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_1 . ' as m' .
-            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_1 . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
@@ -37,8 +37,8 @@ class SectionManager extends AbstractManager
 
     public function selectSectionIDofPartner(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_3 . ' as m' .
-            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_3 . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
@@ -48,8 +48,8 @@ class SectionManager extends AbstractManager
     }
     public function selectSectionIDofEvent(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT ' . 'm.id' . ' FROM ' . self::JOIN_TABLE_2 . ' as m' .
-            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=m.' .
+        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_2 . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;

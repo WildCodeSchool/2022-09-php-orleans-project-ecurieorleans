@@ -344,7 +344,7 @@ VALUES (
         "Région Centre-Val-de-Loire",
         "/assets/images/RCVL-logo.png",
         "https://www.centre-valdeloire.fr/",
-        null
+        4
     );
 
 create table

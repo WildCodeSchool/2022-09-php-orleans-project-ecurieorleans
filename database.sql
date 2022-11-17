@@ -282,24 +282,28 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `event` (title, paragraph, section_id)
+    `event` (title, raceDate, paragraph, section_id)
 VALUES (
         "Compétition rallye Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         1
     ), (
         "Compétition moto Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         2
     ), (
         "Compétition Handi-car Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         3
     ), (
         "Compétition Méca sport Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         4

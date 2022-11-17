@@ -229,6 +229,7 @@ CREATE TABLE
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         imgPath TEXT,
         title VARCHAR(255) NOT NULL,
+        raceDate DATE,
         paragraph TEXT NOT NULL,
         section_id INT NULL,
         CONSTRAINT fk_event_section FOREIGN KEY (section_id) REFERENCES section(id)
@@ -301,3 +302,11 @@ VALUES (
         "https://www.orleans-metropole.fr/",
         NULL
     );
+
+create table `admin`(
+    id int not null auto_increment primary key,
+    email VARCHAR(255) not null,
+    `password` VARCHAR(255) not null
+);
+
+insert into `admin` (email, `password`) VALUES ("admin@admin.com", "$2y$10$P6XsqsX2aQw/xGTFMtPGh.9ovrdqhWnMzaUfhDk6mytDFmAtctYcC");

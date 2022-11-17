@@ -20,11 +20,11 @@ class EventManager extends AbstractManager
         $statement->bindValue(":section_id", $event['sportSelect'], PDO::PARAM_INT);
         $statement->execute();
     }
-    public function update(array $events, ?string $uniqueFileName): bool
+    public function update(array $events, ?string $uniqueFileName, $id): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET  imgPath = :imgPath, title = :title,
         raceDate = :raceDate, paragraph = :paragraph, section_id = :section_id WHERE id=:id");
-        $statement->bindValue('id', $events['id'], PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->bindValue('title', $events['raceName'], PDO::PARAM_STR);
         $statement->bindValue('imgPath', $uniqueFileName, PDO::PARAM_STR);
         $statement->bindValue("raceDate", $events['date'], PDO::PARAM_STR_CHAR);

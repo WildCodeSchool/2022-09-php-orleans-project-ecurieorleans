@@ -11,6 +11,7 @@ return [
     'admin/evenement' => ['EventAdminController', 'index'],
     'admin/evenement/add' => ['EventAdminController', 'add'],
     'admin/evenement/edit' => ['EventAdminController', 'edit', ['id']],
+    'admin/evenement/supprimer' => ['EventAdminController', 'delete'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
     'admin/login' => ['LoginController', 'login'],

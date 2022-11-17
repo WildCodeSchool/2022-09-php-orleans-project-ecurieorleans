@@ -305,7 +305,6 @@ VALUES (
         "Orleans-logo.png",
         "https://www.orleans-metropole.fr/",
         NULL
-
     );
 
 create table `admin`(

@@ -9,8 +9,11 @@
 return [
     '' => ['HomeController', 'index',],
     'eventAdmin' => ['EventAdminController', 'index'],
+    'eventAdmin/add' => ['EventAdminController', 'index'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/login' => ['LoginController', 'login'],
+    'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
     'admin/sports/add' => ['AdminSectionController', 'add',],

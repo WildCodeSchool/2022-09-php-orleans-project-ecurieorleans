@@ -52,6 +52,40 @@ class AdminSectionController extends AbstractController
         ]);
     }
 
+    public function edit(int $id): ?string
+    {
+        $errors = [];
+        $sectionManager = new SectionManager();
+        $section = $sectionManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $sectionUpdated = array_map('trim', $_POST);
+            $sectionErrors = $this->checkErrors($sectionUpdated);
+            $file =  array_map('trim', $_FILES['header']);
+            $fileErrors = $this->checkFilesErrors($file);
+            $errors = array_merge($sectionErrors, $fileErrors);
+
+            if (empty($errors)) {
+                if (empty($file['name'])) {
+                    $uniqueFileName = $section['header'];
+                } else {
+                    $uniqueFileName = uniqid() . $file['name'];
+                }
+                move_uploaded_file($file['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFileName);
+                $sectionManager->update($sectionUpdated, $uniqueFileName);
+
+                header('Location: /admin/sports');
+
+                return null;
+            }
+        }
+
+        return $this->twig->render('AdminSports/adminEditSports.twig', [
+            'section' => $section,
+            'errors' => $errors,
+        ]);
+    }
+
     private function checkErrors(array $section): array
     {
         $errors = [];
@@ -99,13 +133,5 @@ class AdminSectionController extends AbstractController
         }
 
         return $fileErrors;
-    }
-
-    public function edit(int $id): string
-    {
-        $sectionManager = new SectionManager();
-        $section = $sectionManager->selectOneById($id);
-
-        return $this->twig->render('AdminSports/adminEditSports.twig', ['section' => $section]);
     }
 }

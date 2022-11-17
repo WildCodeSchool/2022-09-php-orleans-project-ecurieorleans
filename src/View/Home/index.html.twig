@@ -41,7 +41,7 @@
 			</div>
 			<div class=" blue-spacer bg-primary w-100"></div>
 			<p class="presentation-text m-5">
-				{{ association.presentation }}
+				L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste, bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
 			</p>
 			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
 		</section>
@@ -49,7 +49,7 @@
 			{% for section in sections %}
 				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
-						<img class="mosaic-image w-100 " src="{{'assets/upload/'~section.header is null ? '/assets/images/imgPlaceHolder.webp' : section.header}}" alt="image of {{section.name}}">
+						<img class="mosaic-image w-100 " src="{% if section.header is not null %} {{'/assets/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt=" image of {{section.name}} ">
 						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
 					</a>
 				</div>

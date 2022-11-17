@@ -65,6 +65,7 @@
 
 .admin-header-image {
     object-fit: contain;
+    height: 300px;
 }
 
 .admin-right-buttons {
@@ -82,4 +83,8 @@
 
 .admin-buttons {
     text-decoration: none;
+}
+
+.errors {
+    list-style-type: none;
 }

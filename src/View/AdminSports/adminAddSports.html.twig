@@ -1,0 +1,8 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block stylesheetGrandChild %}{% endblock %}
+
+{% block content %}
+	<h1 class="text-center my-4 mb-5">Nouvelle section sport</h1>
+	{{include ('/Components/_admin_form_add_sports.html.twig')}}
+{% endblock %}

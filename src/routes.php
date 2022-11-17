@@ -16,6 +16,7 @@ return [
     'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
+    'admin/sports/add' => ['AdminSectionController', 'add',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],

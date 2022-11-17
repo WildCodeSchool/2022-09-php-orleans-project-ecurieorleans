@@ -308,7 +308,7 @@ CREATE TABLE
     `partner` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(255) NOT NULL,
-        logo TEXT NOT NULL,
+        logo TEXT NULL,
         `URL` TEXT NOT NULL,
         section_id INT NULL,
         CONSTRAINT fk_partner_section FOREIGN KEY (section_id) REFERENCES section(id)
@@ -318,22 +318,32 @@ INSERT INTO
     `partner` (`name`, logo, `URL`, section_id)
 VALUES (
         "Fédération Française de Motocyclisme",
-        "/assets/images/FFM-logo.png",
+        "FFM-logo.png",
         "https://www.ffmoto.org/",
         2
     ), (
         "Fédération Française du Sport Automobile",
-        "/assets/images/FFSA-logo.jpg",
+        "FFSA-logo.png",
         "https://www.ffsa.org/",
         1
     ), (
         "L'Union Française des Oeuvres Laïques d'Education Physique",
-        "/assets/images/ufolep-logo.png",
+        "Ufolep-logo.png",
         "https://www.ufolep.org/",
         3
     ), (
         "Région Centre-Val-de-Loire",
-        "/assets/images/RCVL-logo.png",
+        "RCVL-logo.png",
         "https://www.centre-valdeloire.fr/",
+        NULL
+    ), ( 
+        "Loiret Département",
+        "Loiret-logo.png",
+        "https://www.loiret.fr/",
+        NULL
+    ), (
+        "Orléans Mairie",
+        "Orleans-logo.png",
+        "https://www.orleans-metropole.fr/",
         NULL
     );

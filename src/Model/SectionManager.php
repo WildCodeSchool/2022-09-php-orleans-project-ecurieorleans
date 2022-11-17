@@ -3,13 +3,13 @@
 namespace App\Model;
 
 use PDO;
+use App\Model\BoardManager;
+use App\Model\EventManager;
+use App\Model\PartnerManager;
 
 class SectionManager extends AbstractManager
 {
     public const TABLE = 'section';
-    public const JOIN_TABLE_1 = 'member';
-    public const JOIN_TABLE_2 = 'event';
-    public const JOIN_TABLE_3 = 'partner';
 
     public function insert(array $section, ?string $uniqueFileName): int
     {
@@ -37,7 +37,7 @@ class SectionManager extends AbstractManager
 
     public function selectSectionIDofMember(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_1 . ' as x' .
+        $query = 'SELECT x.id FROM ' . BoardManager::TABLE . ' as x' .
             ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {
@@ -49,7 +49,7 @@ class SectionManager extends AbstractManager
 
     public function selectSectionIDofPartner(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_3 . ' as x' .
+        $query = 'SELECT x.id FROM ' . PartnerManager::TABLE . ' as x' .
             ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {
@@ -60,7 +60,7 @@ class SectionManager extends AbstractManager
     }
     public function selectSectionIDofEvent(int $id, string $orderBy = '', string $direction = 'ASC')
     {
-        $query = 'SELECT x.id FROM ' . self::JOIN_TABLE_2 . ' as x' .
+        $query = 'SELECT x.id FROM ' . EventManager::TABLE . ' as x' .
             ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
             static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
         if ($orderBy) {

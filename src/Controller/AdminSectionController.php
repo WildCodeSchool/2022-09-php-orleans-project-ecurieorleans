@@ -157,7 +157,7 @@ class AdminSectionController extends AbstractController
         }
     }
 
-    public function deleteValidationMember(int $id): array
+    private function deleteValidationMember(int $id): array
     {
         $errors = [];
         $sectionManager = new SectionManager();
@@ -168,7 +168,7 @@ class AdminSectionController extends AbstractController
         return $errors;
     }
 
-    public function deleteValidationPartner(int $id): array
+    private function deleteValidationPartner(int $id): array
     {
         $errors = [];
         $sectionManager = new SectionManager();
@@ -179,7 +179,7 @@ class AdminSectionController extends AbstractController
         return $errors;
     }
 
-    public function deleteValidationEvent(int $id): array
+    private function deleteValidationEvent(int $id): array
     {
         $errors = [];
         $sectionManager = new SectionManager();

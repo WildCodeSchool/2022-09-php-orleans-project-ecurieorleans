@@ -3,6 +3,9 @@
 namespace App\Model;
 
 use PDO;
+use App\Model\BoardManager;
+use App\Model\EventManager;
+use App\Model\PartnerManager;
 
 class SectionManager extends AbstractManager
 {
@@ -29,5 +32,40 @@ class SectionManager extends AbstractManager
         $statement->bindValue('presentation', $section['presentation'], PDO::PARAM_STR);
 
         return $statement->execute();
+    }
+
+    public function selectSectionIDofMember(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT x.id FROM ' . BoardManager::TABLE . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function selectSectionIDofPartner(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT x.id FROM ' . PartnerManager::TABLE . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+    public function selectSectionIDofEvent(int $id, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT x.id FROM ' . EventManager::TABLE . ' as x' .
+            ' LEFT JOIN ' . static::TABLE . ' ON ' . static::TABLE . '.id=x.' .
+            static::TABLE . '_id' . ' WHERE ' . static::TABLE . '.id=' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
     }
 }

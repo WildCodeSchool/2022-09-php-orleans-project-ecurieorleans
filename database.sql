@@ -24,6 +24,14 @@ Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habita
         "Mécasport",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Test",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+    ), (
+        "Test 2",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
     );
 
 CREATE TABLE
@@ -149,7 +157,7 @@ VALUES (
         "h.duarte@gmail.com",
         FALSE,
         NULL,
-        NULL
+        5
     ), (
         "Dominique",
         "Jouas",
@@ -306,11 +314,17 @@ VALUES (
         "https://www.orleans-metropole.fr/",
         NULL
     );
+    
+CREATE TABLE
+    `admin`(
+        id int not null auto_increment primary key,
+        email VARCHAR(255) not null,
+        `password` VARCHAR(255) not null
+    );
 
-create table `admin`(
-    id int not null auto_increment primary key,
-    email VARCHAR(255) not null,
-    `password` VARCHAR(255) not null
-);
-
-insert into `admin` (email, `password`) VALUES ("admin@admin.com", "$2y$10$P6XsqsX2aQw/xGTFMtPGh.9ovrdqhWnMzaUfhDk6mytDFmAtctYcC");
+INSERT INTO
+    `admin` (email, `password`)
+VALUES (
+        "admin@admin.com",
+        "$2y$10$P6XsqsX2aQw/xGTFMtPGh.9ovrdqhWnMzaUfhDk6mytDFmAtctYcC"
+    );

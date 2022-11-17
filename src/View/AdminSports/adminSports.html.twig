@@ -3,6 +3,19 @@
 {% block stylesheetGrandChild %}{% endblock %}
 
 {% block content %}
+	{% if errors  %}
+		<div class="d-flex justify-content-center flex-column align-items-center">
+			<svg xmlns=" http://www.w3.org/2000/svg" width=" 120" height=" 120" fill=" #FF0000" class=" bi bi-exclamation-triangle py-2" viewbox=" 0 0 16 16">
+				<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+				<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+			</svg>
+			{% for error in errors %}
+				<ul class="errors text-center text-danger fs-5">
+					<li>{{ error }}</li>
+				</ul>
+			{% endfor %}
+		</div>
+	{% endif %}
 	<h1 class="text-center my-4 mb-5">Sections sports</h1>
 	<div class="d-grid gap-2 col-4 mx-auto my-4">
 		<button class="btn btn-success d-flex justify-content-center align-items-center gap-2" type="button">
@@ -37,15 +50,17 @@
 						</svg>
 						<a href="/admin/sports/edit?id={{ section.id }}" class="admin-buttons">Éditer</a>
 					</button>
-
 				</div>
 				<div class="d-grid gap-2 col-4 mx-auto my-2">
-					<button class="btn btn-danger d-flex justify-content-center align-items-center gap-2" type="button">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAFAFD" class="bi bi-trash3" viewbox="0 0 16 16">
-							<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-						</svg>
-						<a href="#" class="admin-buttons text-light">Supprimer</a>
-					</button>
+					<form action="/admin/sports/supprimer" method="post" id="delete-sports" onsubmit="return confirm('Souhaitez-vous vraiment supprimer cette section ?')">
+						<input type="hidden" value="{{ section.id }}" name="id">
+						<button type="submit" class="btn btn-danger d-flex justify-content-center align-items-center gap-2 admin-buttons text-light">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAFAFD" class="bi bi-trash3" viewbox="0 0 16 16">
+								<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+							</svg>
+							Supprimer
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>

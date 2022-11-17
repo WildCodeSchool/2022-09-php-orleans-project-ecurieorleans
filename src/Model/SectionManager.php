@@ -20,11 +20,12 @@ class SectionManager extends AbstractManager
   
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
+    }
 
     public function update(array $section, ?string $uniqueFileName): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name, header = :header,
-         presentation = :presentation WHERE id=:id");
+        presentation = :presentation WHERE id=:id");
         $statement->bindValue('id', $section['id'], PDO::PARAM_INT);
         $statement->bindValue('name', $section['name'], PDO::PARAM_STR);
         $statement->bindValue('header', $uniqueFileName, PDO::PARAM_STR);

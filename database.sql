@@ -1,49 +1,3 @@
--- Active: 1665739511183@@127.0.0.1@3306@stables_orleans
-
--- phpMyAdmin SQL Dump
-
--- version 4.5.4.1deb2ubuntu2
-
--- http://www.phpmyadmin.net
-
---
-
--- Client :  localhost
-
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
-
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
-
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
-SET time_zone = "+00:00";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
-
-;
-
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
-
-;
-
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
-
-;
-
-/*!40101 SET NAMES utf8mb4 */
-
-;
-
---
-
--- Base de données :  `simple-mvc`
-
---
-
--- --------------------------------------------------------
-
 CREATE TABLE
     section(
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -282,24 +236,28 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `event` (title, paragraph, section_id)
+    `event` (title, raceDate, paragraph, section_id)
 VALUES (
         "Compétition rallye Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         1
     ), (
         "Compétition moto Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         2
     ), (
         "Compétition Handi-car Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         3
     ), (
         "Compétition Méca sport Orleans",
+        "2022-06-25",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
 Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
         4
@@ -347,6 +305,7 @@ VALUES (
         "Orleans-logo.png",
         "https://www.orleans-metropole.fr/",
         NULL
+
     );
 
 create table `admin`(

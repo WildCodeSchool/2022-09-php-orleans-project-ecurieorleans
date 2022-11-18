@@ -44,6 +44,7 @@ CREATE TABLE
         mail VARCHAR(150),
         is_board_member BOOLEAN NOT NULL,
         `role` VARCHAR(255),
+        section_responsability VARCHAR(50),
         section_id INT NULL,
         CONSTRAINT fk_member_section FOREIGN KEY (section_id) REFERENCES section(id)
     );
@@ -57,6 +58,7 @@ INSERT INTO
         mail,
         is_board_member,
         `role`,
+        section_responsability,
         section_id
     )
 VALUES (
@@ -67,6 +69,7 @@ VALUES (
         "m.lempereur@gmail.com",
         TRUE,
         "Président d'honneur",
+        NULL,
         NULL
     ), (
         "Jean-Claude",
@@ -76,6 +79,7 @@ VALUES (
         "jc.painchault@gmail.com",
         TRUE,
         "Président",
+        "Responsable",
         1
     ), (
         "Jean-Marc",
@@ -85,6 +89,7 @@ VALUES (
         "jm.pelletier@gmail.com",
         TRUE,
         "Vice-président",
+        "Adjoint",
         1
     ), (
         "Pascal",
@@ -94,6 +99,7 @@ VALUES (
         "p.perdereau@gmail.com",
         TRUE,
         "Vice-président",
+        "Responsable",
         4
     ), (
         "Carole",
@@ -103,6 +109,7 @@ VALUES (
         "c.marechal@gmail.com",
         TRUE,
         "Secrétaire",
+        "Adjoint",
         1
     ), (
         "Jacky",
@@ -112,6 +119,7 @@ VALUES (
         "j.casanueva@gmail.com",
         TRUE,
         "Secrétaire adjoint",
+        "Responsable",
         2
     ), (
         "Olivier",
@@ -121,6 +129,7 @@ VALUES (
         "o.venot@gmail.com",
         TRUE,
         "Trésorier",
+        NULL,
         1
     ), (
         "Pascal",
@@ -129,6 +138,7 @@ VALUES (
         "02 00 00 00 00",
         "p.billard@gmail.com",
         FALSE,
+        "Entraîneur",
         "Entraîneur",
         2
     ), (
@@ -139,6 +149,7 @@ VALUES (
         "m.debat@gmail.com",
         TRUE,
         "Trésorier adjoint",
+        "Adjoint",
         4
     ), (
         "Roselyne",
@@ -148,6 +159,7 @@ VALUES (
         "r.tardif@gmail.com",
         TRUE,
         "Trésorière adjoint",
+        NULL,
         2
     ), (
         "Helder",
@@ -156,6 +168,7 @@ VALUES (
         "02 00 00 00 00",
         "h.duarte@gmail.com",
         FALSE,
+        NULL,
         NULL,
         5
     ), (
@@ -166,6 +179,7 @@ VALUES (
         "d.jouas@gmail.com",
         FALSE,
         "Entraîneur",
+        "Entraîneur",
         3
     ), (
         "Philippe",
@@ -175,6 +189,7 @@ VALUES (
         "p.jubert@gmail.com",
         FALSE,
         NULL,
+        'Responsable',
         3
     ), (
         "Guillaume",
@@ -184,6 +199,7 @@ VALUES (
         "g.lecouflet@gmail.com",
         FALSE,
         NULL,
+        'Adjoint',
         3
     ), (
         "Sylvain",
@@ -192,6 +208,7 @@ VALUES (
         "02 00 00 00 00",
         "s.migniot@gmail.com",
         FALSE,
+        "Entraîneur",
         "Entraîneur",
         1
     ), (
@@ -202,6 +219,7 @@ VALUES (
         "v.perdereau@gmail.com",
         FALSE,
         NULL,
+        NULL,
         3
     ), (
         "Paulin",
@@ -210,6 +228,7 @@ VALUES (
         "02 00 00 00 00",
         "p.pinsart@gmail.com",
         FALSE,
+        "Entraîneur",
         "Entraîneur",
         4
     ), (
@@ -220,6 +239,7 @@ VALUES (
         "r.soulas@gmail.com",
         FALSE,
         NULL,
+        NULL,
         NULL
     ), (
         "Jean-Luc",
@@ -229,6 +249,7 @@ VALUES (
         "jl.martineau@gmail.com",
         FALSE,
         NULL,
+        'Adjoint',
         2
     );
 
@@ -244,7 +265,12 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `event` (title, raceDate, paragraph, section_id)
+    `event` (
+        title,
+        raceDate,
+        paragraph,
+        section_id
+    )
 VALUES (
         "Compétition rallye Orleans",
         "2022-06-25",
@@ -303,7 +329,7 @@ VALUES (
         "RCVL-logo.png",
         "https://www.centre-valdeloire.fr/",
         NULL
-    ), ( 
+    ), (
         "Loiret Département",
         "Loiret-logo.png",
         "https://www.loiret.fr/",
@@ -314,7 +340,7 @@ VALUES (
         "https://www.orleans-metropole.fr/",
         NULL
     );
-    
+
 CREATE TABLE
     `admin`(
         id int not null auto_increment primary key,

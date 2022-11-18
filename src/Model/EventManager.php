@@ -32,4 +32,14 @@ class EventManager extends AbstractManager
         $statement->bindValue("section_id", $events['sportSelect'], PDO::PARAM_INT);
         return $statement->execute();
     }
+
+    public function selectAllEventsBySectionID(int $sectionId, string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT * FROM ' . self::TABLE . ' WHERE section_id=' . $sectionId;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

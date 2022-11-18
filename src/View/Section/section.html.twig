@@ -3,6 +3,7 @@
 {% block stylesheetGrandChild %}
 
 	<link rel="stylesheet" href="/assets/css/section.css"/>
+	<link rel="stylesheet" href="/assets/css/card.css"/>
 
 {% endblock %}
 
@@ -17,4 +18,139 @@
 		</div>
 		<div class="yellow-spacer bg-secondary"></div>
 	</header>
+	<div class="titleContentLight mt-4 p-2 px-4 d-flex align-items-center">
+		<h2 class="titleLight m-auto text-primary py-2">Présentation</h2>
+	</div>
+	<div class=" blue-spacer bg-primary"></div>
+	<section class="sports-events">
+		<p class="text-center p-4 fs-5">
+			{{section.presentation}}
+		</p>
+		<div class="blue-spacer bg-primary w-50 m-auto"></div>
+	</section>
+
+	<section class="sports-events">
+		<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
+			<h2 class="title text-center text-light p-2 py-3">Evènements
+				{{section.name}}</h2>
+		</div>
+		<div class="cards">
+			<div class="cards-container bg-dark h-100">
+				{% for event in events %}
+					<div class="card m-auto col-lg-10">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="{% if event.imgPath is not null %} {{'/assets/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+							</div>
+							<div class="col-md-7 mx-md-4">
+								<div class="card-body">
+									<h3 class="card-title">{{ event.title }}</h3>
+									<div class="row mx-2 my-4">
+										<h4 class="col-2 course bg-primary pt-2 text-light">
+											{{event.course}}
+										</h4>
+										<h4 class="date pt-2 text-center text-dark bg-secondary">
+											Date
+										</h4>
+									</div>
+								</div>
+								<p class="card-text text-dark">
+									{{ event.paragraph }}
+								</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="titleContentLight mt-4 p-2 px-4 d-flex align-items-center">
+			<h2 class="titleLight m-auto text-primary py-2">Organisation</h2>
+		</div>
+		{% set memberResponsabilityCount = 0 %}
+		{% for member in members %}
+			{% if member.section_responsability is not null %}
+				{% set memberResponsabilityCount = memberResponsabilityCount + 1 %}
+			{% endif %}
+		{% endfor %}
+		{% if memberResponsabilityCount == 0 %}
+			<div class="d-flex justify-content-center align-items-center gap-3 my-5">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-stopwatch" viewbox="0 0 16 16">
+					<path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+					<path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+				</svg>
+				<p class="fs-4 text-center my-5">Organisation à venir !</p>
+			</div>
+		{% else %}
+			<table class="sports-table text-center fs-5 m-auto my-5">
+				<thead>
+					<tr>
+						<th>Responsable :</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for member in members %}
+						{% if member.section_responsability == 'Responsable' %}
+							<tr>
+								<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
+							</tr>
+							<tr>
+								<td>{{member.phone}}</td>
+							</tr>
+							<tr>
+								<td>{{member.mail}}</td>
+							</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+				<thead>
+					<tr>
+						<th>Adjoint :</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for member in members %}
+						{% if member.section_responsability == 'Adjoint' %}
+							<tr>
+								<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
+							</tr>
+							<tr>
+								<td>{{member.phone}}</td>
+							</tr>
+							<tr>
+								<td>{{member.email}}</td>
+							</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+				<thead>
+					<tr>
+						<th>Entraîneur :</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for member in members %}
+						{% if member.section_responsability == 'Entraîneur' %}
+							<tr>
+								<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
+							</tr>
+							<tr>
+								<td>{{member.phone}}</td>
+							</tr>
+							<tr>
+								<td>{{member.email}}</td>
+							</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+		<div class="blue-spacer bg-primary w-50 m-auto"></div>
+		<div class="d-flex justify-content-center my-5 align-items-center">
+			<h3 class="bg-primary p-3">
+				<a class="text-light text-decoration-none" href="/contact">Je deviens Membre</a>
+			</h3>
+		</div>
+	</section>
 {% endblock %}

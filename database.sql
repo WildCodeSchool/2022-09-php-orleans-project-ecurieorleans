@@ -275,7 +275,7 @@ CREATE TABLE
     `partner` (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(255) NOT NULL,
-        logo TEXT NOT NULL,
+        logo TEXT NULL,
         `URL` TEXT NOT NULL,
         section_id INT NULL,
         CONSTRAINT fk_partner_section FOREIGN KEY (section_id) REFERENCES section(id)

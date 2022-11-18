@@ -23,5 +23,7 @@ return [
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
     'contact' => ['FormController', 'contact',],
+    'admin/partenaires' => ['AdminPartnerController', 'index',],
+    'admin/partenaires/add' => ['AdminPartnerController', 'add',]
     'partenaires' => ['PartnerController', 'partner',]
 ];

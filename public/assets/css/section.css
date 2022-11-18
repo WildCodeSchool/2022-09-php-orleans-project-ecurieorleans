@@ -6,3 +6,12 @@
 .header-image {
     object-fit: cover;
 }
+
+.sports-events {
+    padding-block-end: 10rem;
+}
+
+.sports-table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}

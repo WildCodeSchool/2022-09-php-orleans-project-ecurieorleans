@@ -15,7 +15,7 @@ return [
     'bureau' => ['BoardController', 'index',],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
-    'section' => ['SectionController', 'section', ['id']],
+    'section' => ['SectionController', 'index', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
     'admin/sports/add' => ['AdminSectionController', 'add',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],
@@ -23,5 +23,7 @@ return [
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
     'contact' => ['FormController', 'contact',],
+    'admin/partenaires' => ['AdminPartnerController', 'index',],
+    'admin/partenaires/add' => ['AdminPartnerController', 'add',],
     'partenaires' => ['PartnerController', 'partner',]
 ];

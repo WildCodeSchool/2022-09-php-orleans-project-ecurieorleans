@@ -26,9 +26,11 @@
 }
 
 .titleContent {
-    margin-left: 55px;
+    margin-left: 15px;
     margin-block-end: -20px;
-    width: clamp(250px, 25%, 550px);
+    z-index: 1;
+    position: relative;
+    width: clamp(250px, 40%, 600px);
     transform: skew(-20deg);
     box-shadow: 0px 4px 4px var(--box-shadow);
 }

@@ -67,11 +67,11 @@
     margin-block-start: 20px;
 }
 
-.divJoin{
-    border-block: 8px solid var(--bs-secondary);
+.divJoin {
+    border-top: 8px solid var(--bs-secondary);
 }
 
-.contact{
+.contact {
     width: fit-content;
     transform: skew(-20deg);
     border: 2px solid var(--bs-primary);
@@ -79,7 +79,7 @@
     margin-top: -100px;
 }
 
-.member{
+.member {
     width: fit-content;
     transform: skew(-20deg);
     border: 2px solid var(--bs-primary);

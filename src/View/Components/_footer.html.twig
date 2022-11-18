@@ -1,13 +1,6 @@
 <footer>
 	<div class="yellow-spacer bg-secondary"></div>
 	<div class="footer-container bg-dark d-flex flex-column pt-3">
-		<div class="py-3 d-flex align-items-center w-100 flex-wrap gap-3 justify-content-around">
-			{% for partner in partners %}
-				<a href="{{partner.URL}}" class="footer-link">
-					<img src="{% if partner.logo is not null %} {{'/assets/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="admin-header-image h-100 w-100 img-fluid rounded-start py-2" alt="Logo image of {{partner.name}}">
-				</a>
-			{% endfor %}
-		</div>
 		<div class="footer-link-container d-flex justify-content-around py-3">
 			<li>
 				<a href="" class="text-light footer-link">À propos</a>

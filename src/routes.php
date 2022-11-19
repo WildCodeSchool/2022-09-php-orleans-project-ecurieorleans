@@ -8,11 +8,16 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     '' => ['HomeController', 'index',],
-    'eventAdmin' => ['EventAdminController', 'index'],
+    'admin/evenement' => ['EventAdminController', 'index'],
+    'admin/evenement/add' => ['EventAdminController', 'add'],
+    'admin/evenement/edit' => ['EventAdminController', 'edit', ['id']],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/login' => ['LoginController', 'login'],
+    'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
+    'admin/sports/add' => ['AdminSectionController', 'add',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
@@ -22,5 +27,6 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['FormController', 'contact',],
     'admin/partenaires' => ['AdminPartnerController', 'index',],
-    'admin/partenaires/add' => ['AdminPartnerController', 'add',]
+    'admin/partenaires/add' => ['AdminPartnerController', 'add',],
+    'partenaires' => ['PartnerController', 'partner',]
 ];

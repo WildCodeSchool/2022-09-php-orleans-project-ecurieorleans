@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\LoginManager;
 use Twig\Environment;
 use App\Model\SectionManager;
 use App\Model\PartnerManager;
@@ -18,6 +19,8 @@ abstract class AbstractController
     protected array|false $sections;
 
     protected array|false $partners;
+
+    protected array|false $user;
 
     public function __construct()
     {
@@ -36,5 +39,8 @@ abstract class AbstractController
         $partnerManager = new PartnerManager();
         $this->partners = $partnerManager->selectAll('id');
         $this->twig->addGlobal('partners', $this->partners);
+        $loginManager = new LoginManager();
+        $this->user = isset($_SESSION['user_id']) ? $loginManager->selectOneById($_SESSION['user_id']) : false;
+        $this->twig->addGlobal('user', $this->user);
     }
 }

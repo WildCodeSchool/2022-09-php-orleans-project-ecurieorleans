@@ -8,7 +8,7 @@ class EventAdminController extends AbstractController
 {
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
     private const MAX_FILE_SIZE = 200000;
-    public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION =  './uploads/';
 
     public function index()
     {

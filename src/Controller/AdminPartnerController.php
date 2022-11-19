@@ -7,7 +7,7 @@ use App\Model\PartnerManager;
 class AdminPartnerController extends AbstractController
 {
     public const MAX_INPUT_LENGTH = 255;
-    public const UPLOADS_DIR_LOCATION = './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION = './uploads/';
 
     public function index()
     {

@@ -265,12 +265,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `event` (
-        title,
-        raceDate,
-        paragraph,
-        section_id
-    )
+    `event` (title, raceDate, paragraph, section_id)
 VALUES (
         "Compétition rallye Orleans",
         "2022-06-25",

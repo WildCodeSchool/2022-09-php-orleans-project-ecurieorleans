@@ -7,7 +7,7 @@ use App\Model\PartnerManager;
 class AdminPartnerController extends AbstractController
 {
     public const MAX_INPUT_LENGTH = 255;
-    public const UPLOADS_DIR_LOCATION = './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION = './uploads/';
 
     public function index()
     {
@@ -117,5 +117,16 @@ class AdminPartnerController extends AbstractController
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectOneById($id);
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
+    }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $partnerManager = new PartnerManager();
+            $partnerManager->delete((int)$id);
+        }
+
+        header('Location:/admin/partenaires/');
     }
 }

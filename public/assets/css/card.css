@@ -20,8 +20,13 @@
 }
 
 .cards {
-    padding-top: 40px;
     border-block: 8px solid var(--bs-secondary);
+    background-image: url(../images/home_cover.jpg);
+}
+
+.cards-container {
+    opacity: 0.93;
+    padding-block: 40px;
 }
 
 .event-content {
@@ -46,8 +51,7 @@
     font-size: (2.2rem);
 }
 
-
-.all-event-content{
+.all-event-content {
     width: 98%;
     margin-block: 16px;
 }

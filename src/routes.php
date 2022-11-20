@@ -8,18 +8,23 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     '' => ['HomeController', 'index',],
-    'eventAdmin' => ['EventAdminController', 'index'],
+    'admin/evenement' => ['EventAdminController', 'index'],
+    'admin/evenement/add' => ['EventAdminController', 'add'],
+    'admin/evenement/edit' => ['EventAdminController', 'edit', ['id']],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
     'admin/bureau' => ["AdminBoardController", "index"],
-    'section' => ['SectionController', 'section', ['id']],
+    'admin/login' => ['LoginController', 'login'],
+    'admin/logout' => ['LoginController', 'logout'],
+    'section' => ['SectionController', 'index', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
+    'admin/sports/add' => ['AdminSectionController', 'add',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],
+    'admin/sports/supprimer' => ['AdminSectionController', 'delete'],
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
-    'contact' => ['FormController', 'contact',]
+    'contact' => ['FormController', 'contact',],
+    'admin/partenaires' => ['AdminPartnerController', 'index',],
+    'admin/partenaires/add' => ['AdminPartnerController', 'add',],
+    'partenaires' => ['PartnerController', 'partner',]
 ];

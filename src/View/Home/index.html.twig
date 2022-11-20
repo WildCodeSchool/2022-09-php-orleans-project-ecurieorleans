@@ -15,7 +15,7 @@
 				Les écuries d'Orléans</h1>
 			<h2 class="pt-4 headerSubtitle">Circuit tout terrain d'1 km à Sougy
 			</h2>
-			<div class="arrows-container d-flex flex-column mt-5">
+			<a class="arrows-container d-flex flex-column mt-5" href="#start">
 				<svg viewbox="0 0 24 24" class="arrow-down bounce">
 					<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
 				</svg>
@@ -25,7 +25,7 @@
 				<svg viewbox="0 0 24 24" class="arrow-down bounce">
 					<path fill-rule="evenodd" fill="#1F1CC6" clip-rule="evenodd" d="M18.5303 9.46967C18.8232 9.76256 18.8232 10.2374 18.5303 10.5303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L5.46967 10.5303C5.17678 10.2374 5.17678 9.76256 5.46967 9.46967C5.76256 9.17678 6.23744 9.17678 6.53033 9.46967L12 14.9393L17.4697 9.46967C17.7626 9.17678 18.2374 9.17678 18.5303 9.46967Z" fill="#030D45"/>
 				</svg>
-			</div>
+			</a>
 		</div>
 		<div class="yellow-spacer bg-secondary"></div>
 	</header>
@@ -34,18 +34,20 @@
 {% block content %}
 	<main>
 		<section>
-			<div class="titleContentLight mt-4 p-2 text-center">
+			<div class="titleContentLight mt-5 p-2 text-center" id="start">
 				<h2 class="text-primary titleLight">Présentation de l'association
 				</h2>
 			</div>
-			<div class=" blue-spacer bg-primary w-100"></div>
-			<p class="presentation-text m-5">
+			<p class="presentation-text my-5 text-center fs-5">
 				L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste, bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
+				<br>
+				<br>Nous nous distinguons par une constante volonté d'innovation. La sécurité reste, bien sur, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
+				<br>L'Ecurie est à l'origine de nombreuses épreuves dans la région comme le Rallye des neiges, le 2 CV cross, le salon des sports mécaniques d'Orléans, les épreuves de championnat de France de Dragsters, de Quad, de Super Cross et meme la création de nouvelles disciplines.
 			</p>
-			<div class=" blue-spacer bg-primary mb-4 w-75 m-auto"></div>
+			<div class="blue-spacer bg-primary mb-4 w-50 m-auto"></div>
 		</section>
 
-		<section class="row g-3 justify-content-center mx-2">
+		<section class="row g-3 justify-content-center mx-2 my-5">
 			{% for section in sections %}
 				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
@@ -62,9 +64,9 @@
 			</div>
 		</section>
 
-		<section class="w-100 mt-5">
+		<section class="home-section w-100">
 			<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
-				<h2 class="title text-center text-light p-2 pt-3">Evènement</h2>
+				<h2 class="title text-center text-light p-2 py-3">Evènement</h2>
 			</div>
 			<div class="cards w-100">
 				<div class="cards-container bg-dark h-100 w-100">
@@ -86,7 +88,7 @@
 											</h4>
 										</div>
 									</div>
-									<p class="card-text text-dark">
+									<p class="card-text text-dark fs-5">
 										{{ event.paragraph }}
 									</p>
 								</div>
@@ -100,30 +102,38 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="mt-5">
-		<div class="titleContentLight mt-4 p-2 text-center">
-			<h2 class="titleLight text-primary">Comment nous rejoindre :</h2>
-		</div>
-		<div class=" blue-spacer bg-primary w-100"></div>
-		<div class="row m-0 divJoin">
-			<div class="col-lg-6 col-12 bg-primary text-white">
-				<div class="d-flex justify-content-center mx-3 align-items-center">
-					<h3 class="member d-flex titleLight bg-white">
-						<a class="text-primary text-decoration-none p-2" href="/">Je deviens Membre</a>
-					</h3>
+		<section class="home-section join">
+			<div class="titleContentLight mt-4 p-2 text-center">
+				<h2 class="titleLight text-primary">Comment nous rejoindre :</h2>
+			</div>
+			<div class="row m-0 divJoin bg-primary">
+				<div class="join-container col-lg-6 col-12 text-white d-flex flex-column justify-content-center align-items-center fs-5">
+					<p>Toute demande d'inscription doit être réalisée en contactant les responsables de chaque section. Chaque section possède sa propre organisation et l'adhésion à une section est indépendante des autres mais les tarifs sont les mêmes.
+						<br>
+						<br>
+						Les tarifs sont les suivants :
+						<br>
+						<ul>
+							<li>Adhésion individuelle : 30€</li>
+							<li>Adhésion couple : 35€</li>
+							<li>Adhésion familiale : 45€</li>
+							<li>Adhésion handi car : 7€</li>
+						</ul>
+					</p>
+					<button class="btn btn-outline-primary bg-light p-3 mt-5" type="button">
+						<a class="text-primary text-decoration-none fs-4" href="/contact">
+							<b>
+								Contactez-nous
+							</b>
+						</a>
+					</button>
+				</div>
+				<div class="col-lg-6 col-12 p-0 ">
+					<img class=" font-image col-12 m-0 " src="assets/images/BMW.jpg" alt="image de voiture"/>
 				</div>
 			</div>
-			<div class="col-lg-6 col-12 p-0 ">
-				<img class=" font-image col-12 m-0 " src="assets/images/BMW.jpg" alt="image de voiture"/>
-			</div>
-		</div>
-		<div class="d-flex justify-content-end mx-3 align-items-center ">
-			<h3 class="contact d-flex titleLight bg-white">
-				<a class="text-primary text-decoration-none p-2" href="/contact">Contact</a>
-			</h3>
-		</div>
-	</section>
-</main>{% endblock %}
+		</section>
+	</main>
+{% endblock %}

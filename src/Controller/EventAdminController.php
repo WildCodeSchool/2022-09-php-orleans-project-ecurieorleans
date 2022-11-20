@@ -8,7 +8,7 @@ class EventAdminController extends AbstractController
 {
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
     private const MAX_FILE_SIZE = 200000;
-    public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION =  './uploads/';
 
     public function index()
     {
@@ -74,9 +74,11 @@ class EventAdminController extends AbstractController
     public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = trim($_POST['id']);
+            $id = (int) trim($_POST['id']);
             $eventManager = new EventManager();
-            $eventManager->delete((int)$id);
+            $imageName = $eventManager->selectOneById($id);
+            unlink("uploads/" . $imageName['imgPath']);
+            $eventManager->delete($id);
 
             header('Location:/admin/evenement');
         }

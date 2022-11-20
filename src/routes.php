@@ -11,6 +11,7 @@ return [
     'eventAdmin' => ['EventAdminController', 'index'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/bureau' => ["AdminBoardController", "index"],
     'section' => ['SectionController', 'section', ['id']],
     'admin/sports' => ['AdminSectionController', 'index',],
     'admin/sports/edit' => ['AdminSectionController', 'edit', ['id']],

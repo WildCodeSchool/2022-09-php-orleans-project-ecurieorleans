@@ -7,8 +7,12 @@
     object-fit: cover;
 }
 
-.sports-events {
-    padding-block-end: 10rem;
+.sports-presentation {
+    padding-inline: 6rem;
+}
+
+.sports-section {
+    padding-block-start: 10rem;
 }
 
 .sports-table {

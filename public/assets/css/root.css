@@ -28,4 +28,5 @@
 
 body {
     background-color: rgb(var(--bs-light));
+    line-height: 1.7;
 }

@@ -112,11 +112,38 @@ class AdminPartnerController extends AbstractController
     }
 
 
-    public function edit(int $id): string
+    public function edit(int $id): ?string
     {
+        $errors = [];
         $partnerManager = new PartnerManager();
-        $partners = $partnerManager->selectOneById($id);
-        return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
+        $partner = $partnerManager->selectOneById($id);
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $partnerUpdate = array_map('trim', $_POST);
+            $partnerErrors = $this->validate($partnerUpdate);
+            $image = array_map('trim', $_FILES['logo']);
+            $uploadErrors = $this->validateUpload($image);
+            $errors = array_merge($partnerErrors, $uploadErrors);
+
+            if (empty($errors)) {
+                if (empty($image['name'])) {
+                    $uniqName = null;
+                } else {
+                    $uniqName = uniqid() . $image['name'];
+                }
+                move_uploaded_file($image['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqName);
+                $partnerManager->update($partnerUpdate, $uniqName);
+
+                header('Location:/admin/partenaires/');
+                return 'null';
+            }
+        }
+
+        return $this->twig->render('AdminPartner/AdminEdit.html.twig', [
+        'errors' => $errors,
+        'partner' => $partner,
+        ]);
     }
 
     public function delete(): void

@@ -17,4 +17,26 @@ class BoardManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function selectRoles()
+    {
+        return $this->pdo->query("SELECT `role` from " . self::TABLE)->fetchAll();
+    }
+
+    public function add($member)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (firstname, lastname, gender, phone, mail,
+         is_board_member, `role`, section_responsability) VALUES (:fname, :lname, :gender, 
+         :phone, :mail, :boardmember, :role, :section_responsability) ");
+        $statement->bindValue(":fname", $member['firstname']);
+        $statement->bindValue(":lname", $member['lastname']);
+        $statement->bindValue(":gender", $member['gender']);
+        $statement->bindValue(":mail", $member['email']);
+        $statement->bindValue(":phone", $member['phone']);
+        $statement->bindValue(":boardmember", $member['boardmember']);
+        $statement->bindValue(":role", $member['role']);
+        $statement->bindValue(":section_responsability", $member['sectionResponsability']);
+
+        $statement->execute();
+    }
 }

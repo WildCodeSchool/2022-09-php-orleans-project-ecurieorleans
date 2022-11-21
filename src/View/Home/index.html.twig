@@ -51,7 +51,7 @@
 			{% for section in sections %}
 				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
-						<img class="mosaic-image w-100 " src="{% if section.header is not null %} {{'/assets/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt=" image of {{section.name}} ">
+						<img class="mosaic-image w-100 " src="{% if section.header is not null %} {{'/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt=" image of {{section.name}} ">
 						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
 					</a>
 				</div>
@@ -74,7 +74,7 @@
 						<div class="card m-auto col-lg-10 my-4">
 							<div class="row g-0">
 								<div class="col-md-4">
-									<img src="{% if event.imgPath is not null %} {{'/assets/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+									<img src="{% if event.imgPath is not null %} {{'/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
 								</div>
 								<div class="col-md-7 mx-md-4">
 									<div class="card-body">

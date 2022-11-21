@@ -9,7 +9,7 @@ class AdminSectionController extends AbstractController
     private const INPUT_MAX_LENGHT = 25;
     private const MAX_FILE_SIZE = 200000;
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
-    public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION =  './uploads/';
 
     public function index(): string
     {

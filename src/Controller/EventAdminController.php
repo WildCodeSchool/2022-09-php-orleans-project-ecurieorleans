@@ -55,13 +55,13 @@ class EventAdminController extends AbstractController
             $errorsFiles = $this->errorsFile();
             $errors = array_merge($errorsFiles, $errorsForm);
             if (empty($errors)) {
-                if (empty($_FILES['eventImage'])) {
-                    $uniqueFiles = $_FILES['eventImage']['name'];
+                if (empty($_FILES['eventImage']['name'])) {
+                    $uniqueFiles = null;
                 } else {
                     $uniqueFiles = uniqid() . $_FILES['eventImage']['name'];
                 }
                 move_uploaded_file($_FILES['eventImage']['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFiles);
-                $eventManager->update($events, $uniqueFiles);
+                $eventManager->update($events, $uniqueFiles, $event['id']);
                 header("Location: /admin/evenement");
             }
             return $this->twig->render(
@@ -71,7 +71,18 @@ class EventAdminController extends AbstractController
         }
         return $this->twig->render('AdminEvent/EditAdminEvent.html.twig', ["event" => $event, "errors" => $errors]);
     }
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = (int) trim($_POST['id']);
+            $eventManager = new EventManager();
+            $imageName = $eventManager->selectOneById($id);
+            unlink("uploads/" . $imageName['imgPath']);
+            $eventManager->delete($id);
 
+            header('Location:/admin/evenement');
+        }
+    }
     public function errorsForm(array $event)
     {
         $errors = [];

@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<img src="{% if partner.logo is not null %} {{'/assets/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}"
+				<img src="{% if partner.logo is not null %} {{'/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/logoph.png'}} {% endif %}"
 					class="admin-header-image h-100 w-100 img-fluid rounded-start py-2"
 					alt="Logo image of {{partner.name}}">
 			</div>

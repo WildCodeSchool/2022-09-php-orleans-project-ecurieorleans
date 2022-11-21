@@ -12,8 +12,10 @@ class AdminBoardController extends AbstractController
     {
         $membersErrors = [];
         $membersManager = new BoardManager();
-        $roles = ["Président d'honneur", "Président","Vice-président","Secrétaire","Secrétaire adjoint"
-        ,"Trésorier","Trésorier adjoint","Entraineur"];
+        $roles = [
+            "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
+            "Trésorier", "Trésorier adjoint", "Entraineur"
+        ];
         $responsability = ["Responsable", "Adjoint", "Entraîneur"];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
@@ -63,12 +65,12 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
         return $errors;
-       }
+    }
 
-      public function index()
-      {
+    public function index()
+    {
         $boardManager = new BoardManager();
         $members = $boardManager->selectAll();
         return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);
-      }
+    }
 }

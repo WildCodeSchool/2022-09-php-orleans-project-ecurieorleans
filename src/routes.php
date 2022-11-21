@@ -16,6 +16,7 @@ return [
     'bureau' => ['BoardController', 'index',],
     'admin/bureau' => ["AdminBoardController", "index"],
     'admin/bureau/edit' => ["AdminBoardController", "edit", ["id"]],
+    'admin/bureau/supprimer' => ["AdminBoardController", "delete"],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'index', ['id']],

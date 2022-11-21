@@ -15,6 +15,7 @@ return [
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
     'admin/bureau' => ["AdminBoardController", "index"],
+    'admin/bureau/edit' => ["AdminBoardController", "edit", ["id"]],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'index', ['id']],

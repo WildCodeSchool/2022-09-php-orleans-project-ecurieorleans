@@ -45,7 +45,7 @@
 .mosaic-image {
     object-fit: cover;
     transition: ease-in-out 0.5s;
-    height: 150px;
+    height: 250px;
 }
 
 .mosaic-image:hover {
@@ -64,13 +64,7 @@
 
 .font-image {
     object-fit: cover;
-    margin-block-start: 20px;
     height: 800px;
-}
-
-.divJoin {
-    border-top: 8px solid var(--bs-secondary);
-    height: fit-content;
 }
 
 .contact {
@@ -89,15 +83,7 @@
 }
 
 .presentation-text {
-    margin-inline: 6rem;
-    background-image: url(../images/fast.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.home-section {
-    margin-block-start: 10rem;
+    margin-inline: 8rem;
 }
 
 .join-container {

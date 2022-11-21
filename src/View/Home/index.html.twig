@@ -38,28 +38,34 @@
 				<h2 class="text-primary titleLight">Présentation de l'association
 				</h2>
 			</div>
-			<p class="presentation-text my-5 text-center fs-5">
-				L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste, bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
-				<br>
-				<br>Nous nous distinguons par une constante volonté d'innovation. La sécurité reste, bien sur, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
-				<br>L'Ecurie est à l'origine de nombreuses épreuves dans la région comme le Rallye des neiges, le 2 CV cross, le salon des sports mécaniques d'Orléans, les épreuves de championnat de France de Dragsters, de Quad, de Super Cross et meme la création de nouvelles disciplines.
-			</p>
+			<div class="d-flex justify-content-around">
+				<div class="d-flex flex-column">
+					<div class="bg-primary px-2 h-100"></div>
+					<div class="bg-secondary px-2 h-50"></div>
+				</div>
+				<p class="presentation-text my-5 fs-5">
+					L'Écurie Orléans est une association de sport mécanique. Nous disposons de plusieurs sections automobile telles que auto, moto ,handi, car, mecasport qui sont indépendante les unes des autres. Nous disposons d'un magnifique circuit à 20 km d'Orléans. Nous nous distinguons par une constante volonté d'innovation.La sécurité reste, bien sûr, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
+					<br>
+					<br>Nous nous distinguons par une constante volonté d'innovation. La sécurité reste, bien sur, l'élément primordial, tout en assurant le bonheur et l'étonnement des spectateurs.
+					<br>L'Ecurie est à l'origine de nombreuses épreuves dans la région comme le Rallye des neiges, le 2 CV cross, le salon des sports mécaniques d'Orléans, les épreuves de championnat de France de Dragsters, de Quad, de Super Cross et meme la création de nouvelles disciplines.
+				</p>
+			</div>
 			<div class="blue-spacer bg-primary mb-4 w-50 m-auto"></div>
 		</section>
 
-		<section class="row g-3 justify-content-center mx-2 my-5">
+		<section class="row g-3 container-fluid m-auto">
 			{% for section in sections %}
 				<div class="col-md-6 d-flex justify-content-center ">
 					<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/section?id={{ section.id }}">
 						<img class="mosaic-image w-100 " src="{% if section.header is not null %} {{'/uploads/'~section.header}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" alt=" image of {{section.name}} ">
-						<h3 class="position-absolute text-dark top-50 start-50 translate-middle">{{section.name}}</h3>
+						<h3 class="position-absolute text-dark top-50 start-50 translate-middle fs-1">{{section.name}}</h3>
 					</a>
 				</div>
 			{% endfor %}
-			<div class="d-flex justify-content-center pb-4">
+			<div class="d-flex justify-content-center pb-4 col-md-6 mx-auto">
 				<a class="mosaic-image-container position-relative d-flex justify-content-center w-100" href="/circuit">
 					<img class="mosaic-image w-100" src=" assets/images/header_circuit2.jpeg" alt=" image of the circuit">
-					<h3 class="position-absolute text-dark top-50 start-50 translate-middle">Circuit</h3>
+					<h3 class="position-absolute text-dark top-50 start-50 translate-middle fs-1">Circuit</h3>
 				</a>
 			</div>
 		</section>
@@ -83,8 +89,8 @@
 											<h4 class="col-2 course bg-primary pt-2 text-light">
 												{{event.course}}
 											</h4>
-											<h4 class="date pt-2 text-center text-dark bg-secondary">
-												Date
+											<h4 class="date pt-2 text-center text-dark bg-secondary w-auto">
+												{{event.raceDate}}
 											</h4>
 										</div>
 									</div>
@@ -105,33 +111,37 @@
 		</section>
 
 		<section class="home-section join">
-			<div class="titleContentLight mt-4 p-2 text-center">
-				<h2 class="titleLight text-primary">Comment nous rejoindre :</h2>
-			</div>
-			<div class="row m-0 divJoin bg-primary">
-				<div class="join-container col-lg-6 col-12 text-white d-flex flex-column justify-content-center align-items-center fs-5">
-					<p>Toute demande d'inscription doit être réalisée en contactant les responsables de chaque section. Chaque section possède sa propre organisation et l'adhésion à une section est indépendante des autres mais les tarifs sont les mêmes.
-						<br>
-						<br>
-						Les tarifs sont les suivants :
-						<br>
-						<ul>
-							<li>Adhésion individuelle : 30€</li>
-							<li>Adhésion couple : 35€</li>
-							<li>Adhésion familiale : 45€</li>
-							<li>Adhésion handi car : 7€</li>
-						</ul>
-					</p>
-					<button class="btn btn-outline-primary bg-light p-3 mt-5" type="button">
-						<a class="text-primary text-decoration-none fs-4" href="/contact">
-							<b>
-								Contactez-nous
-							</b>
-						</a>
-					</button>
+			<div class="row m-0 divJoin bg-primary ">
+				<div class="col-lg-7 d-flex flex-column justify-content-around">
+					<div class="titleContentLight titleContentLightJoin p-2 text-center bg-light w-50">
+						<h2 class="titleLight text-primary">Comment nous rejoindre</h2>
+					</div>
+					<div class="join-container text-white fs-5">
+						<p>Toute demande d'inscription doit être réalisée en contactant les responsables de chaque section. Chaque section possède sa propre organisation et l'adhésion à une section est indépendante des autres mais les tarifs sont les mêmes.
+							<br>
+							<br>
+							Les tarifs sont les suivants :
+							<br>
+							<ul>
+								<li>Adhésion individuelle : 30€</li>
+								<li>Adhésion couple : 35€</li>
+								<li>Adhésion familiale : 45€</li>
+								<li>Adhésion handi car : 7€</li>
+							</ul>
+						</p>
+						<div class="d-flex justify-content-center">
+							<button class="btn btn-outline-primary bg-light p-3 mt-5 " type="button">
+								<a class="text-primary text-decoration-none fs-4" href="/contact">
+									<b>
+										Contactez-nous
+									</b>
+								</a>
+							</button>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-6 col-12 p-0 ">
-					<img class=" font-image col-12 m-0 " src="assets/images/BMW.jpg" alt="image de voiture"/>
+				<div class="col-lg-5 p-0 ">
+					<img class="font-image m-0 w-100" src="assets/images/BMW.jpg" alt="image de voiture"/>
 				</div>
 			</div>
 		</section>

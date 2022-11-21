@@ -75,7 +75,7 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
         return $errors;
-        
+    }
     public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

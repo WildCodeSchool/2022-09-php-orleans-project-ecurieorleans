@@ -1,3 +1,15 @@
 {% extends 'admin_layout.html.twig' %}
 
 {% block stylesheetGrandChild %}{% endblock %}
+
+{% block content %}
+	<h1 class="text-center my-5">
+		<b>Bienvenue, vous êtes connecté en tant que :
+			<br>
+			<div class="text-primary">
+				{{admin.email}}
+			</div>
+		</b>
+	</h1>
+	<img src="assets/images/car.gif" alt="a gif of a car" class="w-100 mt-5">
+{% endblock %}

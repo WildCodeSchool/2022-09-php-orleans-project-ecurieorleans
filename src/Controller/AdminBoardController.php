@@ -7,6 +7,38 @@ use App\Model\BoardManager;
 class AdminBoardController extends AbstractController
 {
     private const INPUT_MAX_LENGHT = 25;
+    private const ROLES = [
+        "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
+        "Trésorier", "Trésorier adjoint", "Entraineur"
+    ];
+
+    public function add()
+    {
+        $membersErrors = [];
+        $membersManager = new BoardManager();
+        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $members = array_map('trim', $_POST);
+            if (isset($members["boardmember"])) {
+                $members['boardmember'] = 1;
+            } else {
+                $members['boardmember'] = 0;
+            }
+            $membersErrors = $this->checkErrors($members);
+
+            if (empty($membersErrors)) {
+                $membersManager->add($members);
+                header('Location: /admin/bureau');
+                return null;
+            }
+        }
+        return $this->twig->render('AdminBoard/AdminAddBoard.html.twig', [
+            'errors' => $membersErrors,
+            'roles' => self::ROLES,
+            'sectionResponsabilitys' => $responsability,
+        ]);
+    }
+
     public function index()
     {
         $boardManager = new BoardManager();

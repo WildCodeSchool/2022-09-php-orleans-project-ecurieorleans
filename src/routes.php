@@ -14,6 +14,7 @@ return [
     'admin/evenement/supprimer' => ['EventAdminController', 'delete'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/bureau/add' => ['AdminBoardController', 'add',],
     'admin/bureau' => ["AdminBoardController", "index"],
     'admin/bureau/edit' => ["AdminBoardController", "edit", ["id"]],
     'admin/bureau/supprimer' => ["AdminBoardController", "delete"],
@@ -29,6 +30,7 @@ return [
     'contact' => ['FormController', 'contact',],
     'admin/partenaires' => ['AdminPartnerController', 'index',],
     'admin/partenaires/add' => ['AdminPartnerController', 'add',],
+    'admin/partenaires/edition' => ['AdminPartnerController', 'edit', ['id']],
     'admin/partenaires/supprimer' => ['AdminPartnerController', 'delete',],
     'partenaires' => ['PartnerController', 'partner',]
 ];

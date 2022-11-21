@@ -13,6 +13,7 @@ return [
     'admin/evenement/edit' => ['EventAdminController', 'edit', ['id']],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/bureau/add' => ['AdminBoardController', 'add',],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'index', ['id']],

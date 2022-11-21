@@ -118,4 +118,15 @@ class AdminPartnerController extends AbstractController
         $partners = $partnerManager->selectOneById($id);
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
     }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $partnerManager = new PartnerManager();
+            $partnerManager->delete((int)$id);
+        }
+
+        header('Location:/admin/partenaires/');
+    }
 }

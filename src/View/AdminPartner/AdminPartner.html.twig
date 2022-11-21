@@ -43,10 +43,10 @@
 				</svg>
 				<a href="/admin/partenaires/edit?id={{ partner.id }}" class="admin-buttons">Éditer</a>
 			</button>
-
 		</div>
+		<form action="/admin/partenaires/supprimer" method="POST">
 		<div class="d-grid gap-2 col-4 mx-auto my-2">
-			<button class="btn btn-danger d-flex justify-content-center align-items-center gap-2" type="button">
+			<button class="btn btn-danger d-flex justify-content-center align-items-center gap-2" type="hidden" name="id" value="{{ partner.id }}">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FAFAFD" class="bi bi-trash3"
 					viewbox="0 0 16 16">
 					<path
@@ -54,8 +54,9 @@
 				</svg>
 				<a href="#" class="admin-buttons text-light">Supprimer</a>
 			</button>
+		</form>
 		</div>
-	</div>
+	</div> 
 </div>
 {% endfor %}
 {% endblock %}

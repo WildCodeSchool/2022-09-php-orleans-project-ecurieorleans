@@ -13,11 +13,8 @@ class AdminSectionController extends AbstractController
 
     public function index(): string
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+
+        $this->testAdmin();
         $sectionManager = new SectionManager();
         $sections = $sectionManager->selectAll('id');
         return $this->twig->render(
@@ -28,11 +25,7 @@ class AdminSectionController extends AbstractController
 
     public function add(): ?string
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+        $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
 
@@ -64,11 +57,8 @@ class AdminSectionController extends AbstractController
 
     public function edit(int $id): ?string
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+
+        $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
@@ -94,7 +84,6 @@ class AdminSectionController extends AbstractController
                 return null;
             }
         }
-
         return $this->twig->render('AdminSports/adminEditSports.twig', [
             'section' => $section,
             'errors' => $errors,

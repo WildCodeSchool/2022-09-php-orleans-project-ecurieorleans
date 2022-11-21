@@ -11,11 +11,7 @@ class AdminPartnerController extends AbstractController
 
     public function index()
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+        $this->testAdmin();
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectAll('name');
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
@@ -23,11 +19,7 @@ class AdminPartnerController extends AbstractController
 
     public function add(): string
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+        $this->testAdmin();
         $errors = $partner = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -96,12 +88,10 @@ class AdminPartnerController extends AbstractController
     {
         $errors = [];
 
-        //image size 1Mo
         $maxFileSize = 1000000;
         if ($file['size'] > $maxFileSize) {
             $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 .  'Mo.';
         }
-        //extension
         $authorizedMimes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
         if (!empty($file['tmp_name'])) {
             $mime = mime_content_type($file['tmp_name']);
@@ -124,11 +114,7 @@ class AdminPartnerController extends AbstractController
 
     public function edit(int $id): string
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+        $this->testAdmin();
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectOneById($id);
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);

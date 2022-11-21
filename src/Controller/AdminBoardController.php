@@ -8,11 +8,7 @@ class AdminBoardController extends AbstractController
 {
     public function index()
     {
-        if (!$this->user) {
-            echo 'Unauthorized access';
-            header('HTTP/1.1 401 Unauthorized');
-            return "";
-        }
+        $this->testAdmin();
         $boardManager = new BoardManager();
         $members = $boardManager->selectAll();
         return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);

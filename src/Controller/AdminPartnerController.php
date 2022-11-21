@@ -11,6 +11,11 @@ class AdminPartnerController extends AbstractController
 
     public function index()
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectAll('name');
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
@@ -18,6 +23,11 @@ class AdminPartnerController extends AbstractController
 
     public function add(): string
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $errors = $partner = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -114,6 +124,11 @@ class AdminPartnerController extends AbstractController
 
     public function edit(int $id): string
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectOneById($id);
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);

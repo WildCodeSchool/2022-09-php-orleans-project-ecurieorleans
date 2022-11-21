@@ -12,6 +12,11 @@ class EventAdminController extends AbstractController
 
     public function index()
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $eventsManager = new EventManager();
         $events = $eventsManager->selectAll();
         return $this->twig->render("AdminEvent/AdminEvent.html.twig", ['events' => $events]);
@@ -19,6 +24,11 @@ class EventAdminController extends AbstractController
 
     public function add(): string
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $events = array_map('trim', $_POST);
@@ -46,6 +56,11 @@ class EventAdminController extends AbstractController
 
     public function edit(int $id): string
     {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+            return "";
+        }
         $errors =  [];
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);

@@ -16,6 +16,7 @@ class SectionController extends AbstractController
         $events = $eventManager->selectAllEventsBySectionID($section['id'], 'raceDate', 'DESC');
         $memberManager = new BoardManager();
         $members = $memberManager->selectAllMembersBySectionID($section['id']);
+
         return $this->twig->render(
             'Section/section.html.twig',
             [

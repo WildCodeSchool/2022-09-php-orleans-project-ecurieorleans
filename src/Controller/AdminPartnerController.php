@@ -145,4 +145,15 @@ class AdminPartnerController extends AbstractController
         'partner' => $partner,
         ]);
     }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $partnerManager = new PartnerManager();
+            $partnerManager->delete((int)$id);
+        }
+
+        header('Location:/admin/partenaires/');
+    }
 }

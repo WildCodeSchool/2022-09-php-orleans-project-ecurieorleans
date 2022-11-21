@@ -11,8 +11,10 @@ return [
     'admin/evenement' => ['EventAdminController', 'index'],
     'admin/evenement/add' => ['EventAdminController', 'add'],
     'admin/evenement/edit' => ['EventAdminController', 'edit', ['id']],
+    'admin/evenement/supprimer' => ['EventAdminController', 'delete'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'admin/bureau' => ["AdminBoardController", "index"],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],
     'section' => ['SectionController', 'index', ['id']],
@@ -26,5 +28,6 @@ return [
     'admin/partenaires' => ['AdminPartnerController', 'index',],
     'admin/partenaires/add' => ['AdminPartnerController', 'add',],
     'admin/partenaires/edition' => ['AdminPartnerController', 'edit', ['id']],
+    'admin/partenaires/supprimer' => ['AdminPartnerController', 'delete',],
     'partenaires' => ['PartnerController', 'partner',]
 ];

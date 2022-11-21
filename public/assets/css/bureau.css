@@ -19,6 +19,15 @@
     margin-block-start: 10rem;
 }
 
+.header-container {
+    height: calc(40vh - var(--navbar_height));
+    background-image: url(../images/bureau-cover.jpg);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-block-start: 100px;
+}
+
 @media screen and (max-width: 768px) {
     .blue-spacer-right {
         margin: auto;

@@ -3,7 +3,9 @@
 {% block stylesheetGrandChild %}{% endblock %}
 
 {% block content %}
-	<h1 class="text-center my-4 mb-5">Évenèment</h1>
+	<h1 class="text-center my-4 mb-5">Modifier l'évènement :
+		{{event.title}}
+	</h1>
 	{% if errors  %}
 		<div class="d-flex justify-content-center flex-column align-items-center">
 			<svg xmlns=" http://www.w3.org/2000/svg" width=" 120" height=" 120" fill=" #FF0000" class=" bi bi-exclamation-triangle py-2" viewbox=" 0 0 16 16">
@@ -17,56 +19,40 @@
 			{% endfor %}
 		</div>
 	{% endif %}
-	<form method="post" accept-charset="UTF-8" class=" form container-fluid mt-5" enctype="multipart/form-data" id="editEvent">
+	<form method="post" accept-charset="UTF-8" class="form container-fluid my-4 w-75" enctype="multipart/form-data" id="editEvent">
 		<input type="hidden" value="{{ event.id }}" name="id">
-		<div class="row p-4">
-			<div class="col-md-3 col-12 p-0 pt-3">
-				<h3>
-					<label for="eventImage">Ajouter une image</label>
-				</h3>
-				<input id="eventImage" type="file" name="eventImage" class="col-6" value="{% if event.imgPath is defined %}{{ event.imgPath }}{% endif %}">
+		<div class="row pt-3 admin-form ">
+			<div class="col-md-3">
+				<label for="eventImage" class="form-label">Ajouter une image</label>
+				<input id="eventImage" type="file" name="eventImage" class="form-control col-6" value="{% if event.imgPath is defined %}{{ event.imgPath }}{% endif %}">
 			</div>
-			<div class="col-md-9 col-12 p-0">
-				<div>
-					<div class="row">
-						<div class="col-md-4 col-12 pt-3">
-							<h3>
-								<label for="raceName" class="text-center">Titre de la course</label>
-							</h3>
-							<input class="col-md-7 col-8" id="raceName" type="text" name="raceName" value="{% if event.title is defined %}{{ event.title }}{% endif %}">
-						</div>
-						<div class="col-md-8 col-12">
-							<div class="container row">
-								<div class="col-md-6 col-12 p-0 pt-3">
-									<h3>
-										<label for="sportSelect">Type de course</label>
-									</h3>
-									<select class="col-6" name="sportSelect" id="sportSelect">
-										{% for section in sections %}
-											<option value="{{section.id}}">{{section.name}}</option>
-										{% endfor %}
-									</select>
-								</div>
-								<div class="col-md-6 col-12 p-0 pt-3">
-									<h3>
-										<label for="date">Date</label>
-									</h3>
-									<div>
-										<div class="input-group date" id="datepicker">
-											<input type="date" class="form-control p-0" id="date" name="date" value="{% if event.raceDate is defined %}{{ event.raceDate }}{% endif %}"/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="col-md-3">
+				<label for="raceName" class="form-label">Titre de la course</label>
+				<input class="form-control col-md-7 col-8" id="raceName" type="text" name="raceName" value="{% if event.title is defined %}{{ event.title }}{% endif %}">
+			</div>
+			<div class="col-md-3">
+				<label for="sportSelect" class="form-label">Type de course</label>
+				<select name="sportSelect" id="sportSelect" class="form-select">
+					{% for section in sections %}
+						<option value="{{section.id}}">{{section.name}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col-md-3">
+				<label for="date" class="form-label">Date</label>
+				<div class="input-group date" id="datepicker">
+					<input type="date" class="form-control" id="date" name="date" value="{% if event.raceDate is defined %}{{ event.raceDate }}{% endif %}"/>
 				</div>
 			</div>
+			<div>
+				<label class="mt-4" for="raceDescription" class="form-label">Description de la course</label>
+				<textarea id="raceDescription" class="form-control my-3 w-100" name="raceDescription">
+					{% if event.paragraph is defined %}
+						{{ event.paragraph }}
+					{% endif %}
+				</textarea>
+			</div>
 		</div>
-		<h3>
-			<label class="mx-3" for="raceDescription">Description de la course</label>
-		</h3>
-		<textarea id="raceDescription" class="col-11 mx-3 p-4" name="raceDescription">{% if event.paragraph is defined %}{{ event.paragraph }}{% endif %}</textarea>
 	</form>
 	<div class="d-flex justify-content-between w-75 m-auto">
 		<button type="submit" class="btn btn-success w-25 py-2" form="editEvent">Valider</button>

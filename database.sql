@@ -265,7 +265,12 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `event` (title, raceDate, paragraph, section_id)
+    `event` (
+        title,
+        raceDate,
+        paragraph,
+        section_id
+    )
 VALUES (
         "Compétition rallye Orleans",
         "2022-06-25",
@@ -349,12 +354,3 @@ VALUES (
         "admin@admin.com",
         "$2y$10$P6XsqsX2aQw/xGTFMtPGh.9ovrdqhWnMzaUfhDk6mytDFmAtctYcC"
     );
-=======
-create table `admin`(
-    id int not null auto_increment primary key,
-    email VARCHAR(255) not null,
-    `password` VARCHAR(255) not null
-);
-
-insert into `admin` (email, `password`) VALUES ("admin@admin.com", "$2y$10$P6XsqsX2aQw/xGTFMtPGh.9ovrdqhWnMzaUfhDk6mytDFmAtctYcC");
-

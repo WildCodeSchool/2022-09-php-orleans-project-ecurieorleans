@@ -14,6 +14,7 @@ return [
     'admin/evenement/supprimer' => ['EventAdminController', 'delete'],
     'circuit' => ['CircuitController', 'circuit',],
     'bureau' => ['BoardController', 'index',],
+    'error' => ['ErrorController', 'index', ['error']],
     'admin/bureau/add' => ['AdminBoardController', 'add',],
     'admin/bureau' => ["AdminBoardController", "index"],
     'admin/bureau/supprimer' => ["AdminBoardController", "delete"],

@@ -69,6 +69,7 @@ class AdminBoardController extends AbstractController
 
     public function index()
     {
+        $this->testAdmin();
         $boardManager = new BoardManager();
         $members = $boardManager->selectAll();
         return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);

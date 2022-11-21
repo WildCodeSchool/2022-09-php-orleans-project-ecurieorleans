@@ -37,9 +37,7 @@ class BoardManager extends AbstractManager
         $statement->bindValue(":boardmember", $member['boardmember']);
         $statement->bindValue(":role", $member['role']);
         $statement->bindValue(":section_responsability", $member['sectionResponsability']);
-        
         $statement->execute();
-    
     }
     public function add($member)
     {
@@ -54,7 +52,6 @@ class BoardManager extends AbstractManager
         $statement->bindValue(":boardmember", $member['boardmember']);
         $statement->bindValue(":role", $member['role']);
         $statement->bindValue(":section_responsability", $member['sectionResponsability']);
-
         $statement->execute();
     }
 }

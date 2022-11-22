@@ -23,55 +23,63 @@
 
 {% block content %}
 	<main>
-		<div class="titleContentLight mt-4 p-2 px-4 d-flex align-items-center">
-			<h2 class="titleLight m-auto text-primary py-2">Présentation</h2>
-		</div>
-		<div class=" blue-spacer bg-primary"></div>
-		<section class="sports-presentation">
-			<p class="text-center p-4 fs-5">
-				{{section.presentation}}
-			</p>
-			<div class="blue-spacer bg-primary w-50 m-auto"></div>
+		<section>
+			<div class="titleContentLight mt-5 p-2 text-center" id="start">
+				<h2 class="text-primary titleLight">Présentation de l'association
+				</h2>
+			</div>
+			<div class="d-flex justify-content-around">
+				<div class="d-flex flex-column">
+					<div class="bg-primary px-2 h-100"></div>
+					<div class="bg-secondary px-2 h-50"></div>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<p class="my-5 fs-5 col-11 col-md-10 m-auto">
+							{{section.presentation}}
+						</p>
+					</div>
+				</div>
+			</div>
 		</section>
-		<section class="sports-section">
+
+		<section class="cards cards container-fluid">
 			<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
 				<h2 class="title text-center text-light p-3 mx-1">Evènements
 					{{section.name}}</h2>
 			</div>
-			<div class="cards">
-				<div class="cards-container bg-dark h-100">
-					{% if events is empty %}
-						<div class="d-flex justify-content-center align-items-center gap-3 my-5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-sign-stop" viewbox="0 0 16 16">
-								<path d="M3.16 10.08c-.931 0-1.447-.493-1.494-1.132h.653c.065.346.396.583.891.583.524 0 .83-.246.83-.62 0-.303-.203-.467-.637-.572l-.656-.164c-.61-.147-.978-.51-.978-1.078 0-.706.597-1.184 1.444-1.184.853 0 1.386.475 1.436 1.087h-.645c-.064-.32-.352-.542-.797-.542-.472 0-.77.246-.77.6 0 .261.196.437.553.522l.654.161c.673.164 1.06.487 1.06 1.11 0 .736-.574 1.228-1.544 1.228Zm3.427-3.51V10h-.665V6.57H4.753V6h3.006v.568H6.587Z"/>
-								<path fill-rule="evenodd" d="M11.045 7.73v.544c0 1.131-.636 1.805-1.661 1.805-1.026 0-1.664-.674-1.664-1.805V7.73c0-1.136.638-1.807 1.664-1.807 1.025 0 1.66.674 1.66 1.807Zm-.674.547v-.553c0-.827-.422-1.234-.987-1.234-.572 0-.99.407-.99 1.234v.553c0 .83.418 1.237.99 1.237.565 0 .987-.408.987-1.237Zm1.15-2.276h1.535c.82 0 1.316.55 1.316 1.292 0 .747-.501 1.289-1.321 1.289h-.865V10h-.665V6.001Zm1.436 2.036c.463 0 .735-.272.735-.744s-.272-.741-.735-.741h-.774v1.485h.774Z"/>
-								<path fill-rule="evenodd" d="M4.893 0a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146A.5.5 0 0 0 11.107 0H4.893ZM1 5.1 5.1 1h5.8L15 5.1v5.8L10.9 15H5.1L1 10.9V5.1Z"/>
-							</svg>
-							<p class="fs-4 text-center text-light my-5">Il n'y a pas d'évènement programmé.</p>
-						</div>
-					{% endif %}
-					{% for event in events %}
-						<div class="card m-auto col-lg-10 mt-4">
-							<div class="row g-0">
-								<div class="col-md-4">
-									<img src="{% if event.imgPath is not null %} {{'/assets/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
-								</div>
-								<div class="col-md-7 mx-md-4">
-									<div class="card-body">
-										<h3 class="card-title">{{ event.title }}</h3>
-										<div class="row mx-2 my-4">
-											<h4 class="col-2 course bg-primary pt-2 text-light w-auto">
-												{{section.name}}
-											</h4>
-											<h4 class="date pt-2 text-center text-dark bg-secondary w-auto">
-												{{event.raceDate}}
-											</h4>
-										</div>
+			{% if events is empty %}
+				<div class="d-flex justify-content-center align-items-center gap-3 my-5">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-sign-stop" viewbox="0 0 16 16">
+						<path d="M3.16 10.08c-.931 0-1.447-.493-1.494-1.132h.653c.065.346.396.583.891.583.524 0 .83-.246.83-.62 0-.303-.203-.467-.637-.572l-.656-.164c-.61-.147-.978-.51-.978-1.078 0-.706.597-1.184 1.444-1.184.853 0 1.386.475 1.436 1.087h-.645c-.064-.32-.352-.542-.797-.542-.472 0-.77.246-.77.6 0 .261.196.437.553.522l.654.161c.673.164 1.06.487 1.06 1.11 0 .736-.574 1.228-1.544 1.228Zm3.427-3.51V10h-.665V6.57H4.753V6h3.006v.568H6.587Z"/>
+						<path fill-rule="evenodd" d="M11.045 7.73v.544c0 1.131-.636 1.805-1.661 1.805-1.026 0-1.664-.674-1.664-1.805V7.73c0-1.136.638-1.807 1.664-1.807 1.025 0 1.66.674 1.66 1.807Zm-.674.547v-.553c0-.827-.422-1.234-.987-1.234-.572 0-.99.407-.99 1.234v.553c0 .83.418 1.237.99 1.237.565 0 .987-.408.987-1.237Zm1.15-2.276h1.535c.82 0 1.316.55 1.316 1.292 0 .747-.501 1.289-1.321 1.289h-.865V10h-.665V6.001Zm1.436 2.036c.463 0 .735-.272.735-.744s-.272-.741-.735-.741h-.774v1.485h.774Z"/>
+						<path fill-rule="evenodd" d="M4.893 0a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146A.5.5 0 0 0 11.107 0H4.893ZM1 5.1 5.1 1h5.8L15 5.1v5.8L10.9 15H5.1L1 10.9V5.1Z"/>
+					</svg>
+					<p class="fs-4 text-center text-light my-5">Il n'y a pas d'évènement programmé.</p>
+				</div>
+			{% endif %}
+			{% for event in events %}
+				<div>
+					<div class="card mt-5 col-md-10 my-4">
+						<div class="row g-0">
+							<div class="col-md-4">
+								<img src="{% if event.imgPath is not null %} {{'/assets/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
+							</div>
+							<div class="col-md-7 p-4 mx-2">
+								<div class="card-body p-0">
+									<h3 class="card-title">{{ event.title }}</h3>
+									<div class="row my-4 mx-2">
+										<h4 class="course bg-primary pt-2 text-light w-auto">
+											{{section.name}}
+										</h4>
+										<h4 class="date pt-2 text-center text-dark bg-secondary w-auto">
+											{{event.raceDate}}
+										</h4>
 									</div>
-									<p class="card-text text-dark">
-										{{ event.paragraph }}
-									</p>
 								</div>
+								<p class="card-text text-dark fs-5 w-auto">
+									{{ event.paragraph }}
+								</p>
 							</div>
 						</div>
 					{% endfor %}

@@ -12,10 +12,11 @@
 
 .bureau-image {
     object-fit: cover;
+    height: 630px;
 }
 
 .section-bureau:not(:first-of-type) {
-    margin-block-start: 10rem;
+    margin-block-start: 5rem;
 }
 
 .header-container {

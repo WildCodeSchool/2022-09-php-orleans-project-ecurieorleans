@@ -31,7 +31,7 @@ opacity:70%;
 .header-container {
     height: calc(40vh - var(--navbar_height));
     background-image: url(../images/partns.jpeg);
-    background-size: fill;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding-block-start: 100px;

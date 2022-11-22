@@ -39,9 +39,53 @@ class AdminBoardController extends AbstractController
         ]);
     }
 
+    public function index()
+    {
+        $this->testAdmin();
+        $boardManager = new BoardManager();
+        $members = $boardManager->selectAll();
+        return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);
+    }
+
+
+    public function edit($id)
+    {
+        $membersErrors = [];
+        $membersManager = new BoardManager();
+        $roles = [
+            "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
+            "Trésorier", "Trésorier adjoint", "Entraineur"
+        ];
+        $member = $membersManager->selectOneById($id);
+        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $members['boardmember'] = "";
+            $members = array_map('trim', $_POST);
+            if ($members["boardmember"] === "on") {
+                $members['boardmember'] = 1;
+            } else {
+                $members['boardmember'] = 0;
+            }
+            $membersErrors = $this->checkErrors($members);
+
+            if (empty($membersErrors)) {
+                $membersManager->edit($members, $id);
+                header('Location: /admin/bureau');
+                return null;
+            }
+        }
+        return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
+            'errors' => $membersErrors,
+            'roles' => $roles,
+            'sectionResponsabilitys' => $responsability,
+            'member' => $member,
+        ]);
+    }
     private function checkErrors(array $member): array
     {
 
+        $membersManager = new BoardManager();
+        $roles = $membersManager->selectRoles();
         $errors = [];
         if (empty($member['lastname'])) {
             $errors[] = 'Le nom du membre est obligatoire.';
@@ -54,7 +98,7 @@ class AdminBoardController extends AbstractController
             $errors[] = 'le mail na pas le bon format .';
         }
 
-        if (!in_array($member['role'], self::ROLES)) {
+        if (in_array($member['role'], $roles)) {
             $errors[] = 'Le role doit etre valide .';
         }
 
@@ -65,14 +109,6 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
         return $errors;
-    }
-
-    public function index()
-    {
-        $this->testAdmin();
-        $boardManager = new BoardManager();
-        $members = $boardManager->selectAll();
-        return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);
     }
 
     public function delete(): void

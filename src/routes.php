@@ -17,6 +17,7 @@ return [
     'error' => ['ErrorController', 'index', ['error']],
     'admin/bureau/add' => ['AdminBoardController', 'add',],
     'admin/bureau' => ["AdminBoardController", "index"],
+    'admin/bureau/edit' => ["AdminBoardController", "edit", ["id"]],
     'admin/bureau/supprimer' => ["AdminBoardController", "delete"],
     'admin/login' => ['LoginController', 'login'],
     'admin/logout' => ['LoginController', 'logout'],

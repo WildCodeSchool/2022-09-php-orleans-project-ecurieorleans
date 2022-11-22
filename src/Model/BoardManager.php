@@ -23,6 +23,22 @@ class BoardManager extends AbstractManager
         return $this->pdo->query("SELECT `role` from " . self::TABLE)->fetchAll();
     }
 
+    public function edit($member, $id)
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET firstname=:fname, lastname=:lname,
+        gender=:gender,phone=:phone, mail=:mail, is_board_member=:boardmember, `role`=:role, 
+        section_responsability=:section_responsability WHERE id = :id ");
+        $statement->bindValue(":id", $id);
+        $statement->bindValue(":fname", $member['firstname']);
+        $statement->bindValue(":lname", $member['lastname']);
+        $statement->bindValue(":gender", $member['gender']);
+        $statement->bindValue(":mail", $member['email']);
+        $statement->bindValue(":phone", $member['phone']);
+        $statement->bindValue(":boardmember", $member['boardmember']);
+        $statement->bindValue(":role", $member['role']);
+        $statement->bindValue(":section_responsability", $member['sectionResponsability']);
+        $statement->execute();
+    }
     public function add($member)
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (firstname, lastname, gender, phone, mail,
@@ -36,7 +52,6 @@ class BoardManager extends AbstractManager
         $statement->bindValue(":boardmember", $member['boardmember']);
         $statement->bindValue(":role", $member['role']);
         $statement->bindValue(":section_responsability", $member['sectionResponsability']);
-
         $statement->execute();
     }
 }

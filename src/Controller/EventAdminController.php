@@ -36,7 +36,7 @@ class EventAdminController extends AbstractController
                 move_uploaded_file($_FILES['eventImage']['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFiles);
                 $addCard = new EventManager();
                 $addCard->addCard($events, $uniqueFiles);
-                header("Location: /admin/evenement");
+                header("Location: /admin/evenements");
             }
             return $this->twig->render(
                 'AdminEvent/AddAdminEvent.html.twig',
@@ -80,9 +80,11 @@ class EventAdminController extends AbstractController
             $id = (int) trim($_POST['id']);
             $eventManager = new EventManager();
             $imageName = $eventManager->selectOneById($id);
-            unlink("uploads/" . $imageName['imgPath']);
+            if ($imageName['imgPath'] != null) {
+                unlink("uploads/" . $imageName['imgPath']);
+                $eventManager->delete($id);
+            }
             $eventManager->delete($id);
-
             header('Location:/admin/evenement');
         }
     }
@@ -103,6 +105,9 @@ class EventAdminController extends AbstractController
             $maxLengthRaceName = 255;
             if (strlen($event['raceName']) > $maxLengthRaceName) {
                 $errors[] = "Le titre de la course est trop long max " . $maxLengthRaceName . ".";
+            }
+            if (strlen($event['raceDescription']) > $maxLengthRaceName) {
+                $errors[] = "La description de la course ne doit pas être plus longue que  " . $maxLengthRaceName . ".";
             }
             $event['sportSelect'] = (int) $event['sportSelect'];
             if (!in_array($event['sportSelect'], $sport)) {

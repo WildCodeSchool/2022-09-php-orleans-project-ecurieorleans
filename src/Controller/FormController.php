@@ -7,7 +7,7 @@ use App\Model\SectionManager;
 
 class FormController extends AbstractController
 {
-    public function contact($message)
+    public function contact($message = "")
     {
         $sectionManager = new SectionManager();
         $sections = $sectionManager->selectAll();

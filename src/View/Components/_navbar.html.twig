@@ -1,73 +1,42 @@
 {% block navbar %}
-<div class="blackspacer"></div>
-<nav class="navbar navbar-expand-md navbar-light bg-light p-0">
-    <div class="navbar-custom container-fluid">
-        <a class="navbar-brand navlogo" href="/">
-            <img src="/assets/images/NavLogo.png" alt="Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Sections Sports
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-start dropdown-custom"
-                        aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item item-custom fw-bold fs-5" href="/section?id=1"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-car-front" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z" />
-                                    <path
-                                        d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z" />
-                                </svg>
-                                Auto</a></li>
-                        <li><a class="dropdown-item item-custom fw-bold fs-5" href="section?id=2"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M4 13.256V12H2v-2h6.365L11.2 8h3.491L13.6 5H11V3h4l1.092 3H20v3h-2.816l1.456 4.002a4.5 4.5 0 1 1-1.985.392L15.419 10h-.947l-1.582 5.87l-.002-.001l.002.006l-2.925 1.064A4.5 4.5 0 1 1 4 13.256zm2-.229a4.5 4.5 0 0 1 3.281 2.033l1.957-.713L12.403 10h-.547L9 12H6v1.027zM5.5 20a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5zm13 0a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5z" />
-                                </svg>
-                                Moto</a></li>
-                        <li><a class="dropdown-item item-custom fw-bold fs-5" href="section?id=3"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-truck-front" viewBox="0 0 16 16">
-                                    <path
-                                        d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7ZM4 2a1 1 0 0 0-1 1v3.9c0 .625.562 1.092 1.17.994C5.075 7.747 6.792 7.5 8 7.5c1.208 0 2.925.247 3.83.394A1.008 1.008 0 0 0 13 6.9V3a1 1 0 0 0-1-1H4Zm0 1h8v3.9c0 .002 0 .001 0 0l-.002.004a.013.013 0 0 1-.005.002h-.004C11.088 6.761 9.299 6.5 8 6.5s-3.088.26-3.99.406h-.003a.013.013 0 0 1-.005-.002L4 6.9c0 .001 0 .002 0 0V3Z" />
-                                    <path
-                                        d="M1 2.5A2.5 2.5 0 0 1 3.5 0h9A2.5 2.5 0 0 1 15 2.5v9c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2v-9ZM3.5 1A1.5 1.5 0 0 0 2 2.5v9A1.5 1.5 0 0 0 3.5 13h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 1h-9Z" />
-                                </svg>
-                                HandiCar</a></li>
-                        <li><a class="dropdown-item item-custom fw-bold fs-5" href="section?id=4"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                                    <path fill="currentColor"
-                                        d="M224.5 68.7a6 6 0 0 0-3.5-3.3a6.2 6.2 0 0 0-4.8.2a5.7 5.7 0 0 0-1.5 1.2L175 106.5l-21.2-4.3l-4.3-21.2l39.7-39.7a4.8 4.8 0 0 0 1.2-1.6a5.9 5.9 0 0 0 .2-4.7a6 6 0 0 0-3.3-3.5a70 70 0 0 0-90.8 94l-61.4 53l-.3.3a30 30 0 0 0 0 42.4a29.9 29.9 0 0 0 42.4 0l.3-.3l53-61.4a70 70 0 0 0 94-90.8ZM201 137a58.3 58.3 0 0 1-68.9 9.9a6 6 0 0 0-7.6 1.2l-55.9 64.8a18 18 0 0 1-25.5-25.5l64.8-55.9a6.1 6.1 0 0 0 1.3-7.5a58 58 0 0 1 64.7-84.3l-35.1 35.1a6.3 6.3 0 0 0-1.7 5.4l5.7 28.3a6 6 0 0 0 4.7 4.7l28.3 5.7a6.3 6.3 0 0 0 5.4-1.7l35.1-35.1A57.6 57.6 0 0 1 201 137Z" />
-                                </svg>
-                                Mécasport</a></li>
-                    </ul>
-                </li>
-                </a>
+	<div class="blackspacer"></div>
+	<nav class="navbar navbar-expand-md navbar-light bg-light p-0">
+		<div class="navbar-custom container-fluid">
+			<a class="navbar-brand navlogo" href="/">
+				<img src="/assets/images/NavLogo.png" alt="Logo"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Sections Sports
+						</a>
+						<ul class="dropdown-menu dropdown-menu-start dropdown-custom" aria-labelledby="navbarDropdownMenuLink">
+							{% for section in sections %}
+								<li>
+									<a class="dropdown-item item-custom fw-bold fs-5" href="/section?id={{ section.id}}">
+										{{section.name}}</a>
+								</li>
+							{% endfor %}
+						</li>
+					</li>
+				</ul>
+			</li>
+		</a>
 
-                <li class="nav-item">
-                    <a class="nav-link fs-5" href="/partenaires">Partenaires</a>
-                </li>
-                <div class="skewright"></div>
-                <li class="nav-item">
-                    <a class="nav-link fs-5" href="/bureau">Bureau</a>
+		<li class="nav-item">
+			<a class="nav-link fs-5" href="/partenaires">Partenaires</a>
+		</li>
+		<div class="skewright"></div>
+		<li class="nav-item">
+			<a class="nav-link fs-5" href="/bureau">Bureau</a>
 
-                </li>
-                <div class="skewright"></div>
-                <li class="nav-item fs-5">
-                    <a class="nav-link" href="/circuit">Circuit</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-{% endblock %}
+		</li>
+		<div class="skewright"></div>
+		<li class="nav-item fs-5">
+			<a class="nav-link" href="/circuit">Circuit</a>
+		</li>
+	</ul>
+</div></div></nav>{% endblock %}

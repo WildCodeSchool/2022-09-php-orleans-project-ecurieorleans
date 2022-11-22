@@ -27,7 +27,7 @@ return [
     'admin/sports/supprimer' => ['AdminSectionController', 'delete'],
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
-    'contact' => ['FormController', 'contact',],
+    'contact' => ['FormController', 'contact', ['message']],
     'admin/partenaires' => ['AdminPartnerController', 'index',],
     'admin/partenaires/add' => ['AdminPartnerController', 'add',],
     'admin/partenaires/edition' => ['AdminPartnerController', 'edit', ['id']],

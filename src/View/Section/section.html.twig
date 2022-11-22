@@ -44,10 +44,11 @@
 		</section>
 
 		<section class="cards cards container-fluid">
-			<div class="titleContent bg-primary d-flex justify-content-center align-items-center">
+			<div class="titleContent bg-primary d-flex justify-content-center align-items-center my-2 mt-5">
 				<h2 class="title text-center text-light p-3 mx-1">Evènements
 					{{section.name}}</h2>
 			</div>
+
 			{% if events is empty %}
 				<div class="d-flex justify-content-center align-items-center gap-3 my-5">
 					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-sign-stop" viewbox="0 0 16 16">
@@ -60,7 +61,7 @@
 			{% endif %}
 			{% for event in events %}
 				<div>
-					<div class="card mt-5 col-md-10 my-4">
+					<div class="card card-height col-md-10 my-5 m-auto">
 						<div class="row g-0">
 							<div class="col-md-4">
 								<img src="{% if event.imgPath is not null %} {{'/assets/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
@@ -82,98 +83,97 @@
 								</p>
 							</div>
 						</div>
-					{% endfor %}
+					</div>
 				</div>
-			</div>
+			{% endfor %}
 		</section>
-		<section class="sports-section">
-			<div class="titleContentLight mt-4 p-2 px-4 d-flex align-items-center">
+
+		<section>
+			<div class="titleContentLight my-4 mb-0 p-2 px-4 d-flex align-items-center">
 				<h2 class="titleLight m-auto text-primary py-2">Organisation</h2>
 			</div>
-			{% set memberResponsabilityCount = 0 %}
-			{% for member in members %}
-				{% if member.section_responsability is not null %}
-					{% set memberResponsabilityCount = memberResponsabilityCount + 1 %}
-				{% endif %}
-			{% endfor %}
-			{% if memberResponsabilityCount == 0 %}
-				<div class="d-flex justify-content-center align-items-center gap-3 my-5">
-					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-stopwatch" viewbox="0 0 16 16">
-						<path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
-						<path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
-					</svg>
-					<p class="fs-4 text-center my-5">Organisation à venir !</p>
+			<div class="d-flex justify-content-around">
+				<div class="d-flex flex-column">
+					<div class="bg-primary px-2 h-100"></div>
+					<div class="bg-secondary px-2 h-50"></div>
 				</div>
-			{% else %}
-				<table class="sports-table text-center fs-5 m-auto my-5">
-					<thead>
-						<tr>
-							<th>Responsable :</th>
-						</tr>
-					</thead>
-					<tbody>
+				<div class="container-fluid">
+					<div class="container-fluid d-flex flex-column">
+						{% set memberResponsabilityCount = 0 %}
 						{% for member in members %}
-							{% if member.section_responsability == 'Responsable' %}
-								<tr>
-									<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
-								</tr>
-								<tr>
-									<td>{{member.phone}}</td>
-								</tr>
-								<tr>
-									<td>{{member.mail}}</td>
-								</tr>
+							{% if member.section_responsability is not null %}
+								{% set memberResponsabilityCount = memberResponsabilityCount + 1 %}
 							{% endif %}
 						{% endfor %}
-					</tbody>
-					<thead>
-						<tr>
-							<th>Adjoint :</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for member in members %}
-							{% if member.section_responsability == 'Adjoint' %}
-								<tr>
-									<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
-								</tr>
-								<tr>
-									<td>{{member.phone}}</td>
-								</tr>
-								<tr>
-									<td>{{member.email}}</td>
-								</tr>
-							{% endif %}
-						{% endfor %}
-					</tbody>
-					<thead>
-						<tr>
-							<th>Entraîneur :</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for member in members %}
-							{% if member.section_responsability == 'Entraîneur' %}
-								<tr>
-									<td>{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</td>
-								</tr>
-								<tr>
-									<td>{{member.phone}}</td>
-								</tr>
-								<tr>
-									<td>{{member.email}}</td>
-								</tr>
-							{% endif %}
-						{% endfor %}
-					</tbody>
-				</table>
-			{% endif %}
-			<div class="blue-spacer bg-primary w-50 m-auto"></div>
-			<div class="d-flex justify-content-center my-5 align-items-center">
-				<h3 class="bg-primary p-3">
-					<a class="text-light text-decoration-none" href="/contact">Je deviens Membre</a>
-				</h3>
+						{% if memberResponsabilityCount == 0 %}
+							<div class="d-flex justify-content-center align-items-center gap-3 my-5">
+								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#1F1CC6" class="bi bi-stopwatch" viewbox="0 0 16 16">
+									<path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+									<path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+								</svg>
+								<p class="fs-4 text-center my-5">Organisation à venir !</p>
+							</div>
+						{% else %}
+							<div class="row g-3 gap-2 justify-content-center mt-5">
+								{% for member in members %}
+									{% if member.section_responsability == 'Responsable' %}
+										<div class="card card-section border border-primary col-lg-3">
+											<div class="card-body d-flex align-items-center">
+												<div class="px-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" fill="#1F1CC6" class="bi bi-person" viewbox="0 0 16 16">
+														<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+													</svg>
+												</div>
+												<div class="d-flex flex-column">
+													<h3 class="card-title">{{member.section_responsability}}</h5>
+													<p class="card-text">{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</p>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+									{% if member.section_responsability == 'Adjoint' %}
+										<div class="card card-section border border-primary col-lg-3">
+											<div class="card-body d-flex align-items-center">
+												<div class="px-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" fill="#1F1CC6" class="bi bi-person" viewbox="0 0 16 16">
+														<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+													</svg>
+												</div>
+												<div class="d-flex flex-column">
+													<h3 class="card-title">{{member.section_responsability}}</h5>
+													<p class="card-text">{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</p>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+									{% if member.section_responsability == 'Entraîneur' %}
+										<div class="card card-section border border-primary col-lg-3">
+											<div class="card-body d-flex align-items-center">
+												<div class="px-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" fill="#1F1CC6" class="bi bi-person" viewbox="0 0 16 16">
+														<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+													</svg>
+												</div>
+												<div class="d-flex flex-column">
+													<h3 class="card-title">{{member.section_responsability}}</h5>
+													<p class="card-text">{{member.gender ~ ' ' ~ member.firstname ~ ' ' ~ member.lastname}}</p>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+						<div class="blue-spacer bg-primary w-50 m-auto my-5"></div>
+						<div class="d-flex justify-content-center my-4 align-items-center">
+							<h3 class="bg-primary p-3">
+								<a class="text-light text-decoration-none" href="/contact">Je deviens Membre</a>
+							</h3>
+
+						</div>
+					{% endif %}
+				</div>
 			</div>
-		</section>
-	</main>
-{% endblock %}
+		</div>
+	</section>
+</main>{% endblock %}

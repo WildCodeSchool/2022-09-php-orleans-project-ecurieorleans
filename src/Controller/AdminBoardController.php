@@ -41,10 +41,12 @@ class AdminBoardController extends AbstractController
 
     public function index()
     {
+        $this->testAdmin();
         $boardManager = new BoardManager();
         $members = $boardManager->selectAll();
         return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);
     }
+
 
     public function edit($id)
     {
@@ -107,13 +109,6 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
         return $errors;
-    }
-    public function index()
-    {
-        $this->testAdmin();
-        $boardManager = new BoardManager();
-        $members = $boardManager->selectAll();
-        return $this->twig->render("AdminBoard/AdminBoard.html.twig", ["members" => $members]);
     }
 
     public function delete(): void

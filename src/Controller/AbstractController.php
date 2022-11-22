@@ -43,4 +43,13 @@ abstract class AbstractController
         $this->user = isset($_SESSION['user_id']) ? $loginManager->selectOneById($_SESSION['user_id']) : false;
         $this->twig->addGlobal('user', $this->user);
     }
+
+    public function testAdmin()
+    {
+        if (!$this->user) {
+            header('HTTP/1.1 404 Not Found');
+            header("Location: /error?error=404");
+            return "";
+        }
+    }
 }

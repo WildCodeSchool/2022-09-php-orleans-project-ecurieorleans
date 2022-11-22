@@ -4,7 +4,6 @@
 
 .admin-members {
     font-size: 1.3rem;
-    width: 33%;
 }
 
 .admin-image {
@@ -13,10 +12,11 @@
 
 .bureau-image {
     object-fit: cover;
+    height: 630px;
 }
 
 .section-bureau:not(:first-of-type) {
-    margin-block-start: 10rem;
+    margin-block-start: 5rem;
 }
 
 .header-container {
@@ -31,11 +31,5 @@
 @media screen and (max-width: 768px) {
     .blue-spacer-right {
         margin: auto;
-    }
-    .bureau-members {
-        margin-block-start: 1.5rem;
-    }
-    .admin-members {
-        margin-block-start: 1.5rem;
     }
 }

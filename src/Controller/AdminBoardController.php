@@ -59,9 +59,8 @@ class AdminBoardController extends AbstractController
         $member = $membersManager->selectOneById($id);
         $responsability = ["Responsable", "Adjoint", "Entraîneur"];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $members['boardmember'] = "";
             $members = array_map('trim', $_POST);
-            if ($members["boardmember"] === "on") {
+            if (isset($members["boardmember"])) {
                 $members['boardmember'] = 1;
             } else {
                 $members['boardmember'] = 0;

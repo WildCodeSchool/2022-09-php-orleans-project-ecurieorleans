@@ -99,7 +99,7 @@ class AdminBoardController extends AbstractController
         }
 
         if (in_array($member['role'], $roles)) {
-            $errors[] = 'Le rôle doit être un des rôle valide.';
+            $errors[] = 'Le rôle doit être un des rôles valide.';
         }
 
         if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {

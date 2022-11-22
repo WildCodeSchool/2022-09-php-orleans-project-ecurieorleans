@@ -1,6 +1,7 @@
 {% extends "admin_layout.html.twig"%}
 
 {% block content %}
+<h1 class="text-center my-3">Ajouter un membre </h1>
 	{% if errors  %}
 		<div class="d-flex justify-content-center flex-column align-items-center">
 			<svg xmlns=" http://www.w3.org/2000/svg" width=" 120" height=" 120" fill=" #FF0000" class=" bi bi-exclamation-triangle py-2" viewbox=" 0 0 16 16">
@@ -74,11 +75,9 @@
 				<input name="boardmember" id="boardmember" type="checkbox">
 			</div>
 		</div>
-		<div class="d-flex justify-content-between w-75 m-auto">
-			<button type="submit" class="btn btn-success w-25 py-2">Valider</button>
-			<button class="btn btn-outline-danger w-25 py-2">
-				<a href="/admin/sports" class="admin-buttons text-danger">Annuler</a>
-			</button>
-		</div>
 	</form>
+		<div class="d-flex justify-content-between w-75 m-auto">
+			<button type="submit" class="btn btn-success w-25 py-2" form="add-board">Valider</button>
+				<a href="/admin/bureau" class="admin-buttons text-dark btn btn-outline-danger w-25 py-2">Annuler</a>
+		</div>
 {% endblock %}

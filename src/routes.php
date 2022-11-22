@@ -28,6 +28,7 @@ return [
     'items' => ['ItemController', 'index',],
     'admin' => ['AdminController', 'index',],
     'contact' => ['FormController', 'contact',],
+    'mention/legale' => ['MentionLegaleController', 'index'],
     'admin/partenaires' => ['AdminPartnerController', 'index',],
     'admin/partenaires/add' => ['AdminPartnerController', 'add',],
     'admin/partenaires/edition' => ['AdminPartnerController', 'edit', ['id']],

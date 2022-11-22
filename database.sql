@@ -311,32 +311,32 @@ INSERT INTO
     `partner` (`name`, logo, `URL`, section_id)
 VALUES (
         "Fédération Française de Motocyclisme",
-        "FFM-logo.png",
+        NULL,
         "https://www.ffmoto.org/",
         2
     ), (
         "Fédération Française du Sport Automobile",
-        "FFSA-logo.png",
+        NULL,
         "https://www.ffsa.org/",
         1
     ), (
         "L'Union Française des Oeuvres Laïques d'Education Physique",
-        "Ufolep-logo.png",
+        NULL,
         "https://www.ufolep.org/",
         3
     ), (
         "Région Centre-Val-de-Loire",
-        "RCVL-logo.png",
+        NULL,
         "https://www.centre-valdeloire.fr/",
         NULL
     ), (
         "Loiret Département",
-        "Loiret-logo.png",
+        NULL,
         "https://www.loiret.fr/",
         NULL
     ), (
         "Orléans Mairie",
-        "Orleans-logo.png",
+        NULL,
         "https://www.orleans-metropole.fr/",
         NULL
     );

@@ -1,7 +1,3 @@
-.yellow-spacer {
-    height: 8px;
-}
-
 .header-container {
     height: calc(40vh - var(--navbar_height));
     background-image: url(../images/header_circuit2.jpeg);
@@ -10,38 +6,12 @@
     background-position: 50% 50% 50% 30%;
 }
 
-.blue-spacer {
-    margin-block-start: -2px;
-    height: 2px;
-}
-
 .circuit-content-image {
     object-fit: cover;
-}
-
-.circuit-section3 {
-    margin-block-start: 115px;
-    margin-block-end: 10rem;
 }
 
 .circuit-adress {
     border-top: solid var(--bs-primary) 2px;
     border-bottom: solid var(--bs-primary) 2px;
     padding-block: 150px;
-}
-
-@media screen and (max-width: 960px) {
-    .circuit-content-image {
-        margin-block-start: 0;
-        border: solid var(--bs-primary) 1px;
-    }
-    .circuit-section3 {
-        margin-block-start: 40px;
-    }
-
-    .circuit-adress {
-        border-top: none;
-        padding-block: 1rem;
-        width: 50%;
-    }
 }

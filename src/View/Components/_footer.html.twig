@@ -13,11 +13,12 @@
 			<li>
 				<a href="/mention/legale" class="text-light footer-link">Mentions légales</a>
 			</li>
-			<div class="small-blue-spacer"></div>
-			<li>
-				<a href="" class="text-light footer-link">CGU</a>
-			</li>
-
+			{% if user is not empty %}
+				<div class="small-blue-spacer"></div>
+				<li>
+					<a href="/admin" class="text-light footer-link">Administration</a>
+				</li>
+			{% endif %}
 		</div>
 	</div>
 </footer>

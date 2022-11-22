@@ -42,4 +42,16 @@ class EventManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function selectAllEventsWithSections(string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT * FROM ' . self::TABLE . ' as x' .
+            ' JOIN ' . SectionManager::TABLE . ' ON ' . SectionManager::TABLE . '.id=x.' .
+            SectionManager::TABLE . '_id';
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

@@ -12,6 +12,7 @@ class EventAdminController extends AbstractController
 
     public function index()
     {
+        $this->testAdmin();
         $eventsManager = new EventManager();
         $events = $eventsManager->selectAll();
         return $this->twig->render("AdminEvent/AdminEvent.html.twig", ['events' => $events]);
@@ -19,6 +20,7 @@ class EventAdminController extends AbstractController
 
     public function add(): string
     {
+        $this->testAdmin();
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $events = array_map('trim', $_POST);
@@ -46,6 +48,7 @@ class EventAdminController extends AbstractController
 
     public function edit(int $id): string
     {
+        $this->testAdmin();
         $errors =  [];
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);

@@ -1,0 +1,14 @@
+{% extends "visitor_layout.html.twig"%}
+
+{% block content %}
+	<div class="d-flex align-items-center flex-column">
+		<h2>
+			Erreur
+			{{ error }}</h2>
+		<h3>
+			La page n'éxiste pas !
+		</h3>
+        <img src="/assets/images/error.webp" class="w-75">
+	</div>
+{% endblock %}
+{% block footer%}{% endblock %}

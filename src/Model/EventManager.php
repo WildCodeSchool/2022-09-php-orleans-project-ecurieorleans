@@ -20,11 +20,11 @@ class EventManager extends AbstractManager
         $statement->bindValue(":section_id", $event['sportSelect'], PDO::PARAM_INT);
         $statement->execute();
     }
-    public function update(array $events, ?string $uniqueFileName): bool
+    public function update(array $events, ?string $uniqueFileName, $id): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET  imgPath = :imgPath, title = :title,
         raceDate = :raceDate, paragraph = :paragraph, section_id = :section_id WHERE id=:id");
-        $statement->bindValue('id', $events['id'], PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->bindValue('title', $events['raceName'], PDO::PARAM_STR);
         $statement->bindValue('imgPath', $uniqueFileName, PDO::PARAM_STR);
         $statement->bindValue("raceDate", $events['date'], PDO::PARAM_STR_CHAR);
@@ -36,6 +36,18 @@ class EventManager extends AbstractManager
     public function selectAllEventsBySectionID(int $sectionId, string $orderBy = '', string $direction = 'ASC')
     {
         $query = 'SELECT * FROM ' . self::TABLE . ' WHERE section_id=' . $sectionId;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function selectAllEventsWithSections(string $orderBy = '', string $direction = 'ASC')
+    {
+        $query = 'SELECT * FROM ' . self::TABLE . ' as x' .
+            ' JOIN ' . SectionManager::TABLE . ' ON ' . SectionManager::TABLE . '.id=x.' .
+            SectionManager::TABLE . '_id';
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }

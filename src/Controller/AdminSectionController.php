@@ -9,10 +9,12 @@ class AdminSectionController extends AbstractController
     private const INPUT_MAX_LENGHT = 25;
     private const MAX_FILE_SIZE = 200000;
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
-    public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION =  './uploads/';
 
     public function index(): string
     {
+
+        $this->testAdmin();
         $sectionManager = new SectionManager();
         $sections = $sectionManager->selectAll('id');
         return $this->twig->render(
@@ -23,6 +25,7 @@ class AdminSectionController extends AbstractController
 
     public function add(): ?string
     {
+        $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
 
@@ -54,6 +57,8 @@ class AdminSectionController extends AbstractController
 
     public function edit(int $id): ?string
     {
+
+        $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
@@ -79,7 +84,6 @@ class AdminSectionController extends AbstractController
                 return null;
             }
         }
-
         return $this->twig->render('AdminSports/adminEditSports.twig', [
             'section' => $section,
             'errors' => $errors,

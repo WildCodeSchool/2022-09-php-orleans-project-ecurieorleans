@@ -8,10 +8,11 @@ class EventAdminController extends AbstractController
 {
     private const AUTHORIZED_EXTENSIONS = ['image/jpg', 'image/jpeg', 'image/webp', 'image/png', 'image/gif'];
     private const MAX_FILE_SIZE = 200000;
-    public const UPLOADS_DIR_LOCATION =  './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION =  './uploads/';
 
     public function index()
     {
+        $this->testAdmin();
         $eventsManager = new EventManager();
         $events = $eventsManager->selectAll();
         return $this->twig->render("AdminEvent/AdminEvent.html.twig", ['events' => $events]);
@@ -19,6 +20,7 @@ class EventAdminController extends AbstractController
 
     public function add(): string
     {
+        $this->testAdmin();
         $errors =  [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $events = array_map('trim', $_POST);
@@ -46,6 +48,7 @@ class EventAdminController extends AbstractController
 
     public function edit(int $id): string
     {
+        $this->testAdmin();
         $errors =  [];
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
@@ -55,13 +58,13 @@ class EventAdminController extends AbstractController
             $errorsFiles = $this->errorsFile();
             $errors = array_merge($errorsFiles, $errorsForm);
             if (empty($errors)) {
-                if (empty($_FILES['eventImage'])) {
-                    $uniqueFiles = $_FILES['eventImage']['name'];
+                if (empty($_FILES['eventImage']['name'])) {
+                    $uniqueFiles = null;
                 } else {
                     $uniqueFiles = uniqid() . $_FILES['eventImage']['name'];
                 }
                 move_uploaded_file($_FILES['eventImage']['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqueFiles);
-                $eventManager->update($events, $uniqueFiles);
+                $eventManager->update($events, $uniqueFiles, $event['id']);
                 header("Location: /admin/evenement");
             }
             return $this->twig->render(
@@ -71,7 +74,18 @@ class EventAdminController extends AbstractController
         }
         return $this->twig->render('AdminEvent/EditAdminEvent.html.twig', ["event" => $event, "errors" => $errors]);
     }
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = (int) trim($_POST['id']);
+            $eventManager = new EventManager();
+            $imageName = $eventManager->selectOneById($id);
+            unlink("uploads/" . $imageName['imgPath']);
+            $eventManager->delete($id);
 
+            header('Location:/admin/evenement');
+        }
+    }
     public function errorsForm(array $event)
     {
         $errors = [];

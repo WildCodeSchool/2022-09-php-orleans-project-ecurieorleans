@@ -7,10 +7,11 @@ use App\Model\PartnerManager;
 class AdminPartnerController extends AbstractController
 {
     public const MAX_INPUT_LENGTH = 255;
-    public const UPLOADS_DIR_LOCATION = './assets/uploads/';
+    public const UPLOADS_DIR_LOCATION = './uploads/';
 
     public function index()
     {
+        $this->testAdmin();
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectAll('name');
         return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
@@ -18,6 +19,7 @@ class AdminPartnerController extends AbstractController
 
     public function add(): string
     {
+        $this->testAdmin();
         $errors = $partner = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -86,12 +88,10 @@ class AdminPartnerController extends AbstractController
     {
         $errors = [];
 
-        //image size 1Mo
         $maxFileSize = 1000000;
         if ($file['size'] > $maxFileSize) {
             $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 .  'Mo.';
         }
-        //extension
         $authorizedMimes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
         if (!empty($file['tmp_name'])) {
             $mime = mime_content_type($file['tmp_name']);
@@ -112,10 +112,49 @@ class AdminPartnerController extends AbstractController
     }
 
 
-    public function edit(int $id): string
+    public function edit(int $id): ?string
     {
+        $this->testAdmin();
+        $errors = [];
         $partnerManager = new PartnerManager();
-        $partners = $partnerManager->selectOneById($id);
-        return $this->twig->render('AdminPartner/AdminPartner.html.twig', ['partners' => $partners,]);
+        $partner = $partnerManager->selectOneById($id);
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $partnerUpdate = array_map('trim', $_POST);
+            $partnerErrors = $this->validate($partnerUpdate);
+            $image = array_map('trim', $_FILES['logo']);
+            $uploadErrors = $this->validateUpload($image);
+            $errors = array_merge($partnerErrors, $uploadErrors);
+
+            if (empty($errors)) {
+                if (empty($image['name'])) {
+                    $uniqName = null;
+                } else {
+                    $uniqName = uniqid() . $image['name'];
+                }
+                move_uploaded_file($image['tmp_name'], self::UPLOADS_DIR_LOCATION . $uniqName);
+                $partnerManager->update($partnerUpdate, $uniqName);
+
+                header('Location:/admin/partenaires/');
+                return 'null';
+            }
+        }
+
+        return $this->twig->render('AdminPartner/AdminEdit.html.twig', [
+        'errors' => $errors,
+        'partner' => $partner,
+        ]);
+    }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $partnerManager = new PartnerManager();
+            $partnerManager->delete((int)$id);
+        }
+
+        header('Location:/admin/partenaires/');
     }
 }

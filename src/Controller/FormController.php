@@ -7,21 +7,19 @@ use App\Model\SectionManager;
 
 class FormController extends AbstractController
 {
-    public function contact()
+    public function contact($message)
     {
         $sectionManager = new SectionManager();
         $sections = $sectionManager->selectAll();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = $this->errors($sections);
             if (empty($errors)) {
-                echo 'Votre message à bien été envoyé';
-                $formView = new formManager();
-                $formView->Insert();
-                header('Location: /contact');
+                header('Location: /contact?message=good');
+                return "";
             }
             return $this->twig->render('/Contact/form.html.twig', ['errors' => $errors]);
         }
-        return $this->twig->render('/Contact/form.html.twig', ['sections' => $sections]);
+        return $this->twig->render('/Contact/form.html.twig', ['sections' => $sections , 'message' => $message]);
     }
 
 

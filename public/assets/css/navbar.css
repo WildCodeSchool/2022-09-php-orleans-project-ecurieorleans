@@ -26,7 +26,6 @@
     animation: pulse 1s infinite;
     animation-timing-function: linear;
     color: black;
-
 }
 
 .navbar-nav {
@@ -35,15 +34,14 @@
     justify-content: space-around;
     align-items: center;
     font-family: var(--font_title);
-    transition: all .1s linear;
+    transition: all 0.1s linear;
     color: var(--bs-primary);
 }
 
-.navbar-nav>li {
+.navbar-nav > li {
     margin-inline-start: 50px;
     margin-inline-end: 20px;
 }
-
 
 .navbar-brand > img {
     width: 150px;
@@ -77,23 +75,20 @@
     top: 100%;
 }
 
-
 .item-custom:hover {
     background-color: var(--bs-primary);
 }
 
-
-@media (max-width:768px) {
-
+@media (max-width: 768px) {
     .skewright {
         display: none;
     }
 
     .dropdown-custom {
-        opacity:90%;
+        opacity: 90%;
     }
 
-    .navbar-nav>li {
+    .navbar-nav > li {
         margin-inline-start: 0;
         margin-inline-end: 0;
         --bs-nav-link-padding-y: 2rem;

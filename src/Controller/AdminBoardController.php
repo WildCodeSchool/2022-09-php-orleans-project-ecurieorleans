@@ -6,17 +6,18 @@ use App\Model\BoardManager;
 
 class AdminBoardController extends AbstractController
 {
-    private const INPUT_MAX_LENGHT = 25;
+    private const INPUT_MAX_LENGTH = 25;
     private const ROLES = [
         "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
         "Trésorier", "Trésorier adjoint", "Entraineur"
     ];
+    public const RESPONSABILITIES = ["Responsable", "Adjoint", "Entraîneur"];
 
     public function add()
     {
         $membersErrors = [];
         $membersManager = new BoardManager();
-        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
+        $responsabilities = self::RESPONSABILITIES;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -35,7 +36,7 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminAddBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => self::ROLES,
-            'sectionResponsabilitys' => $responsability,
+            'sectionResponsabilities' => $responsabilities,
         ]);
     }
 
@@ -57,7 +58,7 @@ class AdminBoardController extends AbstractController
             "Trésorier", "Trésorier adjoint", "Entraineur"
         ];
         $member = $membersManager->selectOneById($id);
-        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
+        $responsabilities = self::RESPONSABILITIES;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -76,7 +77,7 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => $roles,
-            'sectionResponsabilitys' => $responsability,
+            'sectionResponsabilities' => $responsabilities,
             'member' => $member,
         ]);
     }
@@ -101,11 +102,11 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le role doit etre valide .';
         }
 
-        if (strlen($member['lastname']) > self::INPUT_MAX_LENGHT) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
+        if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
+            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
-        if (strlen($member['firstname']) > self::INPUT_MAX_LENGHT) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
+        if (strlen($member['firstname']) > self::INPUT_MAX_LENGTH) {
+            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         return $errors;
     }

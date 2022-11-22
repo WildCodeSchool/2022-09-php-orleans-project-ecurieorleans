@@ -83,14 +83,6 @@
     box-shadow: 0px 4px 4px rgb(var(--bs-dark));
 }
 
-.presentation-text {
-    margin-inline: 8rem;
-}
-
-.join-container {
-    padding-inline: 6rem;
-}
-
 .mosaic-text {
     background-color: rgba(var(--bs-light-rgb), 0.5);
 }

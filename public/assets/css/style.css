@@ -12,7 +12,7 @@
 
 .titleContentLight {
     margin-left: -30px;
-    width: clamp(250px, 35%, 650px);
+    width: clamp(300px, 50%, 650px);
     transform: skew(-20deg);
     border: 2px solid var(--bs-primary);
     box-shadow: 0px 4px 4px rgb(var(--bs-dark));
@@ -22,14 +22,14 @@
     margin-left: 25px;
     transform: skew(20deg);
     font-family: var(--font_title);
-    font-size: clamp(15px, 1.5vw, 40px);
+    font-size: clamp(20px, 1.5vw, 40px);
 }
 
 .titleContent {
     margin-left: -30px;
     z-index: 1;
     position: relative;
-    width: clamp(250px, 40%, 600px);
+    width: clamp(350px, 50%, 600px);
     transform: skew(-20deg);
     box-shadow: 0px 4px 4px var(--box-shadow);
 }
@@ -37,7 +37,7 @@
 .title {
     font-family: var(--font_title);
     transform: skew(20deg);
-    font-size: clamp(15px, 1.5vw, 40px);
+    font-size: clamp(20px, 1.5vw, 40px);
     width: fit-content;
 }
 

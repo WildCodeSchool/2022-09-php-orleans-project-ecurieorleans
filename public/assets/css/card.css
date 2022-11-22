@@ -21,14 +21,15 @@
 
 .cards {
     border-block: 8px solid var(--bs-secondary);
-    background-image: url(../images/home-events-cover.jpg);
+    background: url(../images/home-events-cover.jpg),
+        rgba(var(--bs-dark-rgb), 0.9);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-blend-mode: multiply;
 }
 
 .cards-container {
-    opacity: 0.93;
     padding-block: 40px;
 }
 
@@ -69,5 +70,6 @@
 }
 
 .card {
-    height: 330px;
+    min-height: 330px;
+    margin: auto;
 }

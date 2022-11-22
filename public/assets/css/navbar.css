@@ -1,46 +1,102 @@
 .blackspacer {
     width: 100%;
     height: 30px;
-    background-image: url("../images/FLAGDRAP.jpeg");
-    background-size: cover;
+    background-color: var(--bs-primary);
     opacity: 90%;
+    border-bottom-style: solid;
+    border-bottom-width: larger;
+    border-bottom-color: var(--bs-secondary);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.navbar-nav a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+    color: black;
+
 }
 
 .navbar-nav {
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    float: left;
-    font-weight: 900;
-    font-family: var(--font_body);
-    transition: all 0.1s linear;
-    z-index: 1;
+    font-family: var(--font_title);
+    transition: all .1s linear;
+    color: var(--bs-primary);
 }
 
-.navbar {
-    padding: 0;
+.navbar-nav>li {
+    margin-inline-start: 50px;
+    margin-inline-end: 20px;
 }
 
-.navbar-brand > img {
+
+.navbar-brand,
+img {
     width: 150px;
     margin-block-start: -20px;
 }
 
-.navbar-nav li:hover {
-    transform: translateY(-3px);
-}
-
 .nav-item a {
     align-self: center;
-    padding: 0;
     text-align: center;
+    color: var(--bs-primary);
 }
 
 .skewright {
     height: 100px;
     background-color: var(--bs-black);
-    width: 1px;
+    width: 3px;
     transform: skew(-20deg);
+    margin-inline-start: 40px;
+    opacity: 10%;
+}
+
+.navbar-custom {
+    background: linear-gradient(to bottom, #d9e0e8 0%, white 100%);
+}
+
+.dropdown-custom {
+    background: linear-gradient(to top, #e5ecf4 0%, white 100%);
+    --bs-dropdown-spacer: 20px;
+    --bs-dropdown-min-width: 20rem;
+    left: 50%;
+    top: 100%;
+}
+
+
+.item-custom:hover {
+    background-color: var(--bs-primary);
+}
+
+
+@media (max-width:768px) {
+
+    .skewright {
+        display: none;
+    }
+
+    .dropdown-custom {
+        opacity:90%;
+    }
+
+    .navbar-nav>li {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        --bs-nav-link-padding-y: 2rem;
+    }
 }

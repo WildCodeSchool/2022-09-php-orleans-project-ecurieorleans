@@ -21,7 +21,10 @@
 
 .cards {
     border-block: 8px solid var(--bs-secondary);
-    background-image: url(../images/home_cover.jpg);
+    background-image: url(../images/home-events-cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cards-container {
@@ -61,6 +64,10 @@
 }
 
 .cardImg {
-    height: 100%;
+    height: 328px;
     object-fit: cover;
+}
+
+.card {
+    height: 330px;
 }

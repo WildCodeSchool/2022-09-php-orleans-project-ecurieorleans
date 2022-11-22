@@ -50,6 +50,7 @@
 
 .mosaic-image:hover {
     transform: scale(1.05);
+    filter: brightness(105%);
 }
 
 .mosaic-image-container {
@@ -88,4 +89,8 @@
 
 .join-container {
     padding-inline: 6rem;
+}
+
+.mosaic-text {
+    background-color: rgba(var(--bs-light-rgb), 0.5);
 }

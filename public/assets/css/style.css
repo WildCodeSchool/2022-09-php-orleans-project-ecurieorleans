@@ -12,7 +12,7 @@
 
 .titleContentLight {
     margin-left: -30px;
-    width: clamp(250px, 30%, 550px);
+    width: clamp(250px, 35%, 650px);
     transform: skew(-20deg);
     border: 2px solid var(--bs-primary);
     box-shadow: 0px 4px 4px rgb(var(--bs-dark));
@@ -27,7 +27,6 @@
 
 .titleContent {
     margin-left: -30px;
-    margin-block-end: -20px;
     z-index: 1;
     position: relative;
     width: clamp(250px, 40%, 600px);

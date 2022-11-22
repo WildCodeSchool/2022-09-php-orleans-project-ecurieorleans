@@ -30,12 +30,12 @@
 {% endblock %}
 
 {% block content %}
-	<body>
+	<main>
 		<section class="section-bureau mt-5">
 			<div class="titleContentLight">
-				<h2 class="titleLight text-primary text-center py-2">Les membres du bureau</h2>
+				<h2 class="titleLight text-primary text-center py-3">Les membres du bureau</h2>
 			</div>
-			<div class="row g-3 mx-0">
+			<div class="row">
 				<img src="assets/images/bureau_members.png" alt="a photo of the members of the bureau" class="bureau-image col-md-5 col-sm-12">
 				<div class="row col-sm-12 col-md-7 g-3 justify-content-center">
 					{% for member in members %}
@@ -58,18 +58,28 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="section-bureau">
-			<div class="titleContentLight mt-5">
-				<h2 class="titleLight text-primary text-center py-2">Le conseil d'administration</h2>
-			</div>
-			<div class="row bg-primary m-0">
-				<img src="assets/images/conseil_admistration.png" alt="a photo of the members of the administration" class="admin-image col-md-5 col-sm-12 px-0">
-				<div class="d-flex flex-wrap m-auto col-md-7 text-center py-2">
-					{% for member in members %}
-						<p class="admin-members text-light">{{member.firstname ~ ' ' ~ member.lastname}}</p>
-					{% endfor %}
+			<div class="yellow-spacer bg-secondary"></div>
+			<div class="bg-primary row g-0">
+				<div class="col-md-7">
+					<div class="titleContentLight titleContentLightJoin p-2 px-3 text-center bg-light my-4">
+						<h2 class="titleLight text-primary">Le conseil d'administration</h2>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="my-5 fs-5 col-11 col-md-10 m-auto row">
+								{% for member in members %}
+									<p class="admin-members text-light col-4">{{member.firstname ~ ' ' ~ member.lastname}}</p>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 p-0">
+					<img src="assets/images/conseil_admistration.png" alt="a photo of the members of the administration" class="admin-image w-100 h-100">
 				</div>
 			</div>
 		</section>
-	</body>
+	</main>
 {% endblock %}

@@ -4,7 +4,6 @@
 
 .admin-members {
     font-size: 1.3rem;
-    width: 33%;
 }
 
 .admin-image {
@@ -31,11 +30,5 @@
 @media screen and (max-width: 768px) {
     .blue-spacer-right {
         margin: auto;
-    }
-    .bureau-members {
-        margin-block-start: 1.5rem;
-    }
-    .admin-members {
-        margin-block-start: 1.5rem;
     }
 }

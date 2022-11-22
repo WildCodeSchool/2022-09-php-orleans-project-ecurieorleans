@@ -45,8 +45,7 @@
 }
 
 
-.navbar-brand,
-img {
+.navbar-brand > img {
     width: 150px;
     margin-block-start: -20px;
 }

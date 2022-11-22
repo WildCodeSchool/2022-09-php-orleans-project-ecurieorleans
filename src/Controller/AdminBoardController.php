@@ -77,7 +77,7 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => $roles,
-            'sectionResponsabilitys' => $responsabilities,
+            'sectionResponsabilities' => $responsabilities,
             'member' => $member,
         ]);
     }

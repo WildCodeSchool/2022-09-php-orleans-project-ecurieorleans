@@ -44,20 +44,8 @@
     border-radius: 4px 4px 8px;
 }
 
-.card-content {
-    width: 90%;
-}
-.all-event {
-    text-decoration: none;
-}
-
 .card-title {
     font-size: (2.2rem);
-}
-
-.all-event-content {
-    width: 98%;
-    margin-block: 16px;
 }
 
 .btn-plus {

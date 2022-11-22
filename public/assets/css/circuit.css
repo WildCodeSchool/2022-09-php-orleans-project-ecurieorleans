@@ -15,3 +15,7 @@
     border-bottom: solid var(--bs-primary) 2px;
     padding-block: 150px;
 }
+
+.circuit-img-presentation {
+    max-height: 1210px;
+}

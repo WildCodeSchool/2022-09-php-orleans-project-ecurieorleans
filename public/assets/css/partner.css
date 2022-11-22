@@ -7,20 +7,17 @@
 
 .startline {
     border-radius: 5px 5px 5px;
-    margin-bottom: 15px;
     opacity: 90%;
 }
 
 .endline {
     border-radius: 5px 5px 5px;
-    margin-top: 15px;
     opacity: 90%;
 }
 
 .partnerscontainer {
     height:700px;
-    background-image: url('/assets/images/partner1.jpeg');
-
+    background-image: url('/assets/images/partorl.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -29,6 +26,24 @@
 width:20vw;
 background-color: var(--bs-lightdark-rgb);
 opacity:70%;
+}
+
+.header-container {
+    height: calc(40vh - var(--navbar_height));
+    background-image: url(../images/partns.jpeg);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-block-start: 100px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+.partnerscontainer {
+    background-position: center;
+}
+
 }
 
 

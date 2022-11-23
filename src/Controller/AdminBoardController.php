@@ -11,7 +11,6 @@ class AdminBoardController extends AbstractController
         "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
         "Trésorier", "Trésorier adjoint", "Entraineur"
     ];
-    public const RESPONSABILITIES = ["Responsable", "Adjoint", "Entraîneur"];
 
     public function add()
     {
@@ -34,8 +33,7 @@ class AdminBoardController extends AbstractController
         }
         return $this->twig->render('AdminBoard/AdminAddBoard.html.twig', [
             'errors' => $membersErrors,
-            'roles' => self::ROLES,
-            'sectionResponsabilities' => self::RESPONSABILITIES,
+            'roles' => self::ROLES
         ]);
     }
 
@@ -75,7 +73,6 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => $roles,
-            'sectionResponsabilities' => self::RESPONSABILITIES,
             'member' => $member,
         ]);
     }
@@ -94,9 +91,7 @@ class AdminBoardController extends AbstractController
         if (!filter_var($member['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Votre adresse mail n\'est pas au bon format.';
         }
-        if (strlen($member['phone']) != 10 || !filter_var($member['phone'], FILTER_VALIDATE_INT)) {
-            $errors[] = "le numéro de téléphone na pas le bon format.";
-        }
+
         if (in_array($member['role'], $roles)) {
             $errors[] = 'Le rôle doit être un des rôles valide.';
         }

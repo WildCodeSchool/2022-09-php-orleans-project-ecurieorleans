@@ -14,7 +14,9 @@
 			{% endfor %}
 		</div>
 	{% endif %}
-
+	<h1 class="text-center my-3">Modifier le membre
+		{{'N°'~ member.id}}
+	</h1>
 	<form action="" method="POST" id="add-board">
 		<div class="row admin-form m-auto my-4 p-2 w-75">
 			<div class="mb-3 col-6">
@@ -30,7 +32,7 @@
 					Role du membre</label>
 				<select class="form-control" name="role" id="role">
 					{% for role in roles %}
-						<option value="{{ role }}"{% if role is same as member.role %} selected {% endif %}>
+						<option value="{{ role }}" {% if role is same as member.role %} selected {% endif %}>
 							{{ role }}</option>
 					{% endfor %}
 				</select>
@@ -57,18 +59,7 @@
 					Numéro de téléphone du membre (sans espace)</label>
 				<input class="form-control" name="phone" id="phone" type="tel" value="{{ member.phone}}">
 			</div>
-			<div class="mb-3 col-6 m-auto">
-				<label for="sectionResponsability" class="form-label">
-					Role dans la section</label>
-				<select class="form-control" name="sectionResponsability" id="sectionResponsability">
-					{% for sectionResponsability in sectionResponsabilities %}
-						<option value="{{ sectionResponsability}}"{% if sectionResponsability is same as member.section_responsability %} selected {% endif %}>
-							{{ sectionResponsability }}
-						</option>
-					{% endfor %}
-				</select>
-			</div>
-			<div class="mb-3 col-6 m-auto">
+			<div class="mb-3 m-auto">
 				<label for="boardmember" class="form-label">
 					Fait partie du bureau</label>
 				<input name="boardmember" id="boardmember" type="checkbox">

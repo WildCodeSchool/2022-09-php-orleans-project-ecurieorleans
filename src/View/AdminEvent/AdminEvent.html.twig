@@ -18,7 +18,7 @@
 	</div>
 	{% for event in events %}
 		<div class="row my-5 justify-content-around g-0">
-			<div class="admin-view-card col-9 card container-xxl">
+			<div class="admin-view-card col-9 card">
 				<div class="row g-0">
 					<div class="col-md-8">
 						<div class="card-body">
@@ -29,7 +29,7 @@
 							<h3 class="card-title fs-3">
 								{{event.raceDate}}
 							</h3>
-							<p class="card-text fs-5">{{ event.paragraph }}</p>
+							<p class="card-text fs-5">{{ event.paragraph|nl2br }}</p>
 						</div>
 					</div>
 					<div class="col-md-4">

@@ -88,15 +88,15 @@ class AdminBoardController extends AbstractController
         if (empty($member['firstname'])) {
             $errors[] = 'Le prénom du membre est obligatoire.';
         }
-
         if (!filter_var($member['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Votre adresse mail n\'est pas au bon format.';
         }
-
+        if (strlen($member['phone']) != 10 || !filter_var($member['phone'], FILTER_VALIDATE_INT)) {
+            $errors[] = "le numéro de téléphone na pas le bon format.";
+        }
         if (in_array($member['role'], $roles)) {
             $errors[] = 'Le rôle doit être un des rôles valide.';
         }
-
         if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }

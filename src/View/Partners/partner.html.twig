@@ -25,12 +25,12 @@
 	</header>
 {% endblock %}
 {% block content %}
-<div class="partnerscontainer row justify-content-center align-items-center flex-wrap m-0">
-    {% for partner in partners %}
-    <a class="col-6 col-md-3 d-flex justify-content-center" href="{{ partner.URL }}"><img
-            src="{% if partner.logo is not null %} {{'/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/logoph.png'}} {% endif %}"
-            class="admin-header-image h-100 w-100 img-fluid rounded-start py-2"
-            alt="Logo image of {{partner.name}}"></a>
-    {% endfor %}
-</div>
+	<div class="partnerscontainer row justify-content-center align-items-center flex-wrap m-0">
+		{% for partner in partners %}
+			<a class="col-6 col-md-3 d-flex justify-content-center w-25" href="{{ partner.URL }}" target="blank">
+				<img src="{% if partner.logo is not null %} {{'/uploads/' ~ partner.logo }} {% else %} {{'/assets/images/logopo.png'}} {% endif %}" 
+        class="admin-header-image h-100 w-100 img-fluid rounded-start py-2" alt="Logo image of {{partner.name}}">
+			</a>
+		{% endfor %}
+	</div>
 {% endblock %}

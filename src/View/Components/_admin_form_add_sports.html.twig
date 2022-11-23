@@ -22,7 +22,31 @@
 			<label for="header" class="form-label">Image en-tête de la section</label>
 			<input class="form-control" type="file" id="header" name="header">
 		</div>
-		<div class="mb-3 col-12 m-auto">
+		<div class="mb-3 col-4">
+			<label for="manager" class="form-label">Responsable</label>
+			<select class="form-select" id="manager" name="manager">
+				{% for member in members %}
+					<option value="{{member.id}}">{{member.firstname ~ ' '~ member.lastname}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="mb-3 col-4">
+			<label for="adjunct" class="form-label">Adjoint</label>
+			<select class="form-select" id="adjunct" name="adjunct">
+				{% for member in members %}
+					<option value="{{member.id}}">{{member.firstname ~ ' '~ member.lastname}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="mb-3 col-4">
+			<label for="trainer" class="form-label">Entraîneur</label>
+			<select class="form-select" id="trainer" name="trainer">
+				{% for member in members %}
+					<option value="{{member.id}}">{{member.firstname ~ ' '~ member.lastname}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="mb-3 m-auto">
 			<label for="presentation" class="form-label">Description de la section</label>
 			<textarea class="form-control" name="presentation" id="presentation" rows="3"></textarea>
 		</div>

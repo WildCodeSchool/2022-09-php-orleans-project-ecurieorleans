@@ -11,13 +11,11 @@ class AdminBoardController extends AbstractController
         "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
         "Trésorier", "Trésorier adjoint", "Entraineur"
     ];
-    public const RESPONSABILITIES = ["Responsable", "Adjoint", "Entraîneur"];
 
     public function add()
     {
         $membersErrors = [];
         $membersManager = new BoardManager();
-        $responsabilities = self::RESPONSABILITIES;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -35,8 +33,7 @@ class AdminBoardController extends AbstractController
         }
         return $this->twig->render('AdminBoard/AdminAddBoard.html.twig', [
             'errors' => $membersErrors,
-            'roles' => self::ROLES,
-            'sectionResponsabilities' => $responsabilities,
+            'roles' => self::ROLES
         ]);
     }
 
@@ -58,7 +55,6 @@ class AdminBoardController extends AbstractController
             "Trésorier", "Trésorier adjoint", "Entraineur"
         ];
         $member = $membersManager->selectOneById($id);
-        $responsabilities = self::RESPONSABILITIES;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -77,7 +73,6 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => $roles,
-            'sectionResponsabilities' => $responsabilities,
             'member' => $member,
         ]);
     }

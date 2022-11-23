@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\BoardManager;
 use App\Model\SectionManager;
 
 class AdminSectionController extends AbstractController
@@ -28,6 +29,8 @@ class AdminSectionController extends AbstractController
         $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
+        $memberManager = new BoardManager();
+        $members = $memberManager->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $section = array_map('trim', $_POST);
@@ -52,16 +55,18 @@ class AdminSectionController extends AbstractController
         }
         return $this->twig->render('AdminSports/adminAddSports.html.twig', [
             'errors' => $errors,
+            'members' => $members,
         ]);
     }
 
     public function edit(int $id): ?string
     {
-
         $this->testAdmin();
         $errors = [];
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
+        $memberManager = new BoardManager();
+        $members = $memberManager->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sectionUpdated = array_map('trim', $_POST);
@@ -87,6 +92,7 @@ class AdminSectionController extends AbstractController
         return $this->twig->render('AdminSports/adminEditSports.twig', [
             'section' => $section,
             'errors' => $errors,
+            'members' => $members,
         ]);
     }
 
@@ -144,10 +150,9 @@ class AdminSectionController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = (int) trim($_POST['id']);
-            $validateMembers = $this->deleteValidationMember($id);
             $validatePartners = $this->deleteValidationPartner($id);
             $validateEvents = $this->deleteValidationEvent($id);
-            $errors = array_merge($validateMembers, $validatePartners, $validateEvents);
+            $errors = array_merge($validatePartners, $validateEvents);
 
             if (empty($errors)) {
                 $sectionManager = new SectionManager();
@@ -159,17 +164,6 @@ class AdminSectionController extends AbstractController
                 ]);
             }
         }
-    }
-
-    private function deleteValidationMember(int $id): array
-    {
-        $errors = [];
-        $sectionManager = new SectionManager();
-        $membersSectionID = $sectionManager->selectSectionIDofMember($id);
-        if (!empty($membersSectionID)) {
-            $errors[] = 'Cette section ne peut pas être supprimée car elle est liée à des membres de l\'association.';
-        }
-        return $errors;
     }
 
     private function deleteValidationPartner(int $id): array

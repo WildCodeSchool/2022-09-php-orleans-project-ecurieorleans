@@ -100,7 +100,7 @@ class AdminBoardController extends AbstractController
         if (in_array($member['role'], $roles)) {
             $errors[] = 'Le rôle doit etre valide.';
         }
-        if (strlen($member['phone']) != 14) {
+        if (strlen($member['phone']) != 10 || !filter_var($member['phone'], FILTER_VALIDATE_INT)) {
             $errors[] = "le numéro de téléphone na pas le bon format.";
         }
 

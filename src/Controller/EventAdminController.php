@@ -68,8 +68,8 @@ class EventAdminController extends AbstractController
                 header("Location: /admin/evenement");
             }
             return $this->twig->render(
-                'AdminEvent/AddAdminEvent.html.twig',
-                ['errors' => $errors, 'events' => $events]
+                'AdminEvent/EditAdminEvent.html.twig',
+                ['errors' => $errors, 'event' => $event]
             );
         }
         return $this->twig->render('AdminEvent/EditAdminEvent.html.twig', ["event" => $event, "errors" => $errors]);
@@ -80,9 +80,11 @@ class EventAdminController extends AbstractController
             $id = (int) trim($_POST['id']);
             $eventManager = new EventManager();
             $imageName = $eventManager->selectOneById($id);
-            unlink("uploads/" . $imageName['imgPath']);
+            if ($imageName['imgPath'] != null) {
+                unlink("uploads/" . $imageName['imgPath']);
+                $eventManager->delete($id);
+            }
             $eventManager->delete($id);
-
             header('Location:/admin/evenement');
         }
     }

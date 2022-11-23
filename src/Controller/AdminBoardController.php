@@ -6,7 +6,7 @@ use App\Model\BoardManager;
 
 class AdminBoardController extends AbstractController
 {
-    private const INPUT_MAX_LENGHT = 25;
+    private const INPUT_MAX_LENGTH = 25;
     private const ROLES = [
         "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
         "Trésorier", "Trésorier adjoint", "Entraineur"
@@ -99,13 +99,13 @@ class AdminBoardController extends AbstractController
             $errors[] = "le numéro de téléphone na pas le bon format.";
         }
         if (in_array($member['role'], $roles)) {
-            $errors[] = 'Le rôle doit etre valide.';
+            $errors[] = 'Le rôle doit être valide.';
         }
-        if (strlen($member['lastname']) > self::INPUT_MAX_LENGHT) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
+        if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
+            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
-        if (strlen($member['firstname']) > self::INPUT_MAX_LENGHT) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
+        if (strlen($member['firstname']) > self::INPUT_MAX_LENGTH) {
+            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         return $errors;
     }

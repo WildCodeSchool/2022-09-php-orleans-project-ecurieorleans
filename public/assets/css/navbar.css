@@ -72,7 +72,10 @@
     --bs-dropdown-spacer: 20px;
     --bs-dropdown-min-width: 20rem;
     left: 50%;
-    top: 100%;
+    top: 100%; 
+}
+.dropdown-custom a:hover {
+    color:var(--bs-light);
 }
 
 .item-custom:hover {

@@ -91,22 +91,22 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le nom du membre est obligatoire.';
         }
         if (empty($member['firstname'])) {
-            $errors[] = 'Le prénom du mmebre est obligatoire.';
+            $errors[] = 'Le prénom du membre est obligatoire.';
         }
 
         if (!filter_var($member['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'le mail na pas le bon format .';
+            $errors[] = 'Votre adresse mail n\'est pas au bon format.';
         }
 
         if (in_array($member['role'], $roles)) {
-            $errors[] = 'Le role doit etre valide .';
+            $errors[] = 'Le rôle doit être un des rôles valide.';
         }
 
         if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         if (strlen($member['firstname']) > self::INPUT_MAX_LENGTH) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
+            $errors[] = 'Le prénom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         return $errors;
     }

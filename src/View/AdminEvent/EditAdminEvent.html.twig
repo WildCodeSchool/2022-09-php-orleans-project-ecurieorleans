@@ -34,7 +34,7 @@
 				<label for="sportSelect" class="form-label">Type de course</label>
 				<select name="sportSelect" id="sportSelect" class="form-select">
 					{% for section in sections %}
-						<option value="{{section.id}}">{{section.name}}</option>
+						<option value="{{section.id}}"{% if event.section_id is same as section.id %} selected {% endif %}>{{section.name}}</option>
 					{% endfor %}
 				</select>
 			</div>
@@ -47,7 +47,7 @@
 			<div>
 				<label class="mt-4" for="raceDescription" class="form-label">Description de la course</label>
 				<textarea id="raceDescription" class="form-control my-3 w-100" name="raceDescription">
-					{% if event.paragraph is defined %}
+					{%- if event.paragraph is defined -%}
 						{{ event.paragraph }}
 					{% endif %}
 				</textarea>

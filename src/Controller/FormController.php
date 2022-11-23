@@ -13,11 +13,12 @@ class FormController extends AbstractController
         $sections = $sectionManager->selectAll();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = $this->errors($sections);
+            $valueForm = array_map('trim', $_POST);
             if (empty($errors)) {
                 header('Location: /contact?message=good');
                 return "";
             }
-            return $this->twig->render('/Contact/form.html.twig', ['errors' => $errors]);
+            return $this->twig->render('/Contact/form.html.twig', ['errors' => $errors, 'valueForm' => $valueForm]);
         }
         return $this->twig->render('/Contact/form.html.twig', ['sections' => $sections , 'message' => $message]);
     }

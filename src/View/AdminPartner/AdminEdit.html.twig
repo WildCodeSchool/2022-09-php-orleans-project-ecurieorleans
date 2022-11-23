@@ -24,7 +24,7 @@
 		<div class="row admin-form m-auto my-4 p-2 w-75">
 			<div class="mb-3 col-9">
 				<label for="section-title" class="form-label">Nom du Partenaire</label>
-				<input type="text" name="name" class="form-control" id="name" value="">
+				<input type="text" name="name" class="form-control" id="name" value="{{ partner.name }}">
 			</div>
 			<div class="mb-3 col-3">
 				<label for="section-header" class="form-label">Logo du Partenaire</label>
@@ -32,12 +32,12 @@
 			</div>
 			<div class="mb-1 col-12 m-auto">
 				<label for="section-presentation" class="form-label">URL du site Partenaire</label>
-				<input type="text" name="URL" class="form-control" id="URL" value="">
+				<input type="url" name="URL" class="form-control" id="URL" value="{{ partner.URL }}" required>
 			</div>
 		</div>
 		<div class="d-flex justify-content-between w-75 m-auto">
-			<button type="submit" class="btn btn-outline-success d-flex justify-content-start align-items-start gap-2">Valider</button>
-			<a href="/admin/partenaires/" class="admin-buttons text-dark btn btn-outline-danger d-flex justify-content-end align-items-end gap-2">Annuler</a>
+			<button type="submit" class="btn btn-success w-25 py-2">Valider</button>
+			<a href="/admin/partenaires/" class="admin-buttons text-dark btn btn-outline-danger w-25 py-2">Annuler</a>
 		</div>
 	</form>
 {% endblock %}

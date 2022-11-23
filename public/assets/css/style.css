@@ -78,6 +78,11 @@
     background-color: var(--bs-lightdark);
 }
 
+.card-style{
+    margin-left: 22rem;
+    width:50%;
+}
+
 .admin-form {
     background-color: var(--bs-lightdark);
 }

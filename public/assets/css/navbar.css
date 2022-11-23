@@ -75,7 +75,7 @@
     top: 100%; 
 }
 .dropdown-custom a:hover {
-color:white;
+    color:var(--bs-light);
 }
 
 .item-custom:hover {

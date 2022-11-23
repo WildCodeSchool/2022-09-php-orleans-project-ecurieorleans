@@ -11,12 +11,12 @@ class AdminBoardController extends AbstractController
         "Président d'honneur", "Président", "Vice-président", "Secrétaire", "Secrétaire adjoint",
         "Trésorier", "Trésorier adjoint", "Entraineur"
     ];
+    public const RESPONSABILITIES = ["Responsable", "Adjoint", "Entraîneur"];
 
     public function add()
     {
         $membersErrors = [];
         $membersManager = new BoardManager();
-        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -35,7 +35,7 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminAddBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => self::ROLES,
-            'sectionResponsabilitys' => $responsability,
+            'sectionResponsabilities' => self::RESPONSABILITIES,
         ]);
     }
 
@@ -57,7 +57,6 @@ class AdminBoardController extends AbstractController
             "Trésorier", "Trésorier adjoint", "Entraineur"
         ];
         $member = $membersManager->selectOneById($id);
-        $responsability = ["Responsable", "Adjoint", "Entraîneur"];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $members = array_map('trim', $_POST);
             if (isset($members["boardmember"])) {
@@ -76,7 +75,7 @@ class AdminBoardController extends AbstractController
         return $this->twig->render('AdminBoard/AdminEditBoard.html.twig', [
             'errors' => $membersErrors,
             'roles' => $roles,
-            'sectionResponsabilitys' => $responsability,
+            'sectionResponsabilities' => self::RESPONSABILITIES,
             'member' => $member,
         ]);
     }
@@ -93,19 +92,19 @@ class AdminBoardController extends AbstractController
             $errors[] = 'Le prénom du membre est obligatoire.';
         }
         if (!filter_var($member['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'le mail n\'a pas le bon format.';
+            $errors[] = 'Votre adresse mail n\'est pas au bon format.';
         }
         if (strlen($member['phone']) != 10 || !filter_var($member['phone'], FILTER_VALIDATE_INT)) {
             $errors[] = "le numéro de téléphone na pas le bon format.";
         }
         if (in_array($member['role'], $roles)) {
-            $errors[] = 'Le rôle doit être valide.';
+            $errors[] = 'Le rôle doit être un des rôles valide.';
         }
         if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         if (strlen($member['firstname']) > self::INPUT_MAX_LENGTH) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
+            $errors[] = 'Le prénom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
         }
         return $errors;
     }

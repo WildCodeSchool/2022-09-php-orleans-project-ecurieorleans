@@ -94,14 +94,14 @@ class AdminBoardController extends AbstractController
         }
 
         if (!filter_var($member['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'le mail n\'a pas le bon format .';
+            $errors[] = 'le mail n\'a pas le bon format.';
         }
 
         if (in_array($member['role'], $roles)) {
-            $errors[] = 'Le rôle doit etre valide .';
+            $errors[] = 'Le rôle doit etre valide.';
         }
         if (strlen($member['phone']) != 14) {
-            $errors[] = "le numéro de téléphone na pas le bon format";
+            $errors[] = "le numéro de téléphone na pas le bon format.";
         }
 
         if (strlen($member['lastname']) > self::INPUT_MAX_LENGHT) {

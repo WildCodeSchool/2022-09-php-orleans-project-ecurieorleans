@@ -101,11 +101,8 @@ class AdminBoardController extends AbstractController
         if (in_array($member['role'], $roles)) {
             $errors[] = 'Le rôle doit etre valide.';
         }
-        if (strlen($member['phone']) != 10 || !filter_var($member['phone'], FILTER_VALIDATE_INT)) {
-            $errors[] = "le numéro de téléphone n\'a pas le bon format.";
-        }
-        if (strlen($member['lastname']) > self::INPUT_MAX_LENGTH) {
-            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères.';
+        if (strlen($member['lastname']) > self::INPUT_MAX_LENGHT) {
+            $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';
         }
         if (strlen($member['firstname']) > self::INPUT_MAX_LENGHT) {
             $errors[] = 'Le nom du membre doit faire moins de ' . self::INPUT_MAX_LENGHT . ' caractères.';

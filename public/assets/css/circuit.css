@@ -8,6 +8,7 @@
 
 .circuit-content-image {
     object-fit: cover;
+    height: 800px;
 }
 
 .circuit-adress {

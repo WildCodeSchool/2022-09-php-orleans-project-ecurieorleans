@@ -81,7 +81,7 @@
 			<div class="row">
 				{% for event in events %}
 					<div>
-						<div class="card mt-5 col-md-10 my-4">
+						<div class="card card-height mt-5 col-md-10 my-4 m-auto">
 							<div class="row g-0">
 								<div class="col-md-4">
 									<img src="{% if event.imgPath is not null %} {{'/uploads/'~event.imgPath}} {% else %} {{'/assets/images/imgPlaceHolder.webp'}} {% endif %}" class="img-fluid rounded-start cardImg col-12" alt="Image de carte de l'evenement">
@@ -141,9 +141,11 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="col-lg-5 p-0 ">
 					<img class="font-image m-0 w-100" src="assets/images/BMW.jpg" alt="image de voiture"/>
 				</div>
-			</section>
-		</main>
-	{% endblock %}
+			</div>
+		</section>
+	</main>
+{% endblock %}

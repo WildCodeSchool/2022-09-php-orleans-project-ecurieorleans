@@ -1,3 +1,8 @@
 .contact-button {
     margin-block-end: 385px;
 }
+
+.headtitle {
+    font-family: var(--font_title);
+    color:var(--bs-primary)
+}

@@ -1,23 +1,24 @@
 <footer>
 	<div class="yellow-spacer bg-secondary"></div>
 	<div class="footer-container bg-dark d-flex flex-column pt-3">
-		<div class="footer-link-container d-flex justify-content-around py-3">
+		<div class="footer-link-container d-flex justify-content-around py-3 mx-5">
 			<li>
-				<a href="" class="text-light footer-link">À propos</a>
+				<a href="#start" class="text-light footer-link">À propos</a>
 			</li>
 			<div class="small-blue-spacer"></div>
 			<li>
-				<a href="" class="text-light footer-link">Contact</a>
+				<a href="/contact" class="text-light footer-link">Contact</a>
 			</li>
 			<div class="small-blue-spacer"></div>
 			<li>
 				<a href="/mention/legale" class="text-light footer-link">Mentions légales</a>
 			</li>
-			<div class="small-blue-spacer"></div>
-			<li>
-				<a href="" class="text-light footer-link">CGU</a>
-			</li>
-
+			{% if user is not empty %}
+				<div class="small-blue-spacer"></div>
+				<li>
+					<a href="/admin" class="text-light footer-link">Administration</a>
+				</li>
+			{% endif %}
 		</div>
 	</div>
 </footer>

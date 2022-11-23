@@ -7,15 +7,11 @@
     object-fit: cover;
 }
 
-.sports-presentation {
-    padding-inline: 6rem;
-}
-
-.sports-section {
-    padding-block-start: 10rem;
-}
-
 .sports-table {
     border-collapse: separate;
     border-spacing: 0 15px;
+}
+
+.card-section {
+    height: 140px;
 }

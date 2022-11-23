@@ -30,7 +30,7 @@
 					Role du membre</label>
 				<select class="form-control" name="role" id="role">
 					{% for role in roles %}
-						<option value="{{ role }}">
+						<option value="{{ role }}"{% if role is same as member.role %} selected {% endif %}>
 							{{ role }}</option>
 					{% endfor %}
 				</select>
@@ -54,15 +54,15 @@
 			</div>
 			<div class="mb-3 col-6 m-auto">
 				<label for="phone" class="form-label">
-					Numéro de téléphone du membre</label>
+					Numéro de téléphone du membre (sans espace)</label>
 				<input class="form-control" name="phone" id="phone" type="tel" value="{{ member.phone}}">
 			</div>
 			<div class="mb-3 col-6 m-auto">
 				<label for="sectionResponsability" class="form-label">
 					Role dans la section</label>
 				<select class="form-control" name="sectionResponsability" id="sectionResponsability">
-					{% for sectionResponsability in sectionResponsabilitys %}
-						<option value="{{ sectionResponsability}}">
+					{% for sectionResponsability in sectionResponsabilities %}
+						<option value="{{ sectionResponsability}}"{% if sectionResponsability is same as member.section_responsability %} selected {% endif %}>
 							{{ sectionResponsability }}
 						</option>
 					{% endfor %}
@@ -76,9 +76,7 @@
 		</div>
 		<div class="d-flex justify-content-between w-75 m-auto">
 			<button type="submit" class="btn btn-success w-25 py-2">Valider</button>
-			<button class="btn btn-outline-danger w-25 py-2">
-				<a href="/admin/bureau" class="admin-buttons text-danger">Annuler</a>
-			</button>
+			<a href="/admin/bureau" class="admin-buttons text-dark btn btn-outline-danger w-25 py-2">Annuler</a>
 		</div>
 	</form>
 {% endblock %}

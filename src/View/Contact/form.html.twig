@@ -17,7 +17,7 @@
 			{% endfor %}
 		</div>
 	{% endif %}
-	<h2 class="text-center my-4">Formulaire de contact</h2>
+	<h2 class="text-center my-4 headtitle">Formulaire de contact</h2>
 	{% if message == 'good' %}
 		<div class="alert alert-success" role="alert">
 			<p class="m-0 text-center">
@@ -32,11 +32,11 @@
 		<div class="row admin-form m-auto my-4 p-2 w-75">
 			<div class="mb-3 col-md-5">
 				<label for="name" class="form-label">Prénom et nom :</label>
-				<input id="name" name="name" class="form-control" type="text" placeholder="John Doe" required>
+				<input id="name" name="name" class="form-control" type="text" placeholder="John Doe" value="{{ valueForm.name }}" required>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label for="email" class="form-label">Email :</label>
-				<input id="email" name="email" class="form-control" type="email" placeholder="circuit@gmail.com" required>
+				<input id="email" name="email" class="form-control" type="email" placeholder="circuit@gmail.com" value="{{ valueForm.email }}" required>
 			</div>
 			<div class="mb-3 col-md-3">
 				<label for="subject" class="form-label">Sujet :</label>
@@ -49,7 +49,7 @@
 			</div>
 			<div class="mb-3 ">
 				<label for="message" class="form-label">Contenu de votre message :</label>
-				<textarea minlength="10" id="message" name="message" class="form-control" placeholder="Votre Message..." required></textarea>
+				<textarea minlength="10" id="message" name="message" class="form-control" placeholder="Votre Message..." required> {{ valueForm.message }} </textarea>
 			</div>
 		</div>
 	</form>

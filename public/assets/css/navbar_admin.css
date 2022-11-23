@@ -28,7 +28,7 @@
 }
 
 .navbar-nav li:hover {
-    transform: translateY(-3px);
+    color: var(--bs-primary);
 }
 
 .nav-item a {

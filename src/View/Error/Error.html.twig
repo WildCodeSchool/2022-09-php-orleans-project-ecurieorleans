@@ -1,14 +1,15 @@
 {% extends "visitor_layout.html.twig"%}
 
 {% block content %}
-	<div class="d-flex align-items-center flex-column">
+	<div class="yellow-spacer bg-secondary"></div>
+	<div class="d-flex align-items-center flex-column my-4">
 		<h2>
 			Erreur
 			{{ error }}</h2>
 		<h3 class="mb-5">
 			Cette page n'existe pas !
 		</h3>
-        <img src="/assets/images/error.jpeg" class="w-100">
+		<img src="/assets/images/error.jpeg" class="w-100">
 	</div>
 {% endblock %}
 {% block footer%}{% endblock %}

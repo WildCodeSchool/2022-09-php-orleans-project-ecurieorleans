@@ -3,35 +3,10 @@ CREATE TABLE
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `name` VARCHAR(25) NOT NULL,
         header TEXT NULL,
-        presentation TEXT NOT NULL
-    );
-
-INSERT INTO
-    section (`name`, presentation)
-VALUES (
-        "Auto",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    ), (
-        "Moto",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    ), (
-        "Handi-car",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    ), (
-        "Mécasport",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    ), (
-        "Test",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
-    ), (
-        "Test 2",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
-Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst."
+        presentation TEXT NOT NULL,
+        manager_id INT NOT NULL,
+        adjunct_id INT NOT NULL,
+        trainer_id INT NOT NULL
     );
 
 CREATE TABLE
@@ -43,10 +18,7 @@ CREATE TABLE
         phone CHAR(20),
         mail VARCHAR(150),
         is_board_member BOOLEAN NOT NULL,
-        `role` VARCHAR(255),
-        section_responsability VARCHAR(50),
-        section_id INT NULL,
-        CONSTRAINT fk_member_section FOREIGN KEY (section_id) REFERENCES section(id)
+        `role` VARCHAR(255)
     );
 
 INSERT INTO
@@ -57,9 +29,7 @@ INSERT INTO
         phone,
         mail,
         is_board_member,
-        `role`,
-        section_responsability,
-        section_id
+        `role`
     )
 VALUES (
         "Michel",
@@ -68,9 +38,7 @@ VALUES (
         "02 00 00 00 00",
         "m.lempereur@gmail.com",
         TRUE,
-        "Président d'honneur",
-        NULL,
-        NULL
+        "Président d'honneur"
     ), (
         "Jean-Claude",
         "Painchault",
@@ -78,9 +46,7 @@ VALUES (
         "02 00 00 00 00",
         "jc.painchault@gmail.com",
         TRUE,
-        "Président",
-        "Responsable",
-        1
+        "Président"
     ), (
         "Jean-Marc",
         "Pelletier",
@@ -88,9 +54,7 @@ VALUES (
         "02 00 00 00 00",
         "jm.pelletier@gmail.com",
         TRUE,
-        "Vice-président",
-        "Adjoint",
-        1
+        "Vice-président"
     ), (
         "Pascal",
         "Perdereau",
@@ -98,9 +62,7 @@ VALUES (
         "02 00 00 00 00",
         "p.perdereau@gmail.com",
         TRUE,
-        "Vice-président",
-        "Responsable",
-        4
+        "Vice-président"
     ), (
         "Carole",
         "Maréchal",
@@ -108,9 +70,7 @@ VALUES (
         "02 00 00 00 00",
         "c.marechal@gmail.com",
         TRUE,
-        "Secrétaire",
-        "Adjoint",
-        1
+        "Secrétaire"
     ), (
         "Jacky",
         "Casanueva",
@@ -118,9 +78,7 @@ VALUES (
         "02 00 00 00 00",
         "j.casanueva@gmail.com",
         TRUE,
-        "Secrétaire adjoint",
-        "Responsable",
-        2
+        "Secrétaire adjoint"
     ), (
         "Olivier",
         "Venot",
@@ -128,9 +86,7 @@ VALUES (
         "02 00 00 00 00",
         "o.venot@gmail.com",
         TRUE,
-        "Trésorier",
-        NULL,
-        1
+        "Trésorier"
     ), (
         "Pascal",
         "Billard",
@@ -138,9 +94,7 @@ VALUES (
         "02 00 00 00 00",
         "p.billard@gmail.com",
         FALSE,
-        "Entraîneur",
-        "Entraîneur",
-        2
+        "Entraîneur"
     ), (
         "Marcel",
         "Debat",
@@ -148,9 +102,7 @@ VALUES (
         "02 00 00 00 00",
         "m.debat@gmail.com",
         TRUE,
-        "Trésorier adjoint",
-        "Adjoint",
-        4
+        "Trésorier adjoint"
     ), (
         "Roselyne",
         "Tardif",
@@ -158,9 +110,7 @@ VALUES (
         "02 00 00 00 00",
         "r.tardif@gmail.com",
         TRUE,
-        "Trésorière adjoint",
-        NULL,
-        2
+        "Trésorière adjoint"
     ), (
         "Helder",
         "Duarte",
@@ -168,9 +118,7 @@ VALUES (
         "02 00 00 00 00",
         "h.duarte@gmail.com",
         FALSE,
-        NULL,
-        NULL,
-        5
+        NULL
     ), (
         "Dominique",
         "Jouas",
@@ -178,9 +126,7 @@ VALUES (
         "02 00 00 00 00",
         "d.jouas@gmail.com",
         FALSE,
-        "Entraîneur",
-        "Entraîneur",
-        3
+        "Entraîneur"
     ), (
         "Philippe",
         "Jubert",
@@ -188,9 +134,7 @@ VALUES (
         "02 00 00 00 00",
         "p.jubert@gmail.com",
         FALSE,
-        NULL,
-        'Responsable',
-        3
+        NULL
     ), (
         "Guillaume",
         "Lecouflet",
@@ -198,9 +142,7 @@ VALUES (
         "02 00 00 00 00",
         "g.lecouflet@gmail.com",
         FALSE,
-        NULL,
-        'Adjoint',
-        3
+        NULL
     ), (
         "Sylvain",
         "Migniot",
@@ -208,9 +150,7 @@ VALUES (
         "02 00 00 00 00",
         "s.migniot@gmail.com",
         FALSE,
-        "Entraîneur",
-        "Entraîneur",
-        1
+        "Entraîneur"
     ), (
         "Vincent",
         "Perdereau",
@@ -218,9 +158,7 @@ VALUES (
         "02 00 00 00 00",
         "v.perdereau@gmail.com",
         FALSE,
-        NULL,
-        NULL,
-        3
+        NULL
     ), (
         "Paulin",
         "Pinsart",
@@ -228,9 +166,7 @@ VALUES (
         "02 00 00 00 00",
         "p.pinsart@gmail.com",
         FALSE,
-        "Entraîneur",
-        "Entraîneur",
-        4
+        "Entraîneur"
     ), (
         "Roger",
         "Soulas",
@@ -238,8 +174,6 @@ VALUES (
         "02 00 00 00 00",
         "r.soulas@gmail.com",
         FALSE,
-        NULL,
-        NULL,
         NULL
     ), (
         "Jean-Luc",
@@ -248,9 +182,57 @@ VALUES (
         "02 00 00 00 00",
         "jl.martineau@gmail.com",
         FALSE,
-        NULL,
-        'Adjoint',
-        2
+        NULL
+    );
+
+ALTER TABLE section
+ADD
+    CONSTRAINT fk_section_manager_member FOREIGN KEY (manager_id) REFERENCES member(id);
+
+ALTER TABLE section
+ADD
+    CONSTRAINT fk_section_adjunct_member FOREIGN KEY (adjunct_id) REFERENCES member(id);
+
+ALTER TABLE section
+ADD
+    CONSTRAINT fk_section_trainer_member FOREIGN KEY (trainer_id) REFERENCES member(id);
+
+INSERT INTO
+    section (
+        `name`,
+        presentation,
+        manager_id,
+        adjunct_id,
+        trainer_id
+    )
+VALUES (
+        "Auto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
+        1,
+        2,
+        3
+    ), (
+        "Moto",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
+        4,
+        5,
+        6
+    ), (
+        "Handi-car",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
+        7,
+        8,
+        9
+    ), (
+        "Mécasport",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id sodales tellus. Pellentesque in lorem vitae risus fermentum rutrum. 
+Vestibulum sed libero eget diam fringilla convallis vitae non dui. In hac habitasse platea dictumst.",
+        7,
+        8,
+        9
     );
 
 CREATE TABLE
@@ -324,21 +306,6 @@ VALUES (
         NULL,
         "https://www.ufolep.org/",
         3
-    ), (
-        "Région Centre-Val-de-Loire",
-        NULL,
-        "https://www.centre-valdeloire.fr/",
-        NULL
-    ), (
-        "Loiret Département",
-        NULL,
-        "https://www.loiret.fr/",
-        NULL
-    ), (
-        "Orléans Mairie",
-        NULL,
-        "https://www.orleans-metropole.fr/",
-        NULL
     );
 
 CREATE TABLE

@@ -12,17 +12,18 @@ class SectionController extends AbstractController
     {
         $sectionManager = new SectionManager();
         $section = $sectionManager->selectOneById($id);
+        $managers = $sectionManager->selectJoinSectionOnRoleID($section['id']);
         $eventManager = new EventManager();
         $events = $eventManager->selectAllEventsBySectionID($section['id'], 'raceDate', 'DESC');
-        $memberManager = new BoardManager();
-        $members = $memberManager->selectAllMembersBySectionID($section['id']);
 
+        //var_dump($managers);
+        //exit();
         return $this->twig->render(
             'Section/section.html.twig',
             [
                 'section' => $section,
                 'events' => $events,
-                'members' => $members
+                'managers' => $managers
             ]
         );
     }

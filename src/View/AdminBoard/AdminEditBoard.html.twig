@@ -30,7 +30,7 @@
 					Role du membre</label>
 				<select class="form-control" name="role" id="role">
 					{% for role in roles %}
-						<option value="{{ role }}">
+						<option value="{{ role }}"{% if role is same as member.role %} selected {% endif %}>
 							{{ role }}</option>
 					{% endfor %}
 				</select>
@@ -62,7 +62,7 @@
 					Role dans la section</label>
 				<select class="form-control" name="sectionResponsability" id="sectionResponsability">
 					{% for sectionResponsability in sectionResponsabilities %}
-						<option value="{{ sectionResponsability}}">
+						<option value="{{ sectionResponsability}}"{% if sectionResponsability is same as member.section_responsability %} selected {% endif %}>
 							{{ sectionResponsability }}
 						</option>
 					{% endfor %}

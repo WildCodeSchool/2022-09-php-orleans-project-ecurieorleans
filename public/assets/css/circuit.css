@@ -8,14 +8,11 @@
 
 .circuit-content-image {
     object-fit: cover;
+    height: 800px;
 }
 
 .circuit-adress {
     border-top: solid var(--bs-primary) 2px;
     border-bottom: solid var(--bs-primary) 2px;
     padding-block: 150px;
-}
-
-.circuit-img-presentation {
-    max-height: 1210px;
 }
